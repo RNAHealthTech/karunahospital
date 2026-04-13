@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { KarunaLogo } from "./logo";
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube, Heart } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
@@ -30,17 +32,13 @@ export function Footer() {
         >
           {/* Brand */}
           <div className="footer__brand">
-            <div className="footer-logo">
-              <div className="footer-logo__icon" aria-hidden="true">K</div>
-              <div className="footer-logo__text">
-                <div className="footer-logo__name">Karuna Hospital</div>
-                <div className="footer-logo__tagline">{t("footer.nabh")}</div>
-              </div>
+            <div className="mb-6">
+              <KarunaLogo />
             </div>
             <p className="footer__desc">{t("footer.tagline")}</p>
             <p className="footer__address">
               <MapPin size={14} className="footer__icon-inline" aria-hidden="true" />
-              Pocket 1, Mayur Vihar Phase-3, Delhi – 110096
+              {t("footer.address")}
             </p>
             <div className="footer__socials" aria-label="Social media links">
               <a href="#" className="footer__social-btn" aria-label="Facebook"><Facebook size={16} /></a>

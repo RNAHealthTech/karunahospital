@@ -819,7 +819,7 @@ export default function HabitDetailPage({
               </motion.div>
 
               {/* Prevention Tips Card */}
-              {content.preventionTips && (
+              {(content as any).preventionTips && (
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -836,7 +836,7 @@ export default function HabitDetailPage({
                       : "रोकथाम और प्रबंधन"}
                   </h2>
                   <ul className="mt-2 space-y-3">
-                    {content.preventionTips.map((tip: string, i: number) => (
+                    {(content as any).preventionTips.map((tip: string, i: number) => (
                       <li key={i} className="flex items-start gap-3">
                         <CheckCircle2
                           size={18}
@@ -927,7 +927,7 @@ export default function HabitDetailPage({
                   </div>
                 </div>
 
-                <Link
+                {/* <Link
                   href="tel:01122112211"
                   className="btn btn--outline mt-4 w-full justify-center"
                   style={{
@@ -938,7 +938,7 @@ export default function HabitDetailPage({
                 >
                   <Phone size={16} className="mr-2" />
                   {language === "en" ? "Call Now" : "अभी कॉल करें"}
-                </Link>
+                </Link> */}
               </div>
 
               {/* Quick Stats */}

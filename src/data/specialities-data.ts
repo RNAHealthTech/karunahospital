@@ -325,5 +325,95 @@ export const specialitiesData: Record<string, Speciality> = {
       treatments: ["लाइफ सपोर्ट", "निरंतर निगरानी", "सेप्टिक शॉक प्रबंधन"],
       expertise: ["गहन देखभाल", "आपातकालीन चिकित्सा", "ट्रॉमा केयर"]
     }
+  },
+  "psychiatry": {
+    id: "psychiatry",
+    icon: Activity,
+    color: "purple",
+    image: "/images/lobby.png",
+    en: {
+      title: "Psychiatry",
+      description: "Comprehensive mental health services including diagnosis and treatment of emotional and behavioral disorders.",
+      treatments: ["Counseling", "Medication Management", "Therapy"],
+      expertise: ["Clinical Psychiatry", "Child Psychiatry", "Geriatric Psychiatry"]
+    },
+    hi: {
+      title: "मनोचिकित्सा (Psychiatry)",
+      description: "भावनात्मक और व्यवहार संबंधी विकारों के निदान और उपचार सहित व्यापक मानसिक स्वास्थ्य सेवाएं।",
+      treatments: ["परामर्श", "दवा प्रबंधन", "चिकित्सा"],
+      expertise: ["क्लिनिकल मनोरोग", "बाल मनोरोग", "वृद्धावस्था मनोरोग"]
+    }
+  },
+  "dentistry": {
+    id: "dentistry",
+    icon: Smile,
+    color: "blue",
+    image: "/images/doctor.png",
+    en: {
+      title: "Dentistry",
+      description: "Complete oral healthcare services from routine checkups to advanced dental procedures.",
+      treatments: ["Root Canal", "Dental Implants", "Orthodontics"],
+      expertise: ["General Dentistry", "Cosmetic Dentistry", "Oral Surgery"]
+    },
+    hi: {
+      title: "दंत चिकित्सा (Dentistry)",
+      description: "नियमित जांच से लेकर उन्नत दंत चिकित्सा प्रक्रियाओं तक संपूर्ण मौखिक स्वास्थ्य सेवाएं।",
+      treatments: ["रूट कैनाल", "डेंटल इंप्लांट", "ऑर्थोडॉन्टिक्स"],
+      expertise: ["सामान्य दंत चिकित्सा", "कॉस्मेटिक दंत चिकित्सा", "ओरल सर्जरी"]
+    }
+  },
+  "radiology": {
+    id: "radiology",
+    icon: Microscope,
+    color: "blue",
+    image: "/images/ot.png",
+    en: {
+      title: "Radiology",
+      description: "Advanced imaging services for accurate diagnosis and interventional procedures.",
+      treatments: ["X-Ray", "Ultrasound", "CT Scan"],
+      expertise: ["Diagnostic Radiology", "Interventional Radiology", "Neuroradiology"]
+    },
+    hi: {
+      title: "रेडियोलॉजी",
+      description: "सटीक निदान और इंटरवेंशनल प्रक्रियाओं के लिए उन्नत इमेजिंग सेवाएं।",
+      treatments: ["एक्स-रे", "अल्ट्रासाउंड", "सीटी स्कैन"],
+      expertise: ["डायग्नोस्टिक रेडियोलॉजी", "इंटरवेंशनल रेडियोलॉजी", "न्यूरोरेडियोलॉजी"]
+    }
+  },
+  "pathology": {
+    id: "pathology",
+    icon: Droplets,
+    color: "rose",
+    image: "/images/lobby.png",
+    en: {
+      title: "Pathology",
+      description: "Comprehensive laboratory services for accurate disease diagnosis and monitoring.",
+      treatments: ["Blood Tests", "Biopsy", "Hormone Studies"],
+      expertise: ["Clinical Pathology", "Hematology", "Biochemistry"]
+    },
+    hi: {
+      title: "पैथोलॉजी",
+      description: "सटीक रोग निदान और निगरानी के लिए व्यापक प्रयोगशाला सेवाएं।",
+      treatments: ["रक्त परीक्षण", "बायोप्सी", "हार्मोन अध्ययन"],
+      expertise: ["क्लिनिकल पैथोलॉजी", "हेमेटोलॉजी", "बायोकैमिस्ट्री"]
+    }
+  },
+  "maxillofacial": {
+    id: "maxillofacial",
+    icon: Users,
+    color: "orange",
+    image: "/images/doctor.png",
+    en: {
+      title: "Oral Maxillofacial Surgery",
+      description: "Specialized surgery for face, jaw, and mouth conditions.",
+      treatments: ["Jaw Surgery", "Facial Trauma", "Implantology"],
+      expertise: ["Reconstructive Surgery", "TMJ Disorders", "Orthognathic Surgery"]
+    },
+    hi: {
+      title: "ओरल मैक्सिलोफेशियल सर्जरी",
+      description: "चेहरे, जबड़े और मुंह की स्थितियों के लिए विशेष सर्जरी।",
+      treatments: ["जबड़े की सर्जरी", "फेशियल ट्रॉमा", "इंप्लांटोलॉजी"],
+      expertise: ["पुनर्निर्माण सर्जरी", "TMJ विकार", "ऑर्थोग्नाथिक सर्जरी"]
+    }
   }
 };

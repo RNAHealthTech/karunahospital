@@ -1152,19 +1152,35 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
           >
-            <div className="group relative h-[400px] overflow-hidden rounded-xl shadow-xl">
+            <div className="group relative h-[450px] overflow-hidden rounded-2xl shadow-2xl lg:col-span-2">
+              <img
+                src="/images/building.jpg"
+                alt="Karuna Hospital Building"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10">
+                <h3 className="mb-3 transform text-3xl font-bold text-white transition-transform group-hover:-translate-y-1">
+                  Our Facility
+                </h3>
+                <p className="max-w-[400px] rounded-lg border border-white/10 bg-black/30 p-4 text-base leading-relaxed text-white/95 backdrop-blur-md">
+                  A multi-speciality healthcare landmark in East Delhi,
+                  dedicated to providing world-class medical services since
+                  2011.
+                </p>
+              </div>
+            </div>
+            <div className="group relative h-[450px] overflow-hidden rounded-2xl shadow-xl">
               <img
                 src="/images/lobby.png"
                 alt="Hospital Lobby"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 md:p-10">
+              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10">
                 <h3 className="mb-3 transform text-2xl font-bold text-white transition-transform group-hover:-translate-y-1">
-                  Premium Facilities
+                  Premium Lobby
                 </h3>
-                <p className="max-w-[280px] rounded-lg border border-white/10 bg-black/20 p-3 text-sm leading-relaxed text-white/90 backdrop-blur-sm">
-                  A relaxing and clean environment for our patients and
-                  visitors.
+                <p className="max-w-[280px] rounded-lg border border-white/10 bg-black/30 p-3 text-sm leading-relaxed text-white/90 backdrop-blur-sm">
+                  Patient-friendly environment with modern amenities.
                 </p>
               </div>
             </div>

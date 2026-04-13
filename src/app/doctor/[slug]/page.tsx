@@ -121,7 +121,7 @@ export default function DoctorProfilePage() {
               </div>
 
               {/* Actions */}
-              <div className="dp-cta">
+              {/* <div className="dp-cta">
                 <Link href="/contact" className="dp-btn-primary">
                   <Calendar size={19} />
                   {t("page.doctor.book")}
@@ -130,7 +130,7 @@ export default function DoctorProfilePage() {
                   <Phone size={19} />
                   Call Now
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

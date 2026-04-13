@@ -34,7 +34,7 @@ export const doctorsData = [
   },
   {
     "name": "Dr Saloni Seth",
-    "department": "Psychiatrist",
+    "department": "Obstetrics & Gynaecology",
     "profile": "/doctor/saloni-seth",
     "image": "https://karunahospital.in/wp-content/uploads/2024/11/IMG-20241120-WA0009-1.jpg",
     "slug": "saloni-seth",
@@ -45,7 +45,7 @@ export const doctorsData = [
   },
   {
     "name": "Dr Sachin Kumar",
-    "department": "Dermatologist",
+    "department": "Orthopaedics",
     "profile": "/doctor/sachin-kumar",
     "image": "https://karunahospital.in/wp-content/uploads/2024/04/dr-sachin-kumar.jpg",
     "slug": "sachin-kumar",

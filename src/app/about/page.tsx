@@ -9484,8 +9484,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Overview Section ── */}
-      <section className="section" id="overview">
+      {/* ── Corporate Profile Section ── */}
+      <section className="section" id="corporate-profile">
         <div className="section__inner">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -9494,8 +9494,8 @@ export default function AboutPage() {
             transition={{ duration: 0.7 }}
             className="section__header"
           >
-            <h2 className="section__title">{t("page.about.overview")}</h2>
-            <p className="section__subtitle">{t("page.about.overviewDesc")}</p>
+            <h2 className="section__title">{t("page.about.corporate.title")}</h2>
+            <p className="section__subtitle">{t("page.about.overview")}</p>
           </motion.div>
 
           {/* Removed 2-column grid & right side image/years. Centered content for better balance. */}
@@ -9540,7 +9540,7 @@ export default function AboutPage() {
             transition={{ duration: 0.7 }}
             className="director-content"
           >
-            <h2 className="section__title mb-2">{t("director.title")}</h2>
+            <h2 className="section__title mb-2">{t("page.about.chairman.title")}</h2>
             <p className="mb-6 text-[var(--neutral-600)]">
               {t("director.role")}
             </p>
@@ -9566,6 +9566,73 @@ export default function AboutPage() {
               <ArrowRight size={16} />
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ── Management Team ── */}
+      <section className="section bg-neutral-50" id="management">
+        <div className="section__inner">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="section__header"
+          >
+            <h2 className="section__title">{t("page.about.management.title")}</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12 px-4">
+            {[1, 2, 3].map((i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-white p-8 rounded-3xl border border-neutral-100 shadow-sm text-center"
+              >
+                <div className="w-20 h-20 bg-neutral-100 rounded-full mx-auto mb-6 flex items-center justify-center text-neutral-400">
+                  <Users size={32} />
+                </div>
+                <h3 className="text-xl font-bold text-neutral-900 mb-2">Member {i}</h3>
+                <p className="text-sm text-[var(--brand-primary)] font-bold uppercase tracking-wider mb-4">Board of Directors</p>
+                <p className="text-neutral-600 text-sm leading-relaxed">Dedicated professional contributing to the growth and excellence of Karuna Hospital.</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 24x7 Services ── */}
+      <section className="section bg-white" id="services-247">
+        <div className="section__inner">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="section__header"
+          >
+            <h2 className="section__title">{t("page.about.services247.title")}</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 mt-12">
+            {[
+              { title: "Emergency & Trauma", desc: "Round-the-clock emergency response with expert trauma teams." },
+              { title: "Diagnostic Lab", desc: "24/7 high-end diagnostic testing and imaging services." },
+              { title: "Pharmacy", desc: "Continuous access to quality healthcare medicines and supplies." },
+              { title: "Ambulance", desc: "Immediate ambulance pick-up and transport available 24/7." }
+            ].map((service, index) => (
+              <div key={index} className="p-8 bg-neutral-50 rounded-3xl border border-neutral-100 hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 rounded-xl bg-[var(--brand-primary-light)] text-[var(--brand-primary)] flex items-center justify-center mb-6">
+                  <Heart size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-neutral-900 mb-2">{service.title}</h3>
+                <p className="text-neutral-600 text-sm leading-relaxed">{service.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

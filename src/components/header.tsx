@@ -2,7 +2,9 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Globe, Menu, X, Phone, Heart, Activity, Brain, Shield, User, FlaskConical, Stethoscope, Droplet, Zap, ClipboardCheck, ArrowRight, Wind } from "lucide-react";
+import Image from "next/image";
+import { KarunaLogo } from "./logo";
+import { ChevronDown, Globe, Menu, X, Phone, Heart, Activity, Brain, Shield, User, FlaskConical, Stethoscope, Droplet, Zap, ClipboardCheck, ArrowRight, Wind, Eye, Smile } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -31,6 +33,11 @@ const navigation = [
       { key: "nav.spec.surgery", href: "/specialities/general-surgery", icon: <ClipboardCheck size={14} /> },
       { key: "nav.spec.urology", href: "/specialities/urology", icon: <Droplet size={14} /> },
       { key: "nav.spec.medicine", href: "/specialities/internal-medicine", icon: <Stethoscope size={14} /> },
+      { key: "nav.spec.dentistry", href: "/specialities/dentistry", icon: <Smile size={14} /> },
+      { key: "nav.spec.ophthalmology", href: "/specialities/ophthalmology", icon: <Eye size={14} /> },
+      { key: "nav.spec.psychiatry", href: "/specialities/psychiatry", icon: <Activity size={14} /> },
+      { key: "nav.spec.radiology", href: "/specialities/radiology", icon: <Activity size={14} /> },
+      { key: "nav.spec.pathology", href: "/specialities/pathology", icon: <Activity size={14} /> },
     ],
   },
   {
@@ -301,17 +308,20 @@ export function Header() {
       <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`} role="banner">
         <div className="site-header__inner">
           {/* Logo */}
-          <Link href="/" className="logo-link" aria-label="Karuna Hospital Home">
-            <div className="logo">
-              <div className="logo__icon" aria-hidden="true">
-                <span>K</span>
-              </div>
-              <div className="logo__text">
-                <span className="logo__name">Karuna Hospital</span>
-                <span className="logo__tagline">Excellence in Care</span>
-              </div>
+          <div className="flex items-center gap-4">
+            <Link href="/" className="logo-link scale-90 origin-left" aria-label="Karuna Hospital Home">
+              <KarunaLogo />
+            </Link>
+            <div className="h-10 w-px bg-neutral-200 hidden md:block" aria-hidden="true" />
+            <div className="relative w-16 h-16 hidden md:block">
+              <Image
+                src="/nabh-logo.png"
+                alt="NABH Accredited"
+                fill
+                className="object-contain"
+              />
             </div>
-          </Link>
+          </div>
 
           {/* Desktop Nav */}
           <nav className="desktop-nav" role="navigation" aria-label="Main navigation">
