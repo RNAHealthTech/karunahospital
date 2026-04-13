@@ -15,31 +15,25 @@ export default function SpecialitiesPage() {
   return (
     <main className="specialities-page">
       {/* Hero Section */}
-      <section className="hero hero--internal relative overflow-hidden">
+
+       <section className="hero hero--internal">
         <div className="hero__bg-gradient" aria-hidden="true" />
         <div className="hero__orb hero__orb--1" aria-hidden="true" />
         <div className="hero__orb hero__orb--2" aria-hidden="true" />
-        <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-6 flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md"
-          >
-            <Stethoscope size={16} />
-            <span>{t("page.spec.list.badge")}</span>
-          </motion.div>
-          <h1 className="mb-6 max-w-3xl text-4xl leading-tight font-bold text-white sm:text-5xl lg:text-6xl">
+        <div className="hero__inner">
+         
+          <h1 className="hero__title">
             {t("page.spec.list.title")}
           </h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl">
-            {t("page.spec.list.subtitle")}
+          <p className="hero__subtitle">
+             {t("page.spec.list.subtitle")}
           </p>
         </div>
       </section>
 
       {/* Grid Section */}
       <section className="section bg-white py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="section__inner max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -90,36 +84,7 @@ export default function SpecialitiesPage() {
         </div>
       </section>
 
-      <style jsx>{`
-        .spec-item-icon--blue {
-          background: #eff6ff;
-          color: #2563eb;
-        }
-        .spec-item-icon--teal {
-          background: #f0fdfa;
-          color: #0d9488;
-        }
-        .spec-item-icon--green {
-          background: #f0fdf4;
-          color: #16a34a;
-        }
-        .spec-item-icon--purple {
-          background: #faf5ff;
-          color: #9333ea;
-        }
-        .spec-item-icon--rose {
-          background: #fff1f2;
-          color: #e11d48;
-        }
-        .spec-item-icon--orange {
-          background: #fff7ed;
-          color: #ea580c;
-        }
-        .spec-item-icon--indigo {
-          background: #eef2ff;
-          color: #4f46e5;
-        }
-      `}</style>
+      
     </main>
   );
 }
