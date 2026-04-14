@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import { Providers } from "../components/providers";
-import "../styles/globals.css";
+import '../styles/globals.css';
 
 export const metadata: Metadata = {
   title: "Karuna Hospital – Best Hospital in East Delhi | Affordable & Quality Care",

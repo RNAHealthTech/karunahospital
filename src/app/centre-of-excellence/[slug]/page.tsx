@@ -18,18 +18,26 @@ import {
 } from "lucide-react";
 
 import { useLanguage } from "@/context/LanguageContext";
+import { COE_CONTENT } from "@/data/coe-content";
 
 const COE_DATA: Record<string, any> = {
   "laparoscopic-general-surgery": {
     icon: Microscope,
     titleKey: "nav.coe.laparoscopic",
     color: "spec-blue",
+    image: "/images/coe/laparoscopic.png",
   },
-  maternity: { icon: Baby, titleKey: "nav.coe.maternity", color: "spec-rose" },
+  maternity: {
+    icon: Baby, 
+    titleKey: "nav.coe.maternity", 
+    color: "spec-rose",
+    image: "/images/coe/maternity.png",
+  },
   "pediatrics-neonatology": {
     icon: Heart,
     titleKey: "nav.coe.pediatrics",
     color: "spec-purple",
+    image: "/images/coe/pediatrics.png",
   },
   "interventional-radiology": {
     icon: Activity,
@@ -45,6 +53,7 @@ const COE_DATA: Record<string, any> = {
     icon: Activity,
     titleKey: "nav.spec.gastro",
     color: "spec-orange",
+    image: "/images/coe/gastroenterology.png",
   },
   nephrology: {
     icon: Shield,
@@ -55,6 +64,7 @@ const COE_DATA: Record<string, any> = {
     icon: Pill,
     titleKey: "nav.coe.urology",
     color: "spec-blue",
+    image: "/images/coe/urology.png",
   },
 };
 
@@ -142,28 +152,34 @@ export default function COEPage() {
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
             {/* LEFT: Text Content */}
             <div className="space-y-8">
-              {/* Feature Cards Grid */}
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                {/* Expert Card */}
-                <div className={`spec-card ${cardColorClass}`}>
-                  <div className="spec-card__icon-wrap">
-                    <Shield size={24} />
-                  </div>
-                  <h3 className="spec-card__title">{t("page.coe.expert")}</h3>
-                  <p className="spec-card__desc">{t("page.coe.expert.desc")}</p>
+              {COE_CONTENT[slug as string] ? (
+                <div className="bg-white p-6 rounded-2xl shadow-sm border border-neutral-100">
+                  {COE_CONTENT[slug as string]}
                 </div>
+              ) : (
+                /* Feature Cards Grid */
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  {/* Expert Card */}
+                  <div className={`spec-card ${cardColorClass}`}>
+                    <div className="spec-card__icon-wrap">
+                      <Shield size={24} />
+                    </div>
+                    <h3 className="spec-card__title">{t("page.coe.expert")}</h3>
+                    <p className="spec-card__desc">{t("page.coe.expert.desc")}</p>
+                  </div>
 
-                {/* Advanced Tech Card */}
-                <div className={`spec-card ${cardColorClass}`}>
-                  <div className="spec-card__icon-wrap">
-                    <CheckCircle size={24} />
+                  {/* Advanced Tech Card */}
+                  <div className={`spec-card ${cardColorClass}`}>
+                    <div className="spec-card__icon-wrap">
+                      <CheckCircle size={24} />
+                    </div>
+                    <h3 className="spec-card__title">{t("page.coe.advanced")}</h3>
+                    <p className="spec-card__desc">
+                      {t("page.coe.advanced.desc")}
+                    </p>
                   </div>
-                  <h3 className="spec-card__title">{t("page.coe.advanced")}</h3>
-                  <p className="spec-card__desc">
-                    {t("page.coe.advanced.desc")}
-                  </p>
                 </div>
-              </div>
+              )}
 
               {/* CTA Button */}
               <div className="pt-4">
@@ -178,8 +194,8 @@ export default function COEPage() {
             <div className="relative">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-[var(--border)] shadow-lg lg:aspect-auto lg:h-[500px]">
                 <img
-                  src="/images/lab.png"
-                  alt="Clinical Center"
+                  src={data.image || "/images/lab.png"}
+                  alt={t(data.titleKey)}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>

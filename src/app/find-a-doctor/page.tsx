@@ -93,10 +93,11 @@ export default function FindADoctorPage() {
             {/* {t("page.doctors.title") || "Our Expert Medical Team"} */}
            Our Expert Medical Team
           </h1>
-          <p className="hero__subtitle">
-            {/* {t("page.doctors.subtitle") ||
-              "Meet the experienced specialists at Karuna Hospital. Trusted care across 20+ departments — find the right doctor for you."} */}
-              Meet the experienced specialists at Karuna Hospital. Trusted care across 20+ departments — find the right doctor for you.
+          <p className="hero__subtitle text-sm sm:text-base mb-4">
+            Established in 2011, Karuna Hospital is known for its expertise in both outpatient and inpatient services. Empathy lies at the core of our services which reflects in compassionate treatment of our expert doctors and accessible cost structure.
+          </p>
+          <p className="hero__subtitle text-sm sm:text-base">
+            Experienced doctors with expertise across specialities are associated with Karuna Hospital. This helps us in understanding our patients’ problems better and provide complete care.
           </p>
         </div>
       </section>
@@ -158,17 +159,17 @@ export default function FindADoctorPage() {
                         size={14}
                         className="shrink-0 text-[var(--brand-primary)]"
                       />
-                      <span>Karuna Hospital, Saharanpur</span>
+                      <span>Dilshad Garden, Delhi</span>
                     </p>
                   </div>
-                  {/* Button: Increased text size and padding */}
-                  <button
-                    onClick={() => setSelectedDoctor(doctor)}
+                  {/* Button: Direct link to profile */}
+                  <Link
+                    href={doctor.profile || "#"}
                     className="mt-auto flex w-full items-center justify-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-[15px] font-bold text-[var(--brand-primary)] transition-all duration-200 hover:bg-[var(--brand-primary)] hover:text-white"
                   >
                     View Profile
                     <ChevronRight size={16} />
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -176,129 +177,7 @@ export default function FindADoctorPage() {
         </div>
       </section>
 
-      {/* Doctor Detail Modal - Fixed & Enlarged */}
-      {selectedDoctor && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 py-8 backdrop-blur-sm"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setSelectedDoctor(null);
-          }}
-        >
-          <div className="relative w-full max-w-lg overflow-hidden rounded-2xl bg-white shadow-2xl">
-            {/* Close Button */}
-            <button
-              onClick={() => setSelectedDoctor(null)}
-              className="absolute top-4 right-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-white transition hover:bg-white/40"
-              aria-label="Close modal"
-            >
-              <X size={18} />
-            </button>
 
-            {/* Header - Enlarged text and icons */}
-            <div className="bg-gradient-to-br from-[#0C447C] to-[#185FA5] px-8 py-9">
-              <div className="flex items-end gap-6">
-                <div className="h-28 w-28 flex-shrink-0 overflow-hidden rounded-xl border-4 border-white/30 bg-blue-200 shadow-lg">
-                  {selectedDoctor.image ? (
-                    <img
-                      src={selectedDoctor.image}
-                      alt={selectedDoctor.name}
-                      className="h-full w-full object-cover object-top"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).style.display = "none";
-                      }}
-                    />
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center">
-                      <Stethoscope size={40} className="text-white/60" />
-                    </div>
-                  )}
-                </div>
-                <div className="flex-1 pb-1">
-                  {/* Name: Increased to 2xl */}
-                  <h2 className="text-2xl leading-tight font-bold text-white">
-                    {selectedDoctor.name}
-                  </h2>
-                  {/* Dept: Increased to base (16px) */}
-                  <p className="mt-2 text-base font-medium text-white/90">
-                    {selectedDoctor.department}
-                  </p>
-                  {/* Location: Increased to sm */}
-                  <p className="mt-1.5 flex items-center gap-1.5 text-sm font-medium text-white/75">
-                    <MapPin size={14} />
-                    Karuna Hospital, Saharanpur
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Stats - Enlarged numbers */}
-            <div className="grid grid-cols-3 gap-4 bg-neutral-50 px-8 py-6">
-              <div className="rounded-xl border border-neutral-200 bg-white p-4 text-center shadow-sm">
-                <Award
-                  size={18}
-                  className="mx-auto mb-2 text-[var(--brand-primary)]"
-                />
-                <p className="text-xl font-bold text-neutral-900">
-                  {selectedDoctor.experience}+
-                </p>
-                <p className="text-xs font-medium text-neutral-500">
-                  Years Exp.
-                </p>
-              </div>
-              <div className="rounded-xl border border-neutral-200 bg-white p-4 text-center shadow-sm">
-                <Users
-                  size={18}
-                  className="mx-auto mb-2 text-[var(--brand-primary)]"
-                />
-                <p className="text-xl font-bold text-neutral-900">500+</p>
-                <p className="text-xs font-medium text-neutral-500">Patients</p>
-              </div>
-              <div className="rounded-xl border border-neutral-200 bg-white p-4 text-center shadow-sm">
-                <Stethoscope
-                  size={18}
-                  className="mx-auto mb-2 text-[var(--brand-primary)]"
-                />
-                <p className="text-xl font-bold text-neutral-900">Expert</p>
-                <p className="text-xs font-medium text-neutral-500">
-                  Specialist
-                </p>
-              </div>
-            </div>
-
-            {/* Body - Enlarged description and buttons */}
-            <div className="px-8 pb-8">
-              <div className="mb-2 flex items-center gap-2">
-                <div className="h-1 w-8 rounded-full bg-[var(--brand-primary)]"></div>
-                <p className="text-xs font-bold tracking-widest text-neutral-400 uppercase">
-                  About
-                </p>
-              </div>
-              {/* About Text: Increased to 15px */}
-              <p className="mb-8 text-[15px] leading-relaxed text-neutral-600">
-                {getAbout(selectedDoctor.department)}
-              </p>
-
-              {/* Action Buttons: Enlarged and responsive */}
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/contact"
-                  className="flex flex-1 items-center justify-center gap-2.5 rounded-xl bg-[var(--brand-primary)] px-6 py-3.5 text-[15px] font-bold text-white shadow-md shadow-blue-900/20 transition hover:-translate-y-0.5 hover:opacity-95 hover:shadow-lg"
-                >
-                  <Calendar size={16} />
-                  Book Appointment
-                </Link>
-                <Link
-                  href={selectedDoctor.profile}
-                  className="flex flex-1 items-center justify-center gap-2.5 rounded-xl border-2 border-neutral-200 bg-white px-6 py-3.5 text-[15px] font-bold text-neutral-700 transition hover:border-[var(--brand-primary)] hover:bg-neutral-50 hover:text-[var(--brand-primary)]"
-                >
-                  Full Profile
-                  <ChevronRight size={16} />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

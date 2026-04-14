@@ -3623,16 +3623,16 @@ export default function PatientInfoPage() {
                     </p>
                     <div className="mt-4 flex flex-wrap gap-3">
                       <a
-                        href="tel:+91-XXXX-XXXX-XX"
+                        href="tel:+919873754555"
                         className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-primary)] hover:underline"
                       >
-                        <Phone size={14} /> {t("Call us at +91-XXXX-XXXX-XX")}
+                        <Phone size={14} /> {t("Call us at +91-9873754555")}
                       </a>
                       <a
-                        href="mailto:help@karunahospital.com"
+                        href="mailto:admin.karunahospital@gmail.com"
                         className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-primary)] hover:underline"
                       >
-                        <Mail size={14} /> {t("email@karunahospital.com")}
+                        <Mail size={14} /> {t("admin.karunahospital@gmail.com")}
                       </a>
                     </div>
                   </div>
@@ -3663,7 +3663,7 @@ export default function PatientInfoPage() {
                       <Phone size={16} className="text-[var(--brand-gold)]" />
                       <span className="text-white/90">
                         24/7 Emergency:{" "}
-                        <strong className="text-white">+91-XXXX-XXXX</strong>
+                        <strong className="text-white">+91 9873754555</strong>
                       </span>
                     </div>
                     <div className="flex items-center gap-3 text-sm">

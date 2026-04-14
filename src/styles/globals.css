@@ -705,7 +705,50 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 380px;
+  min-height: 450px;
+}
+
+.hero__image-container {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.5s ease;
+}
+
+.hero__main-image:hover {
+  transform: perspective(1000px) rotateY(0deg) scale(1.02);
+}
+
+.hero__image-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(
+    circle,
+    rgba(26, 159, 212, 0.4) 0%,
+    transparent 70%
+  );
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(40px);
 }
 .hero__card {
   background: rgba(255, 255, 255, 0.12);
@@ -3101,4 +3144,12 @@ body {
 .dp-card a,
 .dp-sidebar-card a {
   scroll-margin-top: calc(var(--header-height) + 36px + 2rem);
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  height: auto;
 }
