@@ -925,10 +925,22 @@ body {
   padding: 8rem 0;
   background: var(--neutral-50);
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
 .section__inner {
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .section__inner {
+    padding: 0 1.5rem;
+  }
 }
 .section__header {
   text-align: left;

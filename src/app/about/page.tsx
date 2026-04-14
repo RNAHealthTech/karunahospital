@@ -71,7 +71,7 @@ export default function AboutPage() {
                 <p>{t("page.about.p2")}</p>
               </div>
 
-              <div className="grid grid-cols-2 gap-6 pt-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
                 <div className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-neutral-100 shadow-sm">
                   <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
                     <Award size={24} />
@@ -111,7 +111,7 @@ export default function AboutPage() {
 
       {/* ── Director's Message ── */}
       <section className="director-section" id="director" style={{ backgroundColor: '#fcfcfc' }}>
-        <div className="section__inner director-section__inner flex flex-col md:flex-row items-center gap-20 py-24">
+        <div className="section__inner director-section__inner flex flex-col md:flex-row items-center gap-10 md:gap-20 py-12 md:py-24">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -205,7 +205,7 @@ export default function AboutPage() {
                 className="group relative overflow-hidden rounded-[3rem] shadow-xl aspect-[4/3] border border-neutral-100"
               >
                 <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex flex-col justify-end p-10 lg:p-12">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-10 lg:p-12">
                   <h4 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: '"DM Sans", sans-serif' }}>{item.title}</h4>
                   <p className="text-white/80 text-base transform translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 leading-relaxed max-w-[280px]">{item.desc}</p>
                 </div>
@@ -240,9 +240,9 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group bg-white px-10 py-16 rounded-[4rem] border border-neutral-100 shadow-sm transition-all hover:shadow-2xl hover:-translate-y-3 text-center flex flex-col items-center justify-center min-h-[480px]"
+                className="group bg-white px-6 md:px-10 py-10 md:py-16 rounded-[3rem] md:rounded-[4rem] border border-neutral-100 shadow-sm transition-all hover:shadow-2xl hover:-translate-y-3 text-center flex flex-col items-center justify-center min-h-[400px] md:min-h-[480px]"
               >
-                <div className="w-32 h-32 bg-gradient-to-br from-[var(--brand-primary)]/10 to-[var(--brand-accent)]/10 text-[var(--brand-primary)] rounded-[2.5rem] mb-12 flex items-center justify-center transition-transform group-hover:rotate-6">
+                <div className="w-32 h-32 bg-gradient-to-br from-[var(--brand-primary)]/10 to-[var(--brand-accent)]/10 text-[var(--brand-primary)] rounded-[2.5rem] mb-8 md:mb-12 flex items-center justify-center transition-transform group-hover:rotate-6">
                   <Users size={56} />
                 </div>
                 <div className="max-w-[260px] mx-auto">
@@ -276,8 +276,8 @@ export default function AboutPage() {
               { title: t("page.about.service.pharmacy"), desc: t("page.about.service.pharmacy.desc") },
               { title: t("page.about.service.ambulance"), desc: t("page.about.service.ambulance.desc") }
             ].map((service, index) => (
-              <div key={index} className="group px-10 py-16 bg-neutral-50 rounded-[3.5rem] border border-neutral-200 hover:bg-white hover:shadow-2xl transition-all duration-500 min-h-[420px] flex flex-col items-center justify-center text-center">
-                <div className="w-24 h-24 rounded-3xl bg-white shadow-sm text-neutral-400 flex items-center justify-center mb-12 transition-all group-hover:bg-[var(--brand-primary)] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[var(--brand-primary)]/20">
+              <div key={index} className="group px-6 md:px-10 py-10 md:py-16 bg-neutral-50 rounded-[2.5rem] md:rounded-[3.5rem] border border-neutral-200 hover:bg-white hover:shadow-2xl transition-all duration-500 min-h-[350px] md:min-h-[420px] flex flex-col items-center justify-center text-center">
+                <div className="w-24 h-24 rounded-3xl bg-white shadow-sm text-neutral-400 flex items-center justify-center mb-8 md:mb-12 transition-all group-hover:bg-[var(--brand-primary)] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[var(--brand-primary)]/20">
                   <Heart size={44} />
                 </div>
                 <div className="max-w-[200px]">
@@ -310,9 +310,9 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="group px-12 lg:px-20 py-24 bg-white rounded-[5rem] border border-neutral-100 shadow-sm hover:shadow-2xl transition-all duration-500 min-h-[550px] flex flex-col items-center justify-center text-center"
+              className="group px-8 md:px-12 lg:px-20 py-12 md:py-24 bg-white rounded-[3rem] md:rounded-[5rem] border border-neutral-100 shadow-sm hover:shadow-2xl transition-all duration-500 min-h-[450px] md:min-h-[550px] flex flex-col items-center justify-center text-center"
             >
-              <div className="w-28 h-28 rounded-[2.5rem] bg-blue-50 text-blue-600 flex items-center justify-center mb-16 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 group-hover:rotate-12 shadow-sm">
+              <div className="w-28 h-28 rounded-[2.5rem] bg-blue-50 text-blue-600 flex items-center justify-center mb-10 md:mb-16 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 group-hover:rotate-12 shadow-sm">
                 <Target size={56} />
               </div>
               <div className="max-w-md">
@@ -329,9 +329,9 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="group px-12 lg:px-20 py-24 bg-white rounded-[5rem] border border-neutral-100 shadow-sm hover:shadow-2xl transition-all duration-500 min-h-[550px] flex flex-col items-center justify-center text-center"
+              className="group px-8 md:px-12 lg:px-20 py-12 md:py-24 bg-white rounded-[3rem] md:rounded-[5rem] border border-neutral-100 shadow-sm hover:shadow-2xl transition-all duration-500 min-h-[450px] md:min-h-[550px] flex flex-col items-center justify-center text-center"
             >
-              <div className="w-28 h-28 rounded-[2.5rem] bg-rose-50 text-rose-600 flex items-center justify-center mb-16 group-hover:bg-rose-600 group-hover:text-white transition-all duration-500 group-hover:rotate-12 shadow-sm">
+              <div className="w-28 h-28 rounded-[2.5rem] bg-rose-50 text-rose-600 flex items-center justify-center mb-10 md:mb-16 group-hover:bg-rose-600 group-hover:text-white transition-all duration-500 group-hover:rotate-12 shadow-sm">
                 <Heart size={56} />
               </div>
               <div className="max-w-md">
