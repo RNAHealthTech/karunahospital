@@ -10,43 +10,68 @@ import { useRouter } from "next/navigation";
 
 const newsData = [
   {
-    title: "Karuna Hospital Successfully Completes 10,000 Surgeries",
-    date: "October 12, 2024",
-    category: "Milestone",
-    readTime: "4 min read",
-    desc: "A massive milestone for our clinical excellence team as we cross the 10,000 successful surgeries mark, ensuring quality healthcare reaches everyone in the region.",
+    titleEn: "Karuna Hospital Launches New Interactive Patient Portal",
+    titleHi: "करुणा अस्पताल ने नया इंटरैक्टिव पेशेंट पोर्टल लॉन्च किया",
+    dateEn: "April 14, 2026",
+    dateHi: "14 अप्रैल, 2026",
+    categoryKey: "page.news.innovation",
+    categoryGroup: "Innovation",
+    readTimeEn: "3 min read",
+    readTimeHi: "3 मिनट का पाठ",
+    descEn: "We are thrilled to unveil our brand-new website and patient portal, designed to provide a smoother, more accessible digital experience for our patients and their families.",
+    descHi: "हम अपनी बिल्कुल नई वेबसाइट और पेशेंट पोर्टल का अनावरण करते हुए रोमांचित हैं, जिसे हमारे रोगियों और उनके परिवारों के लिए एक सहज, अधिक सुलभ डिजिटल अनुभव प्रदान करने के लिए डिज़ाइन किया गया है।",
     img: "/images/lab.png",
   },
   {
-    title: "Free Health Checkup Camp Organized in East Delhi",
-    date: "September 28, 2024",
-    category: "Community",
-    readTime: "3 min read",
-    desc: "Our outreach team successfully screened over 500 local residents during the weekend health camp focusing on cardiovascular and diabetic health awareness.",
+    titleEn: "Real-time Appointment Booking Now Available Online",
+    titleHi: "रियल-टाइम अपॉइंटमेंट बुकिंग अब ऑनलाइन उपलब्ध है",
+    dateEn: "April 12, 2026",
+    dateHi: "12 अप्रैल, 2026",
+    categoryKey: "page.news.milestone",
+    categoryGroup: "Milestone",
+    readTimeEn: "2 min read",
+    readTimeHi: "2 मिनट का पाठ",
+    descEn: "Patients can now view doctor availability and book appointments instantly through our new digital scheduling system, available 24/7 on our website.",
+    descHi: "मरीज अब हमारे नए डिजिटल शेड्यूलिंग सिस्टम के माध्यम से तुरंत डॉक्टरों की उपलब्धता देख सकते हैं और अपॉइंटमेंट बुक कर सकते हैं, जो हमारी वेबसाइट पर 24/7 उपलब्ध है।",
     img: "/images/doctor.png",
   },
   {
-    title: "New Advanced ICU Wing Inaugurated",
-    date: "September 15, 2024",
-    category: "Expansion",
-    readTime: "5 min read",
-    desc: "We are expanding our critical care capabilities with a newly inaugurated 50-bed advanced ICU wing equipped with the latest life-support systems and monitoring technology.",
+    titleEn: "Karuna Hospital Digital Transformation: New Online Resources",
+    titleHi: "करुणा अस्पताल डिजिटल परिवर्तन: नए ऑनलाइन संसाधन",
+    dateEn: "April 10, 2026",
+    dateHi: "10 अप्रैल, 2026",
+    categoryKey: "page.news.milestone",
+    categoryGroup: "Milestone",
+    readTimeEn: "4 min read",
+    readTimeHi: "4 मिनट का पाठ",
+    descEn: "In partnership with RNA HealthTech, we've launched comprehensive digital health resources, blogs, and department guides to help our patients stay informed and healthy.",
+    descHi: "RNA HealthTech के साथ साझेदारी में, हमने अपने मरीजों को सूचित और स्वस्थ रहने में मदद करने के लिए व्यापक डिजिटल स्वास्थ्य संसाधन, ब्लॉग और विभाग गाइड लॉन्च किए हैं।",
     img: "/images/lab.png",
   },
   {
-    title: "Karuna Launches Telemedicine Services for Rural Patients",
-    date: "August 30, 2024",
-    category: "Innovation",
-    readTime: "4 min read",
-    desc: "Bridging the gap between urban healthcare and rural communities, Karuna Hospital launches a comprehensive telemedicine platform connecting patients with specialists from home.",
-    img: "/images/doctor.png",
+    titleEn: "Karuna Hospital Successfully Completes 10,000 Surgeries",
+    titleHi: "करुणा अस्पताल ने सफलतापूर्वक 10,000 सर्जरी पूरी कीं",
+    dateEn: "October 12, 2024",
+    dateHi: "12 अक्टूबर, 2024",
+    categoryKey: "page.news.milestone",
+    categoryGroup: "Milestone",
+    readTimeEn: "4 min read",
+    readTimeHi: "4 मिनट का पाठ",
+    descEn: "A massive milestone for our clinical excellence team as we cross the 10,000 successful surgeries mark, ensuring quality healthcare reaches everyone in the region.",
+    descHi: "हमारी नैदानिक ​​उत्कृष्टता टीम के लिए एक बड़ी उपलब्धि जब हमने 10,000 सफल सर्जरी का आंकड़ा पार किया, जिससे क्षेत्र के सभी लोगों तक गुणवत्तापूर्ण स्वास्थ्य सेवा पहुंच सुनिश्चित हुई।",
+    img: "/images/lab.png",
   },
   {
-    title: "Karuna Hospital Receives National Healthcare Excellence Award",
-    date: "July 22, 2024",
-    category: "Award",
-    readTime: "4 min read",
-    desc: "Recognised for outstanding patient care, clinical innovation, and community outreach, Karuna Hospital proudly receives the National Healthcare Excellence Award 2024.",
+    titleEn: "Free Health Checkup Camp Organized in East Delhi",
+    titleHi: "पूर्वी दिल्ली में मुफ्त स्वास्थ्य जांच शिविर का आयोजन",
+    dateEn: "September 28, 2024",
+    dateHi: "28 सितंबर, 2024",
+    categoryKey: "page.news.community",
+    categoryGroup: "Community",
+    readTimeEn: "3 min read",
+    readTimeHi: "3 मिनट का पाठ",
+    descEn: "Our outreach team successfully screened over 500 local residents during the weekend health camp focusing on cardiovascular and diabetic health awareness.",
+    descHi: "हमारी आउटरीच टीम ने कार्डियोवैस्कुलर और मधुमेह स्वास्थ्य जागरूकता पर केंद्रित सप्ताहांत स्वास्थ्य शिविर के दौरान 500 से अधिक स्थानीय निवासियों की सफलतापूर्वक जांच की।",
     img: "/images/doctor.png",
   },
 ];
@@ -68,7 +93,7 @@ export default function NewsPage() {
   const { t } = useLanguage();
   const router = useRouter();
 
-  const gridCards = newsData.slice(1);
+  const gridCards = newsData;
 
   const handleBookAppointment = () => {
     router.push("/contact");
@@ -134,7 +159,7 @@ export default function NewsPage() {
       {/* ── Content Section ── */}
       <section className="section py-16 lg:py-24">
         <div className="section__inner mx-auto max-w-7xl px-6">
-          
+
           {/* News Grid */}
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3">
             {gridCards.map((news, idx) => (
@@ -153,16 +178,16 @@ export default function NewsPage() {
                 <div className="relative h-52 overflow-hidden">
                   <img
                     src={news.img}
-                    alt={news.title}
+                    alt={useLanguage().language === 'en' ? news.titleEn : news.titleHi}
                     className="h-full w-full object-cover transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
 
                   {/* Category Badge */}
                   <span
-                    className={`absolute top-4 left-1/2 z-10 -translate-x-1/2 rounded-full px-4 py-2 text-[10px] font-bold tracking-wider uppercase shadow-md ${categoryStyles[news.category]}`}
+                    className={`absolute top-4 left-1/2 z-10 -translate-x-1/2 rounded-full px-4 py-2 text-[10px] font-bold tracking-wider uppercase shadow-md ${categoryStyles[news.categoryGroup]}`}
                   >
-                    {news.category}
+                    {t(news.categoryKey)}
                   </span>
                 </div>
 
@@ -175,7 +200,7 @@ export default function NewsPage() {
                         size={13}
                         className="flex-shrink-0 text-[var(--brand-primary)]"
                       />
-                      <span className="whitespace-nowrap">{news.date}</span>
+                      <span className="whitespace-nowrap">{useLanguage().language === 'en' ? news.dateEn : news.dateHi}</span>
                     </span>
                     <span className="h-4 w-px flex-shrink-0 bg-neutral-200" />
                     <span className="flex items-center gap-2 text-neutral-500">
@@ -183,20 +208,20 @@ export default function NewsPage() {
                         size={13}
                         className="flex-shrink-0 text-[var(--brand-primary)]"
                       />
-                      <span className="whitespace-nowrap">{news.readTime}</span>
+                      <span className="whitespace-nowrap">{useLanguage().language === 'en' ? news.readTimeEn : news.readTimeHi}</span>
                     </span>
                   </div>
 
                   {/* Title */}
                   <h3 className="mb-4 px-2 text-center text-lg leading-snug font-bold text-neutral-900 transition-colors group-hover:text-[var(--brand-primary)]">
                     <span className="line-clamp-2 block min-h-[3rem]">
-                      {news.title}
+                      {useLanguage().language === 'en' ? news.titleEn : news.titleHi}
                     </span>
                   </h3>
 
                   {/* Description */}
                   <p className="mb-6 flex-1 px-3 text-center text-sm leading-relaxed text-neutral-500">
-                    <span className="line-clamp-3 block">{news.desc}</span>
+                    <span className="line-clamp-3 block">{useLanguage().language === 'en' ? news.descEn : news.descHi}</span>
                   </p>
 
                   {/* Footer */}
@@ -232,10 +257,10 @@ export default function NewsPage() {
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)]/5 via-transparent to-[var(--brand-accent)]/5 pointer-events-none" />
             <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-gradient-to-br from-[var(--brand-primary)]/10 to-transparent blur-3xl pointer-events-none" />
             <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-gradient-to-tr from-[var(--brand-accent)]/10 to-transparent blur-3xl pointer-events-none" />
-            
+
             {/* Content Wrapper - FORCES CENTER ALIGNMENT */}
             <div className="relative z-15 mx-auto max-w-8xl px-6 py-12 lg:px-8 lg:py-12 text-center">
-              
+
               {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -283,7 +308,7 @@ export default function NewsPage() {
                 transition={{ delay: 0.3 }}
                 className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row "
               >
-                
+
                 {/* Book Appointment Button */}
                 <motion.button
                   whileHover={{ scale: 1.03, y: -2 }}
@@ -293,7 +318,7 @@ export default function NewsPage() {
                 >
                   {/* Shine effect */}
                   <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full rounded-2xl" />
-                  
+
                   <span className="relative  flex items-center justify-center gap-3 text-center">
                     <Phone size={18} className="flex-shrink-0 transition-transform group-hover:scale-110" />
                     <span className="text-center">
@@ -313,7 +338,7 @@ export default function NewsPage() {
                 >
                   {/* Hover fill effect */}
                   <span className="absolute inset-0 scale-0 bg-[var(--brand-primary)] transition-transform duration-300 group-hover:scale-100 rounded-2xl" />
-                  
+
                   <span className="relative flex items-center justify-center gap-3 text-center">
                     <UserPlus size={18} className="flex-shrink-0 transition-transform group-hover:scale-110" />
                     <span className="text-center">
@@ -327,7 +352,7 @@ export default function NewsPage() {
               </motion.div>
 
               {/* Helper Text */}
-              
+
 
             </div>
 

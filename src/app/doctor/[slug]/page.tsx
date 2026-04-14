@@ -151,7 +151,7 @@ export default function DoctorProfilePage() {
               </div>
               <p className="dp-card__text">
                 {doctor.name} is a highly experienced {doctor.department}{" "}
-                specialist practicing at Karuna Hospital, Dilshad Garden, Delhi.
+                specialist practicing at Karuna Hospital, Dilshad Colony, New Delhi.
                 With over {doctor.experience} years of dedicated clinical
                 practice, the doctor has earned a reputation for providing
                 accurate diagnoses, evidence-based treatments, and compassionate
@@ -285,7 +285,7 @@ export default function DoctorProfilePage() {
                   <div>
                     <span className="dp-sidebar-card__lbl">Location</span>
                     <span className="dp-sidebar-card__val">
-                      Karuna Hospital, Dilshad Garden, Delhi
+                      Karuna Hospital, Dilshad Colony, New Delhi
                     </span>
                   </div>
                 </div>

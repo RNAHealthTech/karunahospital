@@ -8,17 +8,17 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const habits = [
-  { id: "alcoholism", key: "nav.diag.habit.alcoholism", icon: <FlaskConical size={24} /> },
-  { id: "anger", key: "nav.diag.habit.anger", icon: <Brain size={24} /> },
-  { id: "heartburn", key: "nav.diag.habit.heartburn", icon: <Zap size={24} /> },
-  { id: "junk-food", key: "nav.diag.habit.junk-food", icon: <Activity size={24} /> },
-  { id: "low-iron", key: "nav.diag.habit.low-iron", icon: <Droplet size={24} /> },
-  { id: "appetite", key: "nav.diag.habit.appetite", icon: <Activity size={24} /> },
-  { id: "nutrition", key: "nav.diag.habit.nutrition", icon: <ClipboardCheck size={24} /> },
-  { id: "sleeplessness", key: "nav.diag.habit.sleeplessness", icon: <Brain size={24} /> },
-  { id: "smoking", key: "nav.diag.habit.smoking", icon: <Wind size={24} /> },
-  { id: "stress", key: "nav.diag.habit.stress", icon: <Heart size={24} /> },
-  { id: "tiredness", key: "nav.diag.habit.tiredness", icon: <Zap size={24} /> },
+  { id: "alcoholism", key: "nav.diag.habit.alcoholism", icon: FlaskConical },
+  { id: "anger", key: "nav.diag.habit.anger", icon: Brain },
+  { id: "heartburn", key: "nav.diag.habit.heartburn", icon: Zap },
+  { id: "junk-food", key: "nav.diag.habit.junk-food", icon: Activity },
+  { id: "low-iron", key: "nav.diag.habit.low-iron", icon: Droplet },
+  { id: "appetite", key: "nav.diag.habit.appetite", icon: Activity },
+  { id: "nutrition", key: "nav.diag.habit.nutrition", icon: ClipboardCheck },
+  { id: "sleeplessness", key: "nav.diag.habit.sleeplessness", icon: Brain },
+  { id: "smoking", key: "nav.diag.habit.smoking", icon: Wind },
+  { id: "stress", key: "nav.diag.habit.stress", icon: Heart },
+  { id: "tiredness", key: "nav.diag.habit.tiredness", icon: Zap },
 ];
 
 function HabitContent() {
@@ -75,22 +75,25 @@ function HabitContent() {
                 </div>
                 <div className="max-h-[60vh] overflow-y-auto px-2 pb-2 custom-scrollbar">
                   <nav className="spec-nav-list">
-                    {habits.map((h) => (
-                      <Link
-                        key={h.id}
-                        href={`/diagnostic-services/by-habit/${h.id}`}
-                        className="spec-nav-item"
-                      >
-                        <div className="flex items-center gap-3">
-                           {/* Icon with subtle BG */}
-                           <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-[var(--brand-primary)] group-hover:bg-[var(--brand-primary)] group-hover:text-white transition-all">
-                             {React.cloneElement(h.icon as React.ReactElement, { size: 14 })}
-                           </div>
-                           <span>{t(h.key)}</span>
-                        </div>
-                        <ArrowRight size={14} className="spec-nav-item__arrow" />
-                      </Link>
-                    ))}
+                    {habits.map((h) => {
+                      const Icon = h.icon;
+                      return (
+                        <Link
+                          key={h.id}
+                          href={`/diagnostic-services/by-habit/${h.id}`}
+                          className="spec-nav-item"
+                        >
+                          <div className="flex items-center gap-3">
+                             {/* Icon with subtle BG */}
+                             <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-[var(--brand-primary)] group-hover:bg-[var(--brand-primary)] group-hover:text-white transition-all">
+                               <Icon size={14} />
+                             </div>
+                             <span>{t(h.key)}</span>
+                          </div>
+                          <ArrowRight size={14} className="spec-nav-item__arrow" />
+                        </Link>
+                      );
+                    })}
                   </nav>
                 </div>
               </div>
@@ -104,31 +107,34 @@ function HabitContent() {
                </div>
 
                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                 {habits.map((h, index) => (
-                    <motion.div
-                      key={h.id}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: (index % 12) * 0.03 }}
-                    >
-                      <Link
-                        href={`/diagnostic-services/by-habit/${h.id}`}
-                        className="group flex flex-col bg-white p-8 rounded-xl border border-neutral-100 hover:border-[var(--brand-primary)] hover:shadow-xl transition-all duration-300 h-full"
+                 {habits.map((h, index) => {
+                    const Icon = h.icon;
+                    return (
+                      <motion.div
+                        key={h.id}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: (index % 12) * 0.03 }}
                       >
-                        <div className="w-14 h-14 rounded-xl bg-neutral-50 flex items-center justify-center text-[var(--brand-primary)] mb-6 group-hover:bg-[var(--brand-primary)] group-hover:text-white transition-all">
-                           {h.icon}
-                        </div>
-                        <h4 className="text-lg font-bold text-neutral-900 group-hover:text-[var(--brand-primary)] transition-colors mb-2">
-                           {t(h.key)}
-                        </h4>
-                        <div className="mt-auto pt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-400 group-hover:text-[var(--brand-primary)] transition-colors">
-                           <span>Explore Tests</span>
-                           <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
-                        </div>
-                      </Link>
-                    </motion.div>
-                 ))}
+                        <Link
+                          href={`/diagnostic-services/by-habit/${h.id}`}
+                          className="group flex flex-col bg-white p-8 rounded-xl border border-neutral-100 hover:border-[var(--brand-primary)] hover:shadow-xl transition-all duration-300 h-full"
+                        >
+                          <div className="w-14 h-14 rounded-xl bg-neutral-50 flex items-center justify-center text-[var(--brand-primary)] mb-6 group-hover:bg-[var(--brand-primary)] group-hover:text-white transition-all">
+                             <Icon size={24} />
+                          </div>
+                          <h4 className="text-lg font-bold text-neutral-900 group-hover:text-[var(--brand-primary)] transition-colors mb-2">
+                             {t(h.key)}
+                          </h4>
+                          <div className="mt-auto pt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-400 group-hover:text-[var(--brand-primary)] transition-colors">
+                             <span>Explore Tests</span>
+                             <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
+                          </div>
+                        </Link>
+                      </motion.div>
+                    );
+                 })}
                </div>
             </div>
           </div>

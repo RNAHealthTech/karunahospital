@@ -8,30 +8,30 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const risks = [
-  { id: "acidity", key: "nav.diag.risk.acidity", icon: <Zap size={24} /> },
-  { id: "allergy", key: "nav.diag.risk.allergy", icon: <Wind size={24} /> },
-  { id: "anaemia", key: "nav.diag.risk.anaemia", icon: <Droplet size={24} /> },
-  { id: "arthritis", key: "nav.diag.risk.arthritis", icon: <Activity size={24} /> },
-  { id: "cancer", key: "nav.diag.risk.cancer", icon: <Shield size={24} /> },
-  { id: "diabetes", key: "nav.diag.risk.diabetes", icon: <Droplet size={24} /> },
-  { id: "digestion", key: "nav.diag.risk.digestion", icon: <Activity size={24} /> },
-  { id: "fever", key: "nav.diag.risk.fever", icon: <Zap size={24} /> },
-  { id: "heart", key: "nav.diag.risk.heart", icon: <Heart size={24} /> },
-  { id: "hepatitis", key: "nav.diag.risk.hepatitis", icon: <FlaskConical size={24} /> },
-  { id: "hormones", key: "nav.diag.risk.hormones", icon: <FlaskConical size={24} /> },
-  { id: "hypertension", key: "nav.diag.risk.hypertension", icon: <Heart size={24} /> },
-  { id: "immunity", key: "nav.diag.risk.immunity", icon: <Shield size={24} /> },
-  { id: "infection", key: "nav.diag.risk.infection", icon: <Shield size={24} /> },
-  { id: "jaundice", key: "nav.diag.risk.jaundice", icon: <FlaskConical size={24} /> },
-  { id: "joints", key: "nav.diag.risk.joints", icon: <Activity size={24} /> },
-  { id: "kidney", key: "nav.diag.risk.kidney", icon: <Droplet size={24} /> },
-  { id: "liver", key: "nav.diag.risk.liver", icon: <FlaskConical size={24} /> },
-  { id: "obesity", key: "nav.diag.risk.obesity", icon: <Activity size={24} /> },
-  { id: "pregnancy", key: "nav.diag.risk.pregnancy", icon: <FlaskConical size={24} /> },
-  { id: "std", key: "nav.diag.risk.std", icon: <Bug size={24} /> },
-  { id: "thyroid", key: "nav.diag.risk.thyroid", icon: <Droplet size={24} /> },
-  { id: "inflammation", key: "nav.diag.risk.inflammation", icon: <Waves size={24} /> },
-  { id: "vitamins", key: "nav.diag.risk.vitamins", icon: <Activity size={24} /> },
+  { id: "acidity", key: "nav.diag.risk.acidity", icon: Zap },
+  { id: "allergy", key: "nav.diag.risk.allergy", icon: Wind },
+  { id: "anaemia", key: "nav.diag.risk.anaemia", icon: Droplet },
+  { id: "arthritis", key: "nav.diag.risk.arthritis", icon: Activity },
+  { id: "cancer", key: "nav.diag.risk.cancer", icon: Shield },
+  { id: "diabetes", key: "nav.diag.risk.diabetes", icon: Droplet },
+  { id: "digestion", key: "nav.diag.risk.digestion", icon: Activity },
+  { id: "fever", key: "nav.diag.risk.fever", icon: Zap },
+  { id: "heart", key: "nav.diag.risk.heart", icon: Heart },
+  { id: "hepatitis", key: "nav.diag.risk.hepatitis", icon: FlaskConical },
+  { id: "hormones", key: "nav.diag.risk.hormones", icon: FlaskConical },
+  { id: "hypertension", key: "nav.diag.risk.hypertension", icon: Heart },
+  { id: "immunity", key: "nav.diag.risk.immunity", icon: Shield },
+  { id: "infection", key: "nav.diag.risk.infection", icon: Shield },
+  { id: "jaundice", key: "nav.diag.risk.jaundice", icon: FlaskConical },
+  { id: "joints", key: "nav.diag.risk.joints", icon: Activity },
+  { id: "kidney", key: "nav.diag.risk.kidney", icon: Droplet },
+  { id: "liver", key: "nav.diag.risk.liver", icon: FlaskConical },
+  { id: "obesity", key: "nav.diag.risk.obesity", icon: Activity },
+  { id: "pregnancy", key: "nav.diag.risk.pregnancy", icon: FlaskConical },
+  { id: "std", key: "nav.diag.risk.std", icon: Bug },
+  { id: "thyroid", key: "nav.diag.risk.thyroid", icon: Droplet },
+  { id: "inflammation", key: "nav.diag.risk.inflammation", icon: Waves },
+  { id: "vitamins", key: "nav.diag.risk.vitamins", icon: Activity },
 ];
 
 function RiskContent() {
@@ -88,21 +88,24 @@ function RiskContent() {
                 </div>
                 <div className="max-h-[60vh] overflow-y-auto px-2 pb-2 custom-scrollbar">
                   <nav className="spec-nav-list">
-                    {risks.map((r) => (
-                      <Link
-                        key={r.id}
-                        href={`/diagnostic-services/by-risk/${r.id}`}
-                        className="spec-nav-item"
-                      >
-                        <div className="flex items-center gap-3">
-                           <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-[var(--brand-primary)] group-hover:bg-[var(--brand-primary)] group-hover:text-white transition-all">
-                             {React.cloneElement(r.icon as React.ReactElement, { size: 14 })}
-                           </div>
-                           <span>{t(r.key)}</span>
-                        </div>
-                        <ArrowRight size={14} className="spec-nav-item__arrow" />
-                      </Link>
-                    ))}
+                    {risks.map((r) => {
+                      const Icon = r.icon;
+                      return (
+                        <Link
+                          key={r.id}
+                          href={`/diagnostic-services/by-risk/${r.id}`}
+                          className="spec-nav-item"
+                        >
+                          <div className="flex items-center gap-3">
+                             <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-[var(--brand-primary)] group-hover:bg-[var(--brand-primary)] group-hover:text-white transition-all">
+                               <Icon size={14} />
+                             </div>
+                             <span>{t(r.key)}</span>
+                          </div>
+                          <ArrowRight size={14} className="spec-nav-item__arrow" />
+                        </Link>
+                      );
+                    })}
                   </nav>
                 </div>
               </div>
@@ -116,31 +119,34 @@ function RiskContent() {
                </div>
 
                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                 {risks.map((r, index) => (
-                    <motion.div
-                      key={r.id}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: (index % 12) * 0.03 }}
-                    >
-                      <Link
-                        href={`/diagnostic-services/by-risk/${r.id}`}
-                        className="group flex flex-col bg-white p-8 rounded-xl border border-neutral-100 hover:border-[var(--brand-primary)] hover:shadow-xl transition-all duration-300 h-full"
+                 {risks.map((r, index) => {
+                    const Icon = r.icon;
+                    return (
+                      <motion.div
+                        key={r.id}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: (index % 12) * 0.03 }}
                       >
-                        <div className="w-14 h-14 rounded-xl bg-neutral-50 flex items-center justify-center text-[var(--brand-primary)] mb-6 group-hover:bg-[var(--brand-primary)] group-hover:text-white transition-all">
-                           {r.icon}
-                        </div>
-                        <h4 className="text-lg font-bold text-neutral-900 group-hover:text-[var(--brand-primary)] transition-colors mb-2">
-                           {t(r.key)}
-                        </h4>
-                        <div className="mt-auto pt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-400 group-hover:text-[var(--brand-primary)] transition-colors">
-                           <span>Explore Tests</span>
-                           <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
-                        </div>
-                      </Link>
-                    </motion.div>
-                 ))}
+                        <Link
+                          href={`/diagnostic-services/by-risk/${r.id}`}
+                          className="group flex flex-col bg-white p-8 rounded-xl border border-neutral-100 hover:border-[var(--brand-primary)] hover:shadow-xl transition-all duration-300 h-full"
+                        >
+                          <div className="w-14 h-14 rounded-xl bg-neutral-50 flex items-center justify-center text-[var(--brand-primary)] mb-6 group-hover:bg-[var(--brand-primary)] group-hover:text-white transition-all">
+                             <Icon size={24} />
+                          </div>
+                          <h4 className="text-lg font-bold text-neutral-900 group-hover:text-[var(--brand-primary)] transition-colors mb-2">
+                             {t(r.key)}
+                          </h4>
+                          <div className="mt-auto pt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-400 group-hover:text-[var(--brand-primary)] transition-colors">
+                             <span>Explore Tests</span>
+                             <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
+                          </div>
+                        </Link>
+                      </motion.div>
+                    );
+                 })}
                </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { KarunaLogo } from "./logo";
-import { ChevronDown, Globe, Menu, X, Phone, Heart, Activity, Brain, Shield, User, FlaskConical, Stethoscope, Droplet, Zap, ClipboardCheck, ArrowRight, Wind, Eye, Smile } from "lucide-react";
+import { ChevronDown, Globe, Menu, X, Phone, Heart, Activity, Brain, Shield, User, Users, Clock, Target, Award, FlaskConical, Stethoscope, Droplet, Zap, ClipboardCheck, ArrowRight, Wind, Eye, Smile } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -14,10 +14,12 @@ const navigation = [
     key: "nav.about",
     href: "/about",
     children: [
-      { key: "nav.about.overview", href: "/about" },
-      { key: "nav.about.director", href: "/about#director" },
-      { key: "nav.about.vision", href: "/about#vision" },
-      { key: "nav.about.accreditation", href: "/about#accreditation" },
+      { key: "nav.about.overview", href: "/about", icon: <Shield size={14} /> },
+      { key: "nav.about.director", href: "/about#director", icon: <User size={14} /> },
+      { key: "nav.about.management", href: "/about#management", icon: <Users size={14} /> },
+      { key: "nav.about.services247", href: "/about#services-247", icon: <Clock size={14} /> },
+      { key: "nav.about.vision", href: "/about#vision", icon: <Target size={14} /> },
+      { key: "nav.about.accreditation", href: "/about#accreditation", icon: <Award size={14} /> },
     ],
   },
   {
