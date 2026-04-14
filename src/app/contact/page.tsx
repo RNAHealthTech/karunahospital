@@ -55,26 +55,10 @@ export default function ContactForm() {
         </div>
       </section>
 
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "3rem 1rem",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "2rem",
-        }}
-      >
+      <div className="contact-grid">
         {/* ================= LEFT SIDE ================= */}
         <div className="contact-info-section">
-          <h2
-            style={{
-              fontSize: "2rem",
-              fontWeight: 700,
-              marginBottom: "1rem",
-              color: "var(--neutral-900)",
-            }}
-          >
+          <h2 className="contact-title">
             {t("page.contact.getInTouch")}
           </h2>
 
@@ -132,8 +116,8 @@ export default function ContactForm() {
 
         {/* ================= RIGHT SIDE  ================= */}
         <div
-          className="spec-card"
-          style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto" }}
+          className="spec-card contact-form-card"
+          style={{ maxWidth: "600px", margin: "0 auto" }}
         >
           {/* Status Message */}
           {submitStatus !== "idle" && (
