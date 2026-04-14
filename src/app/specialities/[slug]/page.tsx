@@ -82,7 +82,7 @@ export default function SpecialityPage() {
             transition={{ delay: 0.2 }}
             className="hero__subtitle"
           >
-            {content.description}
+            {content.description.substring(0, 160)}...
           </motion.p>
         </div>
       </section>
@@ -139,18 +139,18 @@ export default function SpecialityPage() {
           {/* Section Header */}
           <div
             className="section__header"
-            style={{ textAlign: "left", marginBottom: "2.5rem" }}
+            style={{ textAlign: "center", marginBottom: "3rem", display: 'flex', flexDirection: 'column', alignItems: 'center' }}
           >
             <h2
               className="section__title"
-              style={{ textAlign: "left", marginBottom: "0.5rem" }}
+              style={{ textAlign: "center", marginBottom: "0.5rem" }}
             >
               {t("page.spec.welcome")} {content.title}
             </h2>
             <div
               style={{
                 width: "4rem",
-                height: "3px",
+                height: "4px",
                 background: "var(--brand-primary)",
                 borderRadius: "2px",
                 marginBottom: "1rem",
@@ -158,19 +158,34 @@ export default function SpecialityPage() {
             ></div>
           </div>
 
-          {/* Description Text - Fixed alignment */}
-          <p
+          {/* Description Text - Balanced centering */}
+          <div
+            className="spec-page-desc"
             style={{
-              fontSize: "1rem",
+              fontSize: "1.05rem",
               color: "var(--neutral-600)",
-              lineHeight: "1.7",
+              lineHeight: "1.8",
               textAlign: "left",
-              marginBottom: "3rem",
-              maxWidth: "700px",
+              marginBottom: "4rem",
+              maxWidth: "850px",
+              margin: '0 auto',
             }}
           >
-            {t("page.spec.desc")}
-          </p>
+            {content.description.split('\n').map((line, i) => {
+              if (line.trim().startsWith('/images/')) {
+                return (
+                  <div key={i} style={{ margin: '2rem 0', borderRadius: 'var(--radius)', overflow: 'hidden', border: '1px solid var(--border)' }}>
+                    <img src={line.trim()} alt="Speciality Detail" style={{ width: '100%', display: 'block' }} />
+                  </div>
+                );
+              }
+              return (
+                <p key={i} style={{ marginBottom: line.trim() === '' ? '0' : '1rem' }}>
+                  {line}
+                </p>
+              );
+            })}
+          </div>
 
           {/* ========== CARDS (using your EXACT .spec-card classes) ========== */}
           <div
