@@ -112,9 +112,9 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="footer__bottom">
         <p>{t("footer.rights")}</p>
-        <p className="footer__made-with">
+        {/* <p className="footer__made-with">
           Made with <Heart size={12} className="footer__heart" aria-hidden="true" /> for better healthcare
-        </p>
+        </p> */}
       </div>
     </footer>
   );

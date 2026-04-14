@@ -308,17 +308,18 @@ export function Header() {
       <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`} role="banner">
         <div className="site-header__inner">
           {/* Logo */}
-          <div className="flex items-center gap-4">
-            <Link href="/" className="logo-link scale-90 origin-left" aria-label="Karuna Hospital Home">
+          <div className="flex items-center gap-2 sm:gap-4 flex-nowrap shrink-0">
+            <Link href="/" className="logo-link shrink-0" aria-label="Karuna Hospital Home">
               <KarunaLogo />
             </Link>
-            <div className="h-10 w-px bg-neutral-200 hidden md:block" aria-hidden="true" />
-            <div className="relative w-12 h-12 hidden md:block">
+            <div className="h-8 w-px bg-neutral-200 hidden xs:block shrink-0" aria-hidden="true" />
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0">
               <Image
                 src="/nabh-logo.png"
                 alt="NABH Accredited"
-                fill
-                className="object-contain"
+                width={48}
+                height={48}
+                className="object-contain w-full h-full"
               />
             </div>
           </div>

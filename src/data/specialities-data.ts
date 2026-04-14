@@ -300,36 +300,60 @@ export const specialitiesData: Record<string, Speciality> = {
     id: "pulmonology",
     icon: Wind,
     color: "blue",
-    image: "/images/doctor.png",
+    image: "/images/medicine_main.png",
     en: {
       title: "Pulmonology",
-      description: "Comprehensive care for lung-related disorders and respiratory conditions.",
-      treatments: ["Asthma Management", "Sleep Study", "COPD Treatment"],
-      expertise: ["Chest Medicine", "Sleep Medicine", "Critical Care Pulmonology"]
+      description: "Department of Pulmonology & Chest Medicine\nThe Department of Pulmonology at Karuna Hospital provides comprehensive care for respiratory and chest-related disorders. Our specialists focus on diagnosing and treating conditions like asthma, COPD, and sleep apnea using advanced diagnostic tools.\n\nWe offer a range of specialized services to help patients breathe better and improve their overall quality of life. Our clinicians utilize evidence-based protocols to manage both acute respiratory emergencies and chronic lung diseases.\n\nKey Services:\n- Pulmonary Function Tests (PFT)\n- Sleep Apnea & Snoring Studies\n- Asthma & Allergy Management\n- Treatment for Chronic Bronchitis and Emphysema\n- Evaluation of Lung Nodules and Masses\n- Interventional Pulmonology Support",
+      treatments: [
+        "Asthma Management", "Sleep Study", "COPD Treatment", 
+        "Bronchoscopy", "Pneumonia Care", "Lung Cancer Screening"
+      ],
+      expertise: [
+        "Chest Medicine", "Sleep Medicine", "Critical Care Pulmonology"
+      ]
     },
     hi: {
       title: "पल्मोनोलॉजी (Pulmonology)",
-      description: "फेफड़ों से संबंधित विकारों और श्वसन स्थितियों के लिए व्यापक देखभाल।",
-      treatments: ["अस्थमा प्रबंधन", "नींद का अध्ययन (Sleep Study)", "COPD उपचार"],
-      expertise: ["चेस्ट मेडिसिन", "स्लीप मेडिसिन", "क्रिटिकल केयर पल्मोनोलॉजी"]
+      description: "पल्मोनोलॉजी और चेस्ट मेडिसिन विभाग\nकरुणा अस्पताल में पल्मोनोलॉजी विभाग श्वसन और छाती से संबंधित विकारों के लिए व्यापक देखभाल प्रदान करता है। हमारे विशेषज्ञ उन्नत नैदानिक उपकरणों का उपयोग करके अस्थमा, सीओपीडी (COPD) और स्लीप एपनिया जैसी स्थितियों के निदान और उपचार पर ध्यान केंद्रित करते हैं।\n\nहम मरीजों को बेहतर सांस लेने और उनके जीवन की समग्र गुणवत्ता में सुधार करने में मदद करने के लिए विशेष सेवाओं की एक श्रृंखला प्रदान करते हैं। हमारे चिकित्सक तीव्र श्वसन आपात स्थितियों और पुरानी फेफड़ों की बीमारियों दोनों के प्रबंधन के लिए साक्ष्य-आधारित प्रोटोकॉल का उपयोग करते हैं।\n\nमुख्य सेवाएं:\n- पल्मोनरी फंक्शन टेस्ट (PFT)\n- स्लीप एपनिया और खर्राटे का अध्ययन\n- अस्थमा और एलर्जी प्रबंधन\n- क्रोनिक ब्रोंकाइटिस और एम्फिसीमा का उपचार\n- फेफड़ों के नोड्यूल और गांठों का मूल्यांकन",
+      treatments: [
+        "अस्थमा प्रबंधन", "नींद का अध्ययन (Sleep Study)", "COPD उपचार", 
+        "ब्रोंकोस्कोपी", "निमोनिया देखभाल", "फेफड़ों के कैंसर की जांच"
+      ],
+      expertise: [
+        "चेस्ट मेडिसिन", "स्लीप मेडिसिन", "क्रिटिकल केयर पल्मोनोलॉजी"
+      ]
     }
   },
   "ent": {
     id: "ent",
     icon: Ear,
     color: "orange",
-    image: "/images/doctor.png",
+    image: "/images/ent_main.jpg",
     en: {
       title: "ENT (Otolaryngology)",
-      description: "Expert management of ear, nose, and throat disorders and head/neck surgeries.",
-      treatments: ["Audiometry", "Sinus Surgery", "Tonsillectomy"],
-      expertise: ["Otology", "Rhinology", "Laryngology"]
+      description: "Department of ENT (Otolaryngology)\nKaruna Hospital's ENT department provides compassionate and comprehensive care for a wide range of disorders affecting the Ear, Nose, Throat, Head, and Neck. Our team of highly qualified specialists uses the latest technology to diagnose and treat conditions affecting communication, hearing, breathing, and balance.\n\nOur facility is equipped with a high-tech audiology room and advanced diagnostic tools to ensure precise workups for all our patients. We specialize in both routine and complex procedures, including implant operations for hearing loss and surgeries for head and neck cancer.\n\nDiagnostic & Clinical Services:\n- Full Audiology & Audiometry (BERA, Pure Tones, Impedance)\n- Videostroboscopy for voice assessment\n- Specialized clinic for Vertigo and Dizziness\n- Pediatric ENT specialist care\n\nSurgical Expertise:\n- Microscopic Ear Surgery (Mastoidectomy, Stapedectomy)\n- Endoscopic Sinus Surgery (FESS) & Endoscopic DCR\n- Advanced Cochlear Implant Surgery\n- Voice & Throat Surgery (Laser surgeries)\n- Head and Neck Cancer & Thyroid Surgery",
+      treatments: [
+        "Cochlear Implant Surgery", "Microscopic Ear Surgery", "FESS (Sinus Surgery)", 
+        "Audiometry & Hearing Aid Trial", "Voice & Throat Surgery", 
+        "Head & Neck Cancer Care", "Dizziness/Vertigo Management", "Pediatric ENT Care"
+      ],
+      expertise: [
+        "Otology", "Rhinology", "Laryngology", 
+        "Neuro-otology", "Speech & Audiology"
+      ]
     },
     hi: {
-      title: "ईएनटी (नाक, कान, गला)",
-      description: "कान, नाक और गले के विकारों और सिर/गर्दन की सर्जरी का विशेषज्ञ प्रबंधन।",
-      treatments: ["ऑडियोमेट्री", "साइनस सर्जरी", "टॉन्सिल्लेक्टोमी"],
-      expertise: ["ओटोलॉजी", "राइनोलॉजी", "लैरिंजोलॉजी"]
+      title: "कान, नाक और गला (ENT)",
+      description: "ईएनटी (ENT - नाक, कान, गला) विभाग\nकरुणा अस्पताल का ईएनटी विभाग कान, नाक, गले, सिर और गर्दन को प्रभावित करने वाले विकारों के लिए व्यापक देखभाल प्रदान करता है। हमारे विशेषज्ञों की टीम संचार, सुनने, सांस लेने और संतुलन को प्रभावित करने वाली स्थितियों के निदान और उपचार के लिए नवीनतम तकनीक का उपयोग करती है।\n\nहमारी ईएनटी इकाई एक हाई-टेक ऑडियोलॉजी रूम और उन्नत नैदानिक उपकरणों से लैस है। हम सुनने की क्षमता में कमी के लिए इम्प्लांट ऑपरेशन और सिर व गर्दन के विकारों के लिए जटिल सर्जरी में विशेषज्ञता रखते हैं।\n\nनैदानिक और क्लिनिकल सेवाएं:\n- पूर्ण ऑडियोलॉजी और ऑडियोमेट्री (BERA, प्योर टोन्स, प्रतिबाधा (Impedance))\n- आवाज के मूल्यांकन के लिए वीडियोस्ट्रोबोस्कोपी\n- चक्कर (Vertigo) और संतुलन संबंधी विकारों के लिए विशेष क्लिनिक\n- बाल चिकित्सा (Pediatric) ईएनटी देखभाल\n\nसर्जिकल विशेषज्ञता:\n- कान की सूक्ष्म सर्जरी (मास्टोइडेक्टॉमी, स्टेपेडेक्टॉमी)\n- एंडोस्कोपिक साइनस सर्जरी (FESS) और एंडोस्कोपिक DCR\n- उन्नत कॉकलियर इम्प्लांट सर्जरी\n- आवाज और गले की सर्जरी (लेजर सर्जरी)\n- सिर और गर्दन के कैंसर और थायराइड सर्जरी",
+      treatments: [
+        "कॉकलियर इम्प्लांट सर्जरी", "कान की माइक्रोस्कोपिक सर्जरी", "साइनस सर्जरी (FESS)", 
+        "ऑडियोमेट्री और हियरिंग एड ट्रायल", "आवाज और गले की सर्जरी", 
+        "सिर और गर्दन के कैंसर की देखभाल", "चक्कर प्रबंधन", "बच्चों की ईएनटी देखभाल"
+      ],
+      expertise: [
+        "ओटोलॉजी", "राइनोलॉजी", "लैरिंजोलॉजी", 
+        "न्यूरो-ओटोलॉजी", "ऑडियोलॉजी डायग्नोस्टिक्स"
+      ]
     }
   },
   "ophthalmology": {
@@ -357,15 +381,25 @@ export const specialitiesData: Record<string, Speciality> = {
     image: "/images/lobby.png",
     en: {
       title: "Dermatology",
-      description: "Specialized care for skin, hair, and nail disorders, including cosmetic dermatology.",
-      treatments: ["Acne Treatment", "Laser Skin Therapy", "Hair Loss Treatment"],
-      expertise: ["Clinical Dermatology", "Dermatosurgery", "Cosmetology"]
+      description: "Department of Dermatology & Skin Science\nKaruna Hospital's Dermatology department offers expert care for all conditions related to the skin, hair, and nails. Our services range from treating common skin infections and allergies to advanced cosmetic dermatology and surgical procedures.\n\nWe provide personalized treatment plans for both clinical dermatology needs and aesthetic enhancements, ensuring patients achieve healthy, glowing skin.\n\nClinical & Cosmetic Services:\n- Specialized Acne & Scar management\n- Treatment for Eczema, Psoriasis, and Vitiligo\n- Mole mapping and Skin Cancer screening\n- Cosmetic procedures including Chemical Peels and Anti-aging therapy\n- Advanced Laser Skin Restoration\n- Treatment for Hair Loss and Scalp disorders",
+      treatments: [
+        "Acne Treatment", "Laser Skin Therapy", "Hair Loss Treatment", 
+        "Skin Allergy Testing", "Mole Removal", "Psoriasis Management"
+      ],
+      expertise: [
+        "Clinical Dermatology", "Dermatosurgery", "Cosmetology"
+      ]
     },
     hi: {
       title: "त्वचा विज्ञान (Dermatology)",
-      description: "कॉस्मेटिक डर्मेटोलॉजी सहित त्वचा, बाल और नाखूनों के विकारों के लिए विशेष देखभाल।",
-      treatments: ["मुँहासे उपचार", "लेजर स्किन थेरेपी", "बाल झड़ने का उपचार"],
-      expertise: ["क्लिनिकल डर्मेटोलॉजी", "डर्मेटोसर्जरी", "कॉस्मेटोलॉजी"]
+      description: "त्वचा विज्ञान और त्वचा विज्ञान विभाग\nकरुणा अस्पताल का त्वचा विज्ञान विभाग त्वचा, बाल और नाखूनों से संबंधित सभी स्थितियों के लिए विशेषज्ञ देखभाल प्रदान करता है। हमारी सेवाएं सामान्य त्वचा संक्रमण और एलर्जी के इलाज से लेकर उन्नत कॉस्मेटिक डर्मेटोलॉजी और सर्जिकल प्रक्रियाओं तक फैली हुई हैं।\n\nहम नैदानिक त्वचा विज्ञान की जरूरतों और सौंदर्य वृद्धि दोनों के लिए व्यक्तिगत उपचार योजनाएं प्रदान करते हैं, यह सुनिश्चित करते हुए कि मरीजों को स्वस्थ, चमकती त्वचा प्राप्त हो।\n\nनैदानिक और कॉस्मेटिक सेवाएं:\n- विशेष मुँहासे (Acne) और निशान प्रबंधन\n- एक्जिमा, सोरायसिस और विटिलिगो का उपचार\n- तिल (Mole) मैपिंग और त्वचा कैंसर स्क्रीनिंग\n- केमिकल पील्स और एंटी-एजिंग थेरेपी सहित कॉस्मेटिक प्रक्रियाएं",
+      treatments: [
+        "मुँहासे उपचार", "लेजर स्किन थेरेपी", "बाल झड़ने का उपचार", 
+        "त्वचा एलर्जी परीक्षण", "तिल हटाना", "सोरायसिस प्रबंधन"
+      ],
+      expertise: [
+        "क्लिनिकल डर्मेटोलॉजी", "डर्मेटोसर्जरी", "कॉस्मेटोलॉजी"
+      ]
     }
   },
   "oncology": {
@@ -426,18 +460,28 @@ export const specialitiesData: Record<string, Speciality> = {
     id: "psychiatry",
     icon: Activity,
     color: "purple",
-    image: "/images/lobby.png",
+    image: "/images/doctors/male-doc.png",
     en: {
-      title: "Psychiatry",
-      description: "Comprehensive mental health services including diagnosis and treatment of emotional and behavioral disorders.",
-      treatments: ["Counseling", "Medication Management", "Therapy"],
-      expertise: ["Clinical Psychiatry", "Child Psychiatry", "Geriatric Psychiatry"]
+      title: "Psychiatry & Mental Health",
+      description: "Department of Psychiatry & Behavioral Sciences\nThe Psychiatry Department at Karuna Hospital is dedicated to providing compassionate mental health care for individuals of all ages. We offer expert diagnosis and treatment for emotional, behavioral, and psychiatric disorders in a supportive and confidential environment.\n\nOur multidisciplinary team uses a combination of clinical assessment, counseling, and modern medication management to help patients recover and achieve mental well-being.\n\nMental Health Services:\n- Evaluation and treatment of Depression and Anxiety\n- Stress Management and Bipolar Disorder care\n- Specialized Child and Adolescent Psychiatry\n- Support for Psychosomatic disorders\n- De-addiction counseling and support\n- Geriatric (Senior) Mental Health services",
+      treatments: [
+        "Counseling", "Medication Management", "Behavioral Therapy", 
+        "Stress Management", "Depression Therapy", "Child Psychiatry"
+      ],
+      expertise: [
+        "Clinical Psychiatry", "Child Psychiatry", "Geriatric Psychiatry"
+      ]
     },
     hi: {
-      title: "मनोचिकित्सा (Psychiatry)",
-      description: "भावनात्मक और व्यवहार संबंधी विकारों के निदान और उपचार सहित व्यापक मानसिक स्वास्थ्य सेवाएं।",
-      treatments: ["परामर्श", "दवा प्रबंधन", "चिकित्सा"],
-      expertise: ["क्लिनिकल मनोरोग", "बाल मनोरोग", "वृद्धावस्था मनोरोग"]
+      title: "मनोचिकित्सा और मानसिक स्वास्थ्य (Psychiatry)",
+      description: "मनोचिकित्सा और व्यवहार विज्ञान विभाग\nकरुणा अस्पताल में मनोचिकित्सा विभाग सभी उम्र के व्यक्तियों के लिए मानसिक स्वास्थ्य देखभाल प्रदान करने के लिए समर्पित है। हम एक सहायक और गोपनीय वातावरण में भावनात्मक, व्यवहारिक और मनोरोग विकारों के लिए विशेषज्ञ निदान और उपचार प्रदान करते हैं।\n\nहमारी बहु-विषयक टीम मरीजों को ठीक होने और मानसिक कल्याण प्राप्त करने में मदद करने के लिए नैदानिक मूल्यांकन, परामर्श और आधुनिक दवा प्रबंधन के संयोजन का उपयोग करती है।\n\nमानसिक स्वास्थ्य सेवाएं:\n- अवसाद (Depression) और चिंता (Anxiety) का मूल्यांकन और उपचार\n- तनाव प्रबंधन और द्विध्रुवी विकार (Bipolar Disorder) देखभाल\n- विशेष बाल और किशोर मनोचिकित्सा\n- मनोदैहिक विकारों (Psychosomatic disorders) के लिए सहायता",
+      treatments: [
+        "परामर्श", "दवा प्रबंधन", "व्यवहार चिकित्सा", 
+        "तनाव प्रबंधन", "डिप्रेशन थेरेपी", "बाल मनोचिकित्सा"
+      ],
+      expertise: [
+        "क्लिनिकल मनोरोग", "बाल मनोरोग", "वृद्धावस्था मनोरोग"
+      ]
     }
   },
   "dentistry": {
@@ -462,54 +506,91 @@ export const specialitiesData: Record<string, Speciality> = {
     id: "radiology",
     icon: Microscope,
     color: "blue",
-    image: "/images/ot.png",
+    image: "/images/radiology_main.jpg",
     en: {
-      title: "Radiology",
-      description: "Advanced imaging services for accurate diagnosis and interventional procedures.",
-      treatments: ["X-Ray", "Ultrasound", "CT Scan"],
-      expertise: ["Diagnostic Radiology", "Interventional Radiology", "Neuroradiology"]
+      title: "Radiology & Imaging",
+      description: "Department of Radiology & Imaging\nKaruna Hospital's Radiology Department is equipped with cutting-edge medical equipment to handle all your diagnostic imaging needs. Our facilities include advanced GE CT machines, Digital X-Rays, and high-resolution Ultrasound systems.\n\nOur primary goal is taking care of your health with precise and timely imaging. We provide highly accurate reports that help our clinicians swiftly determine the best treatment path for each patient.\n\nKey Diagnostic Services:\n- CT Scan (Computed Tomography): High-resolution 16-slice imaging for detailed views of internal structures.\n- Digital X-Ray: Low-radiation digital imaging for rapid diagnosis of skeletal and respiratory issues.\n- Ultrasound (Sonography): Radiation-free real-time imaging for abdominal, pelvic, and specialized studies.\n\nInfrastructure & Technology:\n- GE BrightSpeed Elite 16-slice CT Scanner\n- AGFA Digital CR System\n- Logiq E9 high-resolution Ultrasound system\n- Fixed 300 MA & Portable 100 MA X-Ray units",
+      treatments: [
+        "CT Scan Analysis", "Digital Radiography", "Whole Body Ultrasound", 
+        "Color Doppler Studies", "Interventional Radiology Support", 
+        "Specialized X-Ray Procedures"
+      ],
+      expertise: [
+        "Diagnostic Radiology", "CT Imaging", "Sonography", 
+        "Low-Radiation Protocols", "Precision Diagnostics"
+      ]
     },
     hi: {
-      title: "रेडियोलॉजी",
-      description: "सटीक निदान और इंटरवेंशनल प्रक्रियाओं के लिए उन्नत इमेजिंग सेवाएं।",
-      treatments: ["एक्स-रे", "अल्ट्रासाउंड", "सीटी स्कैन"],
-      expertise: ["डायग्नोस्टिक रेडियोलॉजी", "इंटरवेंशनल रेडियोलॉजी", "न्यूरोरेडियोलॉजी"]
+      title: "रेडियोलॉजी और इमेजिंग (Radiology)",
+      description: "रेडियोलॉजी और इमेजिंग विभाग\nकरुणा अस्पताल का रेडियोलॉजी विभाग आपकी सभी नैदानिक इमेजिंग आवश्यकताओं को पूरा करने के लिए अत्याधुनिक चिकित्सा उपकरणों से लैस है। हमारी सुविधाओं में उन्नत जीई (GE) सीटी मशीनें, डिजिटल एक्स-रे और हाई-रिज़ॉल्यूशन अल्ट्रासाउंड सिस्टम शामिल हैं।\n\nहमारा प्राथमिक लक्ष्य सटीक और समय पर इमेजिंग के साथ आपके स्वास्थ्य की देखभाल करना है। हम अत्यधिक सटीक रिपोर्ट प्रदान करते हैं जो हमारे चिकित्सकों को प्रत्येक रोगी के लिए सर्वोत्तम उपचार पथ निर्धारित करने में मदद करती है।\n\nप्रमुख नैदानिक सेवाएं:\n- सीटी स्कैन (Computed Tomography): आंतरिक संरचनाओं के विस्तृत दृश्य के लिए उच्च-रिज़ॉल्यूशन इमेजिंग।\n- डिजिटल एक्स-रे: हड्डियों और श्वसन संबंधी समस्याओं के त्वरित निदान के लिए कम-विकिरण वाली डिजिटल इमेजिंग।\n- अल्ट्रासाउंड (सोनोग्राफी): पेट, श्रोणि और विशेष अध्ययन के लिए विकिरण-मुक्त रीयल-टाइम इमेजिंग।\n\nबुनियादी ढांचा और तकनीक:\n- जीई (GE) 16-स्लाइस सीटी स्कैनर\n- एजीएफए (AGFA) डिजिटल सीआर (CR) सिस्टम\n- लॉजिक ई9 (Logiq E9) हाई-रिज़ॉल्यूशन अल्ट्रासाउंड सिस्टम\n- फिक्स्ड 300 MA और पोर्टेबल 100 MA एक्स-रे यूनिट",
+      treatments: [
+        "सीटी स्कैन विश्लेषण", "डिजिटल रेडियोग्राफी", "पूरे शरीर का अल्ट्रासाउंड", 
+        "कलर डॉपलर अध्ययन", "इंटरवेंशनल रेडियोलॉजी सहायता", "विशेष एक्स-रे प्रक्रियाएं"
+      ],
+      expertise: [
+        "डायग्नोस्टिक रेडियोलॉजी", "सीटी इमेजिंग", "सोनोग्राफी", 
+        "कम-विकिरण प्रोटोकॉल", "सटीक डायग्नोस्टिक्स"
+      ]
     }
   },
   "pathology": {
     id: "pathology",
-    icon: Droplets,
+    icon: Microscope,
     color: "rose",
-    image: "/images/lobby.png",
+    image: "/images/pathology_main.jpg",
     en: {
-      title: "Pathology",
-      description: "Comprehensive laboratory services for accurate disease diagnosis and monitoring.",
-      treatments: ["Blood Tests", "Biopsy", "Hormone Studies"],
-      expertise: ["Clinical Pathology", "Hematology", "Biochemistry"]
+      title: "Pathology & Microbiology",
+      description: "Department of Pathology & Microbiology\nKaruna Hospital labs have fully automated equipment connected to the hospital's information system. This means that lab reports can be accessed from anywhere in the hospital by authorized personnel. Patients can also access their outpatient lab reports online, saving time and effort.\n\nOur labs follow international accreditation and standardization guidelines to ensure accurate and high-quality results. We offer a comprehensive range of services including Haematology, Biochemistry, Immunoassays, Hormones, Cancer Markers, Vitamins, Clinical Pathology, Microbiology, Serology, Histopathology, and Cytology.\n\nInfrastructure & Equipment:\nOur advanced diagnostic facility is equipped with:\n- Cobas E 411 & Cobas Integra 400 Plus Analyzers\n- Series XS-800i & XS-500i Hematology Systems\n- Automated Electrolyte & Urine Analyzers (Qdx Urilyzer)\n- Advanced Fluidics on Flex and Semi-Auto Analyzers\n- Comprehensive Blood Bank Facilities",
+      treatments: [
+        "Haematology Tests", "Biochemistry Analysis", "Immunoassays", 
+        "Cancer Marker Testing", "Hormone Studies", "Histopathology", 
+        "Microbiology & Serology", "Vitamins & Nutritional Panels"
+      ],
+      expertise: [
+        "Clinical Pathology", "Microbiology", "Cytology", 
+        "Automated Diagnostics", "Histopathology"
+      ]
     },
     hi: {
-      title: "पैथोलॉजी",
-      description: "सटीक रोग निदान और निगरानी के लिए व्यापक प्रयोगशाला सेवाएं।",
-      treatments: ["रक्त परीक्षण", "बायोप्सी", "हार्मोन अध्ययन"],
-      expertise: ["क्लिनिकल पैथोलॉजी", "हेमेटोलॉजी", "बायोकैमिस्ट्री"]
+      title: "पैथोलॉजी और माइक्रोबायोलॉजी (Pathology)",
+      description: "पैथोलॉजी और माइक्रोबायोलॉजी विभाग\nकरुणा अस्पताल की प्रयोगशालाएं अस्पताल के सूचना तंत्र से जुड़ी पूरी तरह से स्वचालित आधुनिक उपकरणों से लैस हैं। इसका अर्थ है कि लैब रिपोर्ट अस्पताल में कहीं से भी अधिकृत व्यक्तियों द्वारा देखी जा सकती हैं। मरीज भी अपनी लैब रिपोर्ट ऑनलाइन देख सकते हैं, जिससे समय और प्रयास की बचत होती है।\n\nसटीक और उच्च-गुणवत्ता वाले परिणाम सुनिश्चित करने के लिए हमारी लैब अंतरराष्ट्रीय मान्यता और मानकीकरण दिशानिर्देशों का पालन करती हैं। हम हेमाटोलॉजी, बायोकैमिस्ट्री, इम्यूनोएसेज, हार्मोन, कैंसर मार्कर, विटामिन, क्लिनिकल पैथोलॉजी, माइक्रोबायोलॉजी, सेरोलॉजी, हिस्टोपैथोलॉजी और साइटोलॉजी सहित सेवाओं की एक विस्तृत श्रृंखला प्रदान करते हैं।\n\nबुनियादी ढांचा और उपकरण:\nहमारी उन्नत नैदानिक सुविधा निम्नलिखित से लैस है:\n- कोबास (Cobas) ई 411 और कोबास इंटेग्रा 400 प्लस एनालाइज़र\n- सीरीज़ XS-800i और XS-500i हेमाटोलॉजी सिस्टम\n- स्वचालित इलेक्ट्रोलाइट और मूत्र एनालाइज़र (Qdx Urilyzer)\n- फ्लेक्स पर उन्नत फ्लूइडिक्स और सेमी-ऑटो एनालाइज़र\n- व्यापक ब्लड बैंक सुविधाएं",
+      treatments: [
+        "हेमाटोलॉजी परीक्षण", "बायोकैमिस्ट्री विश्लेषण", "इम्यूनोएसेज", 
+        "कैंसर मार्कर टेस्टिंग", "हार्मोन अध्ययन", "हिस्टोपैथोलॉजी", 
+        "माइक्रोबायोलॉजी और सेरोलॉजी", "विटामिन और पोषण पैनल"
+      ],
+      expertise: [
+        "क्लिनिकल पैथोलॉजी", "माइक्रोबायोलॉजी", "साइटोलॉजी", 
+        "स्वचालित निदान", "हिस्टोपैथोलॉजी"
+      ]
     }
   },
   "maxillofacial": {
     id: "maxillofacial",
     icon: Users,
     color: "orange",
-    image: "/images/doctor.png",
+    image: "/images/surgery_main.png",
     en: {
-      title: "Oral Maxillofacial Surgery",
-      description: "Specialized surgery for face, jaw, and mouth conditions.",
-      treatments: ["Jaw Surgery", "Facial Trauma", "Implantology"],
-      expertise: ["Reconstructive Surgery", "TMJ Disorders", "Orthognathic Surgery"]
+      title: "Oral & Maxillofacial Surgery",
+      description: "Department of Oral & Maxillofacial Surgery\nKaruna Hospital specializes in the surgical treatment of complex conditions affecting the head, neck, face, and jaws. Our expert surgeons handle everything from facial trauma reconstruction to functional jaw surgeries, combining surgical precision with aesthetic considerations.\n\nSurgical Services:\n- Reconstructive surgery for Facial Trauma and injuries\n- Corrective Jaw Surgery (Orthognathic surgery)\n- Specialized TMJ (Temporomandibular Joint) disorder treatment\n- Management of Oral Pathologies and Cysts\n- Complex Dental Implants and wisdom tooth extractions\n- Treatment for Facial Clefts and congenital deformities",
+      treatments: [
+        "Jaw Surgery", "Facial Trauma Reconstruction", "TMJ Disorder Treatment", 
+        "Corrective Jaw Surgery", "Oral Pathology Surgery", "Wisdom Tooth Extraction"
+      ],
+      expertise: [
+        "Oral Surgery", "Maxillofacial Surgery", "Reconstructive Surgery"
+      ]
     },
     hi: {
-      title: "ओरल मैक्सिलोफेशियल सर्जरी",
-      description: "चेहरे, जबड़े और मुंह की स्थितियों के लिए विशेष सर्जरी।",
-      treatments: ["जबड़े की सर्जरी", "फेशियल ट्रॉमा", "इंप्लांटोलॉजी"],
-      expertise: ["पुनर्निर्माण सर्जरी", "TMJ विकार", "ऑर्थोग्नाथिक सर्जरी"]
+      title: "ओरल और मैक्सिलोफेशियल सर्जरी",
+      description: "ओरल और मैक्सिलोफेशियल सर्जरी विभाग\nकरुणा अस्पताल सिर, गर्दन, चेहरे और जबड़ों को प्रभावित करने वाली जटिल स्थितियों के सर्जिकल उपचार में माहिर है। हमारे विशेषज्ञ सर्जन सर्जिकल सटीकता और सौंदर्य संबंधी पहलुओं को ध्यान में रखते हुए चेहरे के ट्रॉमा पुनर्निर्माण से लेकर कार्यात्मक जबड़े की सर्जरी तक सब कुछ संभालते हैं।\n\nसर्जिकल सेवाएं:\n- चेहरे के ट्रॉमा और चोटों के लिए पुनर्निर्माण सर्जरी\n- सुधारात्मक जबड़े की सर्जरी (ऑर्थोग्नाथिक सर्जरी)\n- विशेष TMJ (जबड़े के जोड़) विकार उपचार\n- ओरल पैथोलॉजी और सिस्ट का प्रबंधन",
+      treatments: [
+        "जबड़े की सर्जरी", "फेशियल ट्रॉमा", "TMJ विकार", 
+        "सुधारात्मक जबड़े की सर्जरी", "ओरल पैथोलॉजी सर्जरी", "विज़डम टूथ निष्कर्षण"
+      ],
+      expertise: [
+        "ओरल सर्जरी", "मैक्सिलोफेशियल सर्जरी", "पुनर्निर्माण सर्जरी"
+      ]
     }
   }
 };

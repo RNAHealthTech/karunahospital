@@ -1,171 +1,19 @@
-
-// New Code
-
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Calendar,
-  Clock,
-  Newspaper,
-} from "lucide-react";
+import { ArrowRight, Calendar, Clock, Newspaper } from "lucide-react";
 
 import { useLanguage } from "@/context/LanguageContext";
 
-// "use client";
-
-// import { motion } from "framer-motion";
-// import { ArrowLeft, ArrowRight, Calendar, Newspaper } from "lucide-react";
-
-// import { useLanguage } from "@/context/LanguageContext";
-
-// export default function NewsPage() {
-//   const { t } = useLanguage();
-
-//   return (
-//     <main className="news-page min-h-screen bg-neutral-50 pb-20">
-//       {/* Premium Internal Hero */}
-//       <section className="hero hero--internal relative overflow-hidden">
-//         <div className="hero__bg-gradient" aria-hidden="true" />
-//         <div className="hero__orb hero__orb--1" aria-hidden="true" />
-//         <div className="hero__orb hero__orb--2" aria-hidden="true" />
-
-//         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8">
-//           <motion.div
-//             initial={{ opacity: 0, y: 20 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             className="mb-6 flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md"
-//           >
-//             <Newspaper size={16} />
-//             <span>Latest Updates</span>
-//           </motion.div>
-//           <motion.h1
-//             initial={{ opacity: 0, y: 20 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ delay: 0.1 }}
-//             className="mb-6 max-w-3xl text-4xl leading-tight font-bold text-white sm:text-5xl lg:text-6xl"
-//           >
-//             {t("page.news.title")}
-//           </motion.h1>
-//           <motion.p
-//             initial={{ opacity: 0, y: 20 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ delay: 0.2 }}
-//             className="max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl"
-//           >
-//             Stay up to date with the latest clinical breakthroughs, community
-//             service initiatives, and hospital notifications from Karuna.
-//           </motion.p>
-//         </div>
-//       </section>
-
-//       {/* News Grid Section */}
-//       <section className="section py-12 sm:py-16 lg:py-20">
-//         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-//           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-//             {[
-//               {
-//                 title:
-//                   "Karuna Hospital Successfully Completes 10,000 Surgeries",
-//                 date: "October 12, 2024",
-//                 desc: "A massive milestone for our clinical excellence team as we cross the 10,000 successful surgeries mark, ensuring quality healthcare reaches everyone.",
-//                 img: "/images/lab.png",
-//               },
-//               {
-//                 title: "Free Health Checkup Camp Organized in East Delhi",
-//                 date: "September 28, 2024",
-//                 desc: "Our outreach team successfully screened over 500 local residents during the weekend health camp focusing on cardiovascular and diabetic health.",
-//                 img: "/images/doctor.png",
-//               },
-//               {
-//                 title: "New Advanced ICU Wing Inaugurated",
-//                 date: "September 15, 2024",
-//                 desc: "We are expanding our critical care capabilities with a newly inaugurated 50-bed advanced ICU wing equipped with the latest life-support systems.",
-//                 img: "/images/lab.png",
-//               },
-//             ].map((news, i) => (
-//               <motion.article
-//                 key={i}
-//                 initial={{ opacity: 0, y: 30 }}
-//                 whileInView={{ opacity: 1, y: 0 }}
-//                 viewport={{ once: true }}
-//                 transition={{ delay: i * 0.1 }}
-//                 className="group flex flex-col overflow-hidden rounded-xl border border-neutral-100 bg-white shadow-sm transition duration-300 hover:border-[var(--brand-primary)] hover:shadow-md"
-//               >
-//                 <div className="relative h-56 overflow-hidden">
-//                   <img
-//                     src={news.img}
-//                     alt={news.title}
-//                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-//                   />
-//                   <div className="absolute top-4 left-4">
-//                     <span className="rounded-full bg-white/90 px-3 py-1.5 text-[10px] font-bold tracking-widest text-[var(--brand-primary)] uppercase shadow-sm backdrop-blur-sm">
-//                       Hospital News
-//                     </span>
-//                   </div>
-//                 </div>
-
-//                 <div className="flex flex-1 flex-col p-6">
-//                   <div className="mb-3 flex items-center gap-2 text-xs font-semibold tracking-wider text-gray-500 uppercase">
-//                     <Calendar
-//                       size={14}
-//                       className="text-[var(--brand-primary)]"
-//                     />
-//                     <span>{news.date}</span>
-//                   </div>
-
-//                   <h2 className="mb-3 text-xl leading-snug font-semibold text-neutral-900 transition-colors group-hover:text-[var(--brand-primary)]">
-//                     {news.title}
-//                   </h2>
-
-//                   <p className="mb-6 line-clamp-3 flex-1 text-sm leading-relaxed text-gray-600">
-//                     {news.desc}
-//                   </p>
-
-//                   <div className="mt-auto flex items-center justify-between border-t border-neutral-100 pt-4">
-//                     <span className="text-xs font-medium text-gray-500">
-//                       4 Min Read
-//                     </span>
-//                     <button className="inline-flex items-center gap-1 text-sm font-medium text-[var(--brand-primary)] transition-all hover:gap-2">
-//                       {t("page.news.readfull")} <ArrowRight size={16} />
-//                     </button>
-//                   </div>
-//                 </div>
-//               </motion.article>
-//             ))}
-//           </div>
-
-//           {/* Premium Pagination */}
-//           <div className="mt-12 flex items-center justify-center gap-2">
-//             <button className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 bg-white text-gray-500 transition duration-200 hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)]">
-//               <ArrowLeft size={18} />
-//             </button>
-//             <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--brand-primary)] font-medium text-white shadow-sm">
-//               1
-//             </button>
-//             <button className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 bg-white font-medium text-gray-700 transition duration-200 hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)]">
-//               2
-//             </button>
-//             <button className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 bg-white text-gray-500 transition duration-200 hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)]">
-//               <ArrowRight size={18} />
-//             </button>
-//           </div>
-//         </div>
-//       </section>
-//     </main>
-//   );
-// }
-
-// New Code
+import { Phone, Sparkles, UserPlus } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const newsData = [
   {
     title: "Karuna Hospital Successfully Completes 10,000 Surgeries",
     date: "October 12, 2024",
     category: "Milestone",
-    readTime: "4 Min Read",
+    readTime: "4 min read",
     desc: "A massive milestone for our clinical excellence team as we cross the 10,000 successful surgeries mark, ensuring quality healthcare reaches everyone in the region.",
     img: "/images/lab.png",
   },
@@ -173,7 +21,7 @@ const newsData = [
     title: "Free Health Checkup Camp Organized in East Delhi",
     date: "September 28, 2024",
     category: "Community",
-    readTime: "3 Min Read",
+    readTime: "3 min read",
     desc: "Our outreach team successfully screened over 500 local residents during the weekend health camp focusing on cardiovascular and diabetic health awareness.",
     img: "/images/doctor.png",
   },
@@ -181,7 +29,7 @@ const newsData = [
     title: "New Advanced ICU Wing Inaugurated",
     date: "September 15, 2024",
     category: "Expansion",
-    readTime: "5 Min Read",
+    readTime: "5 min read",
     desc: "We are expanding our critical care capabilities with a newly inaugurated 50-bed advanced ICU wing equipped with the latest life-support systems and monitoring technology.",
     img: "/images/lab.png",
   },
@@ -189,207 +37,307 @@ const newsData = [
     title: "Karuna Launches Telemedicine Services for Rural Patients",
     date: "August 30, 2024",
     category: "Innovation",
-    readTime: "4 Min Read",
+    readTime: "4 min read",
     desc: "Bridging the gap between urban healthcare and rural communities, Karuna Hospital launches a comprehensive telemedicine platform connecting patients with specialists from home.",
     img: "/images/doctor.png",
-  },
-  {
-    title: "Annual Blood Donation Drive Collects Record Units",
-    date: "August 10, 2024",
-    category: "Community",
-    readTime: "3 Min Read",
-    desc: "This year's blood donation drive saw overwhelming participation with over 800 units collected, making it our most successful drive to date.",
-    img: "/images/lab.png",
   },
   {
     title: "Karuna Hospital Receives National Healthcare Excellence Award",
     date: "July 22, 2024",
     category: "Award",
-    readTime: "4 Min Read",
+    readTime: "4 min read",
     desc: "Recognised for outstanding patient care, clinical innovation, and community outreach, Karuna Hospital proudly receives the National Healthcare Excellence Award 2024.",
     img: "/images/doctor.png",
   },
 ];
 
-const categoryColors: { [key: string]: string } = {
-  Milestone: "bg-blue-50 text-blue-700",
-  Community: "bg-green-50 text-green-700",
-  Expansion: "bg-purple-50 text-purple-700",
-  Innovation: "bg-amber-50 text-amber-700",
-  Award: "bg-rose-50 text-rose-700",
+const categoryStyles: Record<string, string> = {
+  Milestone:
+    "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-blue-200/50",
+  Community:
+    "bg-gradient-to-r from-emerald-500 to-green-600 text-white shadow-emerald-200/50",
+  Expansion:
+    "bg-gradient-to-r from-purple-500 to-indigo-600 text-white shadow-purple-200/50",
+  Innovation:
+    "bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-amber-200/50",
+  Award:
+    "bg-gradient-to-r from-rose-500 to-pink-600 text-white shadow-rose-200/50",
 };
 
 export default function NewsPage() {
   const { t } = useLanguage();
+  const router = useRouter();
+
+  const gridCards = newsData.slice(1);
+
+  const handleBookAppointment = () => {
+    router.push("/contact");
+  };
+
+  const handleFindDoctor = () => {
+    router.push("/contact");
+  };
 
   return (
-    <main className="news-page min-h-screen bg-neutral-50">
-      <section className="hero hero--internal">
-        <div className="hero__bg-gradient" aria-hidden="true" />
-        <div className="hero__orb hero__orb--1" aria-hidden="true" />
-        <div className="hero__orb hero__orb--2" aria-hidden="true" />
-        <div className="hero__inner">
-          <div className="hero__badge">
-            <Newspaper size={13} />
-            <span>{t("page.news.badge")}</span>
-          </div>
-          <h1 className="hero__title">
-            {t("page.news.title") || "News & Announcements"}
-          </h1>
-          <p className="hero__subtitle">
-            {t("page.news.hero.subtitle")}
-          </p>
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
+      {/* ── Hero Section ── */}
+      <section className="hero hero--internal relative overflow-hidden">
+        <div
+          className="hero__bg-gradient absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)] via-[var(--brand-primary-dark)] to-[var(--brand-accent)]"
+          aria-hidden="true"
+        />
+        <div
+          className="hero__orb hero__orb--1 absolute -top-20 -right-20 h-96 w-96 rounded-full bg-white/10 blur-3xl"
+          aria-hidden="true"
+        />
+        <div
+          className="hero__orb hero__orb--2 absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-white/10 blur-3xl"
+          aria-hidden="true"
+        />
+
+        <div className="hero__inner relative z-10 mx-auto max-w-6xl px-6 py-20 text-center lg:py-28">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2.5 shadow-sm backdrop-blur-md"
+          >
+            <Newspaper size={15} className="text-white" />
+            <span className="text-sm font-semibold text-white">
+              Latest Updates
+            </span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mb-6 text-4xl font-black tracking-tight text-white lg:text-5xl xl:text-6xl"
+          >
+            {t("page.news.title") || "News"} &amp;{" "}
+            <span className="text-white/90">Announcements</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mx-auto max-w-3xl text-lg leading-relaxed text-white/85 lg:text-xl"
+          >
+            Stay up to date with the latest clinical breakthroughs, community
+            service initiatives, and hospital announcements from Karuna
+            Hospital.
+          </motion.p>
         </div>
       </section>
 
-      <section className="section pb-20">
-        <div className="section__inner">
-          {/* Featured Article */}
-          <motion.article
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="group mb-10 overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-primary)] hover:shadow-md lg:flex"
-          >
-            <div className="relative h-64 overflow-hidden lg:h-auto lg:w-[42%] lg:flex-shrink-0">
-              <img
-                src={newsData[0].img}
-                alt={newsData[0].title}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent lg:bg-gradient-to-r" />
-              <span className="absolute top-4 left-4 rounded-full bg-[var(--brand-primary)] px-3 py-1 text-[10px] font-bold tracking-widest text-white uppercase">
-                {t("page.news.featured")}
-              </span>
-            </div>
-            <div className="flex flex-1 flex-col justify-center p-8">
-              <div className="mb-3 flex items-center gap-3">
-                <span
-                  className={
-                    "rounded-full px-3 py-1 text-[10px] font-bold tracking-wider uppercase " +
-                    (categoryColors[newsData[0].category] ||
-                      "bg-neutral-100 text-neutral-600")
-                  }
-                >
-                  {t(`page.news.${newsData[0].category.toLowerCase()}`) || newsData[0].category}
-                </span>
-              </div>
-              <h2 className="mb-4 text-2xl leading-snug font-bold text-neutral-900 transition-colors group-hover:text-[var(--brand-primary)] lg:text-3xl">
-                {newsData[0].title}
-              </h2>
-              <p className="mb-6 text-sm leading-relaxed text-neutral-600 lg:text-base">
-                {newsData[0].desc}
-              </p>
-              <div className="flex items-center justify-between border-t border-neutral-100 pt-5">
-                <div className="flex items-center gap-4">
-                  <span className="flex items-center gap-1.5 text-xs text-neutral-500">
-                    <Calendar
-                      size={13}
-                      className="text-[var(--brand-primary)]"
-                    />
-                    {newsData[0].date}
-                  </span>
-                  <span className="flex items-center gap-1.5 text-xs text-neutral-500">
-                    <Clock size={13} className="text-[var(--brand-primary)]" />
-                    {newsData[0].readTime}
+      {/* ── Content Section ── */}
+      <section className="section py-16 lg:py-24">
+        <div className="section__inner mx-auto max-w-7xl px-6">
+          
+          {/* News Grid */}
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3">
+            {gridCards.map((news, idx) => (
+              <motion.article
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="group relative flex cursor-pointer flex-col overflow-hidden rounded-3xl border border-neutral-100 bg-white shadow-lg transition-shadow duration-400 hover:shadow-2xl"
+              >
+                {/* Top accent gradient */}
+                <div className="absolute top-0 right-0 left-0 h-1.5 bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-accent)] to-[var(--brand-primary)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                {/* Image Container */}
+                <div className="relative h-52 overflow-hidden">
+                  <img
+                    src={news.img}
+                    alt={news.title}
+                    className="h-full w-full object-cover transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+
+                  {/* Category Badge */}
+                  <span
+                    className={`absolute top-4 left-1/2 z-10 -translate-x-1/2 rounded-full px-4 py-2 text-[10px] font-bold tracking-wider uppercase shadow-md ${categoryStyles[news.category]}`}
+                  >
+                    {news.category}
                   </span>
                 </div>
-                <button className="flex items-center gap-1.5 text-sm font-semibold text-[var(--brand-primary)] transition-all hover:gap-2.5">
-                  {t("page.news.readfull")}
-                  <ArrowRight size={15} />
-                </button>
-              </div>
-            </div>
-          </motion.article>
 
-          {/* News Grid */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {newsData.slice(1).map(function (news, i) {
-              return (
-                <motion.article
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-primary)] hover:shadow-md"
-                >
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={news.img}
-                      alt={news.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    <span
-                      className={
-                        "absolute top-4 left-4 rounded-full px-3 py-1 text-[10px] font-bold tracking-wider uppercase " +
-                        (categoryColors[news.category] ||
-                          "bg-white text-neutral-700")
-                      }
-                    >
-                      {t(`page.news.${news.category.toLowerCase()}`) || news.category}
+                {/* Content Container */}
+                <div className="flex flex-1 flex-col px-8 py-8 text-center">
+                  {/* Meta Row */}
+                  <div className="mb-5 flex items-center justify-center gap-5 text-[11px] font-medium">
+                    <span className="flex items-center gap-2 text-neutral-500">
+                      <Calendar
+                        size={13}
+                        className="flex-shrink-0 text-[var(--brand-primary)]"
+                      />
+                      <span className="whitespace-nowrap">{news.date}</span>
+                    </span>
+                    <span className="h-4 w-px flex-shrink-0 bg-neutral-200" />
+                    <span className="flex items-center gap-2 text-neutral-500">
+                      <Clock
+                        size={13}
+                        className="flex-shrink-0 text-[var(--brand-primary)]"
+                      />
+                      <span className="whitespace-nowrap">{news.readTime}</span>
                     </span>
                   </div>
 
-                  <div className="flex flex-1 flex-col p-5">
-                    <div className="mb-3 flex items-center gap-3 text-xs text-neutral-500">
-                      <span className="flex items-center gap-1.5">
-                        <Calendar
-                          size={12}
-                          className="text-[var(--brand-primary)]"
-                        />
-                        {news.date}
-                      </span>
-                      <span className="h-3 w-px bg-neutral-200" />
-                      <span className="flex items-center gap-1.5">
-                        <Clock
-                          size={12}
-                          className="text-[var(--brand-primary)]"
-                        />
-                        {news.readTime}
-                      </span>
-                    </div>
-
-                    <h2 className="mb-3 line-clamp-2 text-base leading-snug font-bold text-neutral-900 transition-colors group-hover:text-[var(--brand-primary)]">
+                  {/* Title */}
+                  <h3 className="mb-4 px-2 text-center text-lg leading-snug font-bold text-neutral-900 transition-colors group-hover:text-[var(--brand-primary)]">
+                    <span className="line-clamp-2 block min-h-[3rem]">
                       {news.title}
-                    </h2>
+                    </span>
+                  </h3>
 
-                    <p className="mb-5 line-clamp-3 flex-1 text-sm leading-relaxed text-neutral-500">
-                      {news.desc}
-                    </p>
+                  {/* Description */}
+                  <p className="mb-6 flex-1 px-3 text-center text-sm leading-relaxed text-neutral-500">
+                    <span className="line-clamp-3 block">{news.desc}</span>
+                  </p>
 
-                    <div className="mt-auto flex items-center justify-end border-t border-neutral-100 pt-4">
-                      <button className="flex items-center gap-1.5 text-sm font-semibold text-[var(--brand-primary)] transition-all hover:gap-2.5">
-                        {t("page.news.readfull")}
-                        <ArrowRight size={14} />
-                      </button>
-                    </div>
+                  {/* Footer */}
+                  <div className="mt-auto flex items-center justify-center border-t border-neutral-100 pt-6 pb-4">
+                    <button className="group/btn inline-flex items-center gap-2 text-sm font-bold text-[var(--brand-primary)] transition-colors hover:text-[var(--brand-primary-dark)]">
+                      {t("page.news.readfull") || "Read More"}
+                      <ArrowRight
+                        size={14}
+                        className="transition-transform group-hover/btn:translate-x-1"
+                      />
+                    </button>
                   </div>
-                </motion.article>
-              );
-            })}
+
+                  {/* Extra bottom space */}
+                  <div className="h-4" />
+                </div>
+              </motion.article>
+            ))}
           </div>
 
+          {/* Extra spacing below grid */}
+          <div className="h-12" />
 
-          {/* Pagination */}
-          <div className="mt-14 flex items-center justify-center gap-2">
-            <button className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-500 transition hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)]">
-              <ArrowLeft size={17} />
-            </button>
-            <button className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--brand-primary)] text-sm font-semibold text-white shadow-sm">
-              1
-            </button>
-            <button className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-sm font-semibold text-neutral-700 transition hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)]">
-              2
-            </button>
-            <button className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-sm font-semibold text-neutral-700 transition hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)]">
-              3
-            </button>
-            <button className="flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-500 transition hover:border-[var(--brand-primary)] hover:text-[var(--brand-primary)]">
-              <ArrowRight size={17} />
-            </button>
-          </div>
+          {/* ✅ ENHANCED CTA SECTION - GUARANTEED CENTER ALIGNMENT */}
+          <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+            className="relative mt-8 overflow-hidden rounded-3xl border border-neutral-100 bg-white shadow-xl text-center"
+          >
+            {/* Decorative Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)]/5 via-transparent to-[var(--brand-accent)]/5 pointer-events-none" />
+            <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-gradient-to-br from-[var(--brand-primary)]/10 to-transparent blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-gradient-to-tr from-[var(--brand-accent)]/10 to-transparent blur-3xl pointer-events-none" />
+            
+            {/* Content Wrapper - FORCES CENTER ALIGNMENT */}
+            <div className="relative z-15 mx-auto max-w-8xl px-6 py-12 lg:px-8 lg:py-12 text-center">
+              
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                className="mb-6 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--brand-primary)]/10 to-[var(--brand-accent)]/10 px-5 py-2.5 mx-auto"
+              >
+                <Sparkles size={16} className="text-[var(--brand-primary)]" />
+                <span className="text-sm font-semibold text-[var(--brand-primary)]">
+                  Quick Access
+                </span>
+              </motion.div>
+
+              {/* Heading */}
+              <motion.h2
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-2xl font-black tracking-tight text-neutral-900 lg:text-3xl mx-auto"
+              >
+                Need Help?{" "}
+                <span className="bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-accent)] bg-clip-text text-transparent">
+                  We&apos;re Here for You
+                </span>
+              </motion.h2>
+
+              {/* Subheading */}
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="mx-auto mt-4 max-w-10xl text-base leading-relaxed text-neutral-600"
+              >
+                Connect with our care team to schedule your visit or find the right specialist for your needs.
+              </motion.p>
+
+              {/* Buttons Container - PERFECTLY CENTERED */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row "
+              >
+                
+                {/* Book Appointment Button */}
+                <motion.button
+                  whileHover={{ scale: 1.03, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={handleBookAppointment}
+                  className="group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-primary-dark)] px-8 py-4 text-white shadow-lg shadow-[var(--brand-primary)]/30 transition-all duration-300 hover:shadow-xl hover:shadow-[var(--brand-primary)]/40 sm:w-auto max-w-sm"
+                >
+                  {/* Shine effect */}
+                  <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full rounded-2xl" />
+                  
+                  <span className="relative  flex items-center justify-center gap-3 text-center">
+                    <Phone size={18} className="flex-shrink-0 transition-transform group-hover:scale-110" />
+                    <span className="text-center">
+                      <span className="block text-sm font-bold">Book Appointment</span>
+                      {/* <span className="block text-xs text-white/85">Schedule your visit</span> */}
+                    </span>
+                  </span>
+                  <ArrowRight size={15} className="relative flex-shrink-0 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 hidden sm:block" />
+                </motion.button>
+
+                {/* Find a Doctor Button */}
+                <motion.button
+                  whileHover={{ scale: 1.03, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={handleFindDoctor}
+                  className="group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-2xl border-2 border-[var(--brand-primary)] bg-white px-8 py-4 text-[var(--brand-primary)] shadow-sm transition-all duration-300 hover:bg-[var(--brand-primary)] hover:text-white sm:w-auto max-w-sm"
+                >
+                  {/* Hover fill effect */}
+                  <span className="absolute inset-0 scale-0 bg-[var(--brand-primary)] transition-transform duration-300 group-hover:scale-100 rounded-2xl" />
+                  
+                  <span className="relative flex items-center justify-center gap-3 text-center">
+                    <UserPlus size={18} className="flex-shrink-0 transition-transform group-hover:scale-110" />
+                    <span className="text-center">
+                      <span className="block text-sm font-bold">Find a Doctor</span>
+                      {/* <span className="block text-xs text-neutral-500 group-hover:text-white/85">Browse specialists</span> */}
+                    </span>
+                  </span>
+                  <ArrowRight size={15} className="relative flex-shrink-0 opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1 hidden sm:block" />
+                </motion.button>
+
+              </motion.div>
+
+              {/* Helper Text */}
+              
+
+            </div>
+
+            {/* Bottom Accent Bar */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-accent)] to-[var(--brand-primary)]" />
+          </motion.section>
+
+          {/* Extra spacing below CTA section */}
+          <div className="h-8" />
+
         </div>
       </section>
     </main>
