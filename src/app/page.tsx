@@ -208,17 +208,17 @@ export default function Home() {
             >
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-bold text-[var(--brand-primary)]">
                 <Heart size={16} />
-                <span>About Us</span>
+                <span>{t("home.about.badge")}</span>
               </div>
               <h2 id="about-heading" className="mb-6 text-4xl font-extrabold text-neutral-900 md:text-5xl leading-tight">
-                Welcome to <span className="text-[var(--brand-primary)]">Karuna Hospital</span>
+                {t("home.about.welcome")} <span className="text-[var(--brand-primary)]">Karuna Hospital</span>
               </h2>
               <div className="prose prose-lg text-neutral-600 mb-8 max-w-none">
                 <p className="font-medium text-xl text-neutral-700 leading-relaxed mb-4">
-                  Established in 2011, Karuna Hospital is a leading multi-speciality healthcare facility in Delhi. We are committed to providing comprehensive, world-class medical services.
+                  {t("home.about.p1.title")}
                 </p>
                 <p>
-                  Empathy lies at the core of our ethos. Our team of experienced doctors and compassionate staff work tirelessly to deliver personalized care with the help of state-of-the-art infrastructure and highly accessible healthcare packages.
+                  {t("home.about.p2.desc")}
                 </p>
               </div>
               
@@ -238,7 +238,7 @@ export default function Home() {
               </div>
 
               <Link href="/about" className="btn btn--primary inline-flex gap-2">
-                Discover More <ArrowRight size={16} />
+                {t("home.about.discover")} <ArrowRight size={16} />
               </Link>
             </motion.div>
           </div>
@@ -304,11 +304,10 @@ export default function Home() {
         <div className="section__inner">
           <div className="section__header">
             <h2 id="infra-heading" className="section__title">
-              Infrastructure & Technology
+              {t("home.infra.title")}
             </h2>
             <p className="section__subtitle">
-              State-of-the-art facilities designed for patient comfort, safety,
-              and advanced clinical care.
+              {t("home.infra.subtitle")}
             </p>
           </div>
           <motion.div
@@ -326,12 +325,10 @@ export default function Home() {
               />
               <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10">
                 <h3 className="mb-3 transform text-3xl font-bold text-white transition-transform group-hover:-translate-y-1">
-                  Our Facility
+                  {t("home.infra.facility.title")}
                 </h3>
                 <p className="max-w-[400px] rounded-lg border border-white/10 bg-black/30 p-4 text-base leading-relaxed text-white/95 backdrop-blur-md">
-                  A multi-speciality healthcare landmark in East Delhi,
-                  dedicated to providing world-class medical services since
-                  2011.
+                  {t("home.infra.facility.desc")}
                 </p>
               </div>
             </div>
@@ -343,10 +340,10 @@ export default function Home() {
               />
               <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10">
                 <h3 className="mb-3 transform text-2xl font-bold text-white transition-transform group-hover:-translate-y-1">
-                  Premium Lobby
+                  {t("home.infra.lobby.title")}
                 </h3>
                 <p className="max-w-[280px] rounded-lg border border-white/10 bg-black/30 p-3 text-sm leading-relaxed text-white/90 backdrop-blur-sm">
-                  Patient-friendly environment with modern amenities.
+                  {t("home.infra.lobby.desc")}
                 </p>
               </div>
             </div>
@@ -358,10 +355,10 @@ export default function Home() {
               />
               <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 md:p-10">
                 <h3 className="mb-3 transform text-2xl font-bold text-white transition-transform group-hover:-translate-y-1">
-                  Compassionate Care
+                  {t("home.infra.care.title")}
                 </h3>
                 <p className="max-w-[280px] rounded-lg border border-white/10 bg-black/20 p-3 text-sm leading-relaxed text-white/90 backdrop-blur-sm">
-                  Expert doctors delivering personalized attention.
+                  {t("home.infra.care.desc")}
                 </p>
               </div>
             </div>
@@ -373,10 +370,10 @@ export default function Home() {
               />
               <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 md:p-10">
                 <h3 className="mb-3 transform text-2xl font-bold text-white transition-transform group-hover:-translate-y-1">
-                  Modular OTs
+                  {t("home.infra.ot.title")}
                 </h3>
                 <p className="max-w-[280px] rounded-lg border border-white/10 bg-black/20 p-3 text-sm leading-relaxed text-white/90 backdrop-blur-sm">
-                  Equipped with ultra-modern surgical and diagnostic technology.
+                  {t("home.infra.ot.desc")}
                 </p>
               </div>
             </div>
@@ -466,15 +463,13 @@ export default function Home() {
 
       <blockquote className="director-quote space-y-4">
         <p>
-          As the name of the hospital suggests, Karuna Hospital was
-          established to address the gap in the healthcare needs of people
-          who truly need it.
+          {t("home.director.p1")}
         </p>
 
         <p>&ldquo;{t("director.quote")}&rdquo;</p>
 
         <footer className="director-quote__footer">
-          <cite>— Director, Karuna Hospital</cite>
+          <cite>— {t("home.director.cite")}</cite>
         </footer>
       </blockquote>
 
@@ -512,5 +507,6 @@ export default function Home() {
         </motion.div>
       </section>
     </div>
+
   );
 }

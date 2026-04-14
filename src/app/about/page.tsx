@@ -121,26 +121,26 @@ export default function AboutPage() {
             transition={{ duration: 0.7 }}
             className="flex-1"
           >
-            <h2 className="text-3xl font-bold text-neutral-900 mb-2">Message from Chairman</h2>
+            <h2 className="text-3xl font-bold text-neutral-900 mb-2">{t("page.about.chairman.label")}</h2>
             <p className="mb-8 text-[var(--brand-primary)] font-semibold uppercase tracking-wider text-sm">
-              Director’s Message
+              {t("page.about.director.title")}
             </p>
 
             <div className="prose prose-lg text-neutral-600 max-w-none">
               <p>
-                As the name of the hospital suggests, Karuna Hospital was established to address the gap in the healthcare needs of people who truly need it. Our processes, onboarding of doctors, treatment and state-of-the-art infrastructure have all been designed to bridge this gap.
+                {t("page.about.chairman.p1")}
               </p>
               <p>
-                In my 35 years of medical practice, I have witnessed the wonders that the combination of medical knowledge and compassion can achieve.
+                {t("page.about.chairman.p2")}
               </p>
               <p>
-                “Karuna” reflects in our clear communication, making the patients feel at home, and the understanding with which we approach treatment. This is what we try to inculcate in the behaviour of our staff, working culture and the perception of professionalism, while providing services to thousands of patients round-the-clock. Trust of our patients empowers us to march ahead and ensure healthcare for all.
+                {t("page.about.chairman.p3")}
               </p>
             </div>
             
             <div className="mt-8">
-              <h4 className="text-xl font-bold text-neutral-900">Dr. Rajeev Gupta</h4>
-              <p className="text-neutral-500">Chairman & Director</p>
+              <h4 className="text-xl font-bold text-neutral-900">{t("page.about.chairman.name")}</h4>
+              <p className="text-neutral-500">{t("page.about.chairman.desig")}</p>
             </div>
 
             <Link
@@ -181,9 +181,9 @@ export default function AboutPage() {
                 <div className="w-20 h-20 bg-neutral-100 rounded-full mx-auto mb-6 flex items-center justify-center text-neutral-400">
                   <Users size={32} />
                 </div>
-                <h3 className="text-xl font-bold text-neutral-900 mb-2">Member {i}</h3>
-                <p className="text-sm text-[var(--brand-primary)] font-bold uppercase tracking-wider mb-4">Board of Directors</p>
-                <p className="text-neutral-600 text-sm leading-relaxed">Dedicated professional contributing to the growth and excellence of Karuna Hospital.</p>
+                <h3 className="text-xl font-bold text-neutral-900 mb-2">{t("Board Member")} {i}</h3>
+                <p className="text-sm text-[var(--brand-primary)] font-bold uppercase tracking-wider mb-4">{t("page.about.mgmt.title")}</p>
+                <p className="text-neutral-600 text-sm leading-relaxed">{t("page.about.mgmt.desc")}</p>
               </motion.div>
             ))}
           </div>
@@ -205,10 +205,10 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 mt-12">
             {[
-              { title: "Emergency & Trauma", desc: "Round-the-clock emergency response with expert trauma teams." },
-              { title: "Diagnostic Lab", desc: "24/7 high-end diagnostic testing and imaging services." },
-              { title: "Pharmacy", desc: "Continuous access to quality healthcare medicines and supplies." },
-              { title: "Ambulance", desc: "Immediate ambulance pick-up and transport available 24/7." }
+              { title: t("page.about.service.emergency"), desc: t("page.about.service.emergency.desc") },
+              { title: t("page.about.service.lab"), desc: t("page.about.service.lab.desc") },
+              { title: t("page.about.service.pharmacy"), desc: t("page.about.service.pharmacy.desc") },
+              { title: t("page.about.service.ambulance"), desc: t("page.about.service.ambulance.desc") }
             ].map((service, index) => (
               <div key={index} className="p-8 bg-neutral-50 rounded-3xl border border-neutral-100 hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 rounded-xl bg-[var(--brand-primary-light)] text-[var(--brand-primary)] flex items-center justify-center mb-6">
@@ -288,9 +288,7 @@ export default function AboutPage() {
                 {t("page.about.values.title")}
               </h3>
               <p className="spec-card__desc">
-                {t(
-                  "At Karuna Hospital, excellence drives everything we do. We provide cutting-edge, affordable healthcare to all communities, build lasting doctor-patient partnerships, and nurture a supportive workplace where our staff can grow and excel. Backed by the finest healthcare team in the region, we deliver exceptional care with integrity and compassion."
-                )}
+                {t("page.about.values.long")}
               </p>
               {/* Removed common.learnMore link */}
             </motion.div>
@@ -307,18 +305,17 @@ export default function AboutPage() {
                 <Award size={28} />
               </div>
               <h3 className="spec-card__title">
-                {t(" Polished Mission Statement")}
+                {t("page.about.mission.heading")}
               </h3>
               <p className="spec-card__desc">
-                {t(
-                  "Karuna Hospital is committed to excellence in all we do. We strive to deliver state-of-the-art medical care to every segment of society at affordable prices, foster enduring doctor-patient relationships, and cultivate an environment where healthcare professionals and staff can continuously learn and thrive. Powered by an exceptional team, we are dedicated to setting the standard in compassionate, high-quality healthcare"
-                )}
+                {t("page.about.mission.long")}
               </p>
               {/* Removed common.learnMore link */}
             </motion.div>
           </div>
         </div>
       </section>
+
 
       {/* ── Why Choose Us ── */}
       {/* <section className="why-section">

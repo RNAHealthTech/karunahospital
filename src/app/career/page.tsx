@@ -74,29 +74,29 @@ export default function CareerPage() {
       icon: Star,
       iconBg: "bg-sky-100",
       iconColor: "text-[#0b6fa4]",
-      title: "Professional Growth",
-      description: "Continuous learning and development opportunities to advance your medical career at Karuna Hospital.",
+      title: t("page.career.progrowth"),
+      description: t("page.career.progrowth.desc"),
     },
     {
       icon: Users,
       iconBg: "bg-emerald-100",
       iconColor: "text-emerald-600",
-      title: "Collaborative Environment",
-      description: "Work alongside some of the best medical professionals in a supportive, team-oriented culture.",
+      title: t("page.career.collab.env"),
+      description: t("page.career.collab.env.desc"),
     },
     {
       icon: Award,
       iconBg: "bg-amber-100",
       iconColor: "text-amber-600",
-      title: "Excellence & Recognition",
-      description: "We value and reward outstanding patient care, dedication, and clinical excellence.",
+      title: t("page.career.excellence"),
+      description: t("page.career.excellence.desc"),
     },
     {
       icon: Zap,
       iconBg: "bg-violet-100",
       iconColor: "text-violet-600",
-      title: "Advanced Technology",
-      description: "Access to state-of-the-art medical equipment and innovative healthcare solutions.",
+      title: t("page.career.tech"),
+      description: t("page.career.tech.desc"),
     },
   ];
 
@@ -120,7 +120,7 @@ export default function CareerPage() {
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <Briefcase size={16} className="mr-1" />
-            <span>Join Our Mission</span>
+            <span>{t("page.career.badge")}</span>
           </motion.div>
 
           <motion.h1
@@ -157,7 +157,7 @@ export default function CareerPage() {
             >
               <div className="career-culture__label">
                 <span className="career-culture__label-dot"></span>
-                <span className="career-culture__label-text">Work With Us</span>
+                <span className="career-culture__label-text">{t("page.career.joinus")}</span>
               </div>
 
               <h2 className="career-culture__title">{t("page.career.why")}</h2>
@@ -217,9 +217,9 @@ export default function CareerPage() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                 >
-                  <p className="flex items-center gap-2">
-                    <Heart size={18} className="text-rose-400" />
-                    "A place where medical excellence meets compassionate care at Karuna Hospital."
+                  <p className="flex items-center gap-2 text-sm sm:text-base">
+                    <Heart size={18} className="text-rose-400 shrink-0" />
+                    "{t("page.career.quote")}"
                   </p>
                 </motion.div>
               </div>
@@ -242,10 +242,10 @@ export default function CareerPage() {
               {t("page.career.openings")}
             </h2>
             <p className="career-openings__subtitle">
-              Join our team of specialists and support staff dedicated to
-              providing the best healthcare services.
+              {t("page.career.openings.p")}
             </p>
           </motion.div>
+
 
           {/* ✨ CENTERED JOB CARDS CONTAINER */}
           <div className="career-jobs-wrapper">

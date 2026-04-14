@@ -87,17 +87,16 @@ export default function FindADoctorPage() {
         <div className="hero__inner">
           <div className="hero__badge">
             <Stethoscope size={13} />
-            <span>Find Your Doctor</span>
+            <span>{t("page.doctors.badge")}</span>
           </div>
           <h1 className="hero__title">
-            {/* {t("page.doctors.title") || "Our Expert Medical Team"} */}
-           Our Expert Medical Team
+            {t("page.doctors.title")}
           </h1>
           <p className="hero__subtitle text-sm sm:text-base mb-4">
-            Established in 2011, Karuna Hospital is known for its expertise in both outpatient and inpatient services. Empathy lies at the core of our services which reflects in compassionate treatment of our expert doctors and accessible cost structure.
+            {t("page.doctors.hero.p1")}
           </p>
           <p className="hero__subtitle text-sm sm:text-base">
-            Experienced doctors with expertise across specialities are associated with Karuna Hospital. This helps us in understanding our patients’ problems better and provide complete care.
+            {t("page.doctors.hero.p2")}
           </p>
         </div>
       </section>
@@ -152,14 +151,14 @@ export default function FindADoctorPage() {
                         size={14}
                         className="shrink-0 text-[var(--brand-primary)]"
                       />
-                      <span>{doctor.experience} years experience</span>
+                      <span>{doctor.experience} {t("page.doctors.card.experience")}</span>
                     </p>
                     <p className="flex items-center gap-2 text-[13px] font-medium text-neutral-600">
                       <MapPin
                         size={14}
                         className="shrink-0 text-[var(--brand-primary)]"
                       />
-                      <span>Dilshad Garden, Delhi</span>
+                      <span>{t("page.doctors.card.location")}</span>
                     </p>
                   </div>
                   {/* Button: Direct link to profile */}
@@ -167,7 +166,7 @@ export default function FindADoctorPage() {
                     href={doctor.profile || "#"}
                     className="mt-auto flex w-full items-center justify-center gap-2 rounded-xl bg-blue-50 px-4 py-3 text-[15px] font-bold text-[var(--brand-primary)] transition-all duration-200 hover:bg-[var(--brand-primary)] hover:text-white"
                   >
-                    View Profile
+                    {t("page.doctors.card.viewProfile")}
                     <ChevronRight size={16} />
                   </Link>
                 </div>
@@ -176,6 +175,7 @@ export default function FindADoctorPage() {
           </div>
         </div>
       </section>
+
 
 
     </div>

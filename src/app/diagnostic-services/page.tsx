@@ -11,28 +11,28 @@ export default function DiagnosticServicesHub() {
 
   const categories = [
     {
-      title: language === 'en' ? "Browse by Habit" : "आदत के अनुसार",
-      desc: language === 'en' ? "Lifestyle-based screenings for smoking, stress, and routine patterns." : "धूम्रपान, तनाव और नियमित पैटर्न के लिए जीवनशैली-आधारित स्क्रीनिंग।",
+      title: t("page.diag.cat.habit.title"),
+      desc: t("page.diag.cat.habit.desc"),
       href: "/diagnostic-services/by-habit",
       icon: Activity,
       color: "blue",
-      stats: "20+ Habit Checks"
+      stats: t("page.diag.cat.habit.stats")
     },
     {
-      title: language === 'en' ? "Browse by Risk" : "जोखिम के अनुसार",
-      desc: language === 'en' ? "Targeted diagnostics for specific clinical risks like Diabetes or Heart disease." : "मधुमेह या हृदय रोग जैसे विशिष्ट नैदानिक ​​जोखिमों के लिए लक्षित निदान।",
+      title: t("page.diag.cat.risk.title"),
+      desc: t("page.diag.cat.risk.desc"),
       href: "/diagnostic-services/by-risk",
       icon: Shield,
       color: "rose",
-      stats: "30+ Risk Profiles"
+      stats: t("page.diag.cat.risk.stats")
     },
     {
-      title: language === 'en' ? "Health Packages" : "स्वास्थ्य पैकेज",
-      desc: language === 'en' ? "Comprehensive full-body checkups curated for all age groups and needs." : "सभी आयु समूहों और आवश्यकताओं के लिए क्यूरेट किया गया व्यापक फुल-बॉडी चेकअप।",
+      title: t("page.diag.cat.package.title"),
+      desc: t("page.diag.cat.package.desc"),
       href: "/diagnostic-services/packages",
       icon: Zap,
       color: "orange",
-      stats: "15+ Bundled Plans"
+      stats: t("page.diag.cat.package.stats")
     }
   ];
 
@@ -55,36 +55,35 @@ export default function DiagnosticServicesHub() {
             >
               <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white text-sm font-bold uppercase tracking-widest mb-8">
                 <Microscope size={16} className="text-sky-300" />
-                <span>{language === 'en' ? "State-of-the-Art Diagnostics" : "अत्याधुनिक डायग्नोस्टिक्स"}</span>
+                <span>{t("page.diag.hero.badge")}</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
-                Precision <span className="text-sky-300 italic font-medium">Diagnosis</span>,<br />
-                Personalized Care.
+                {t("page.diag.hero.title")}
               </h1>
               
               <p className="text-lg md:text-xl text-sky-100 max-w-xl leading-relaxed mb-10 font-medium">
-                Karuna Hospital partners with leading laboratories to provide end-to-end clinical assessments. Choose the right path for your health screening below.
+                {t("page.diag.hero.subtitle")}
               </p>
 
               <div className="flex flex-wrap gap-6 bg-white/5 p-6 rounded-3xl border border-white/10">
                  <div className="flex items-center gap-3 text-white font-bold">
-                   <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                     <CheckCircle2 size={16} className="text-emerald-400" />
-                   </div>
-                   <span>99.9% Accuracy</span>
+                    <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                      <CheckCircle2 size={16} className="text-emerald-400" />
+                    </div>
+                    <span>{t("page.diag.hero.accuracy")}</span>
                  </div>
                  <div className="flex items-center gap-3 text-white font-bold">
-                   <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                     <CheckCircle2 size={16} className="text-emerald-400" />
-                   </div>
-                   <span>24/7 Processing</span>
+                    <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                      <CheckCircle2 size={16} className="text-emerald-400" />
+                    </div>
+                    <span>{t("page.diag.hero.processing")}</span>
                  </div>
                  <div className="flex items-center gap-3 text-white font-bold">
-                   <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                     <CheckCircle2 size={16} className="text-emerald-400" />
-                   </div>
-                   <span>Digital Reports</span>
+                    <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                      <CheckCircle2 size={16} className="text-emerald-400" />
+                    </div>
+                    <span>{t("page.diag.hero.reports")}</span>
                  </div>
               </div>
             </motion.div>
@@ -173,7 +172,7 @@ export default function DiagnosticServicesHub() {
              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center relative z-10">
                 <div>
                     <h2 className="text-4xl font-extrabold text-white mb-10 leading-tight">
-                      Why our <span className="text-sky-300 italic font-medium">Clinical Assessments</span> stand out.
+                      {t("page.diag.trust.title")}
                     </h2>
                    <div className="space-y-8">
                       <div className="flex gap-6 items-start bg-white/5 p-6 rounded-3xl border border-white/10 backdrop-blur-sm">
@@ -181,8 +180,8 @@ export default function DiagnosticServicesHub() {
                             <CheckCircle2 className="text-sky-300" size={28} />
                          </div>
                          <div>
-                             <h4 className="text-xl font-bold text-white mb-2">Global Standards</h4>
-                             <p className="text-white/70 text-base leading-relaxed font-medium">Our clinical diagnostic protocols are aligned with NABH and ISO benchmarks for total safety.</p>
+                             <h4 className="text-xl font-bold text-white mb-2">{t("page.diag.trust.global.title")}</h4>
+                             <p className="text-white/70 text-base leading-relaxed font-medium">{t("page.diag.trust.global.desc")}</p>
                          </div>
                       </div>
                       <div className="flex gap-6 items-start bg-white/5 p-6 rounded-3xl border border-white/10 backdrop-blur-sm">
@@ -190,8 +189,8 @@ export default function DiagnosticServicesHub() {
                             <CheckCircle2 className="text-sky-300" size={28} />
                          </div>
                          <div>
-                             <h4 className="text-xl font-bold text-white mb-2">Expert Interpretation</h4>
-                             <p className="text-white/70 text-base leading-relaxed font-medium">Every report is reviewed by specialized pathologists and MD physicians before release.</p>
+                             <h4 className="text-xl font-bold text-white mb-2">{t("page.diag.trust.expert.title")}</h4>
+                             <p className="text-white/70 text-base leading-relaxed font-medium">{t("page.diag.trust.expert.desc")}</p>
                          </div>
                       </div>
                    </div>
@@ -200,19 +199,19 @@ export default function DiagnosticServicesHub() {
                 <div className="grid grid-cols-2 gap-6">
                    <div className="bg-white p-8 rounded-[2rem] shadow-xl flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
                       <span className="text-5xl font-black text-[#005a8d] mb-3 italic">12h</span>
-                      <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">TAT for Routine</span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">{t("page.diag.trust.stat.tat")}</span>
                    </div>
                    <div className="bg-white p-8 rounded-[2rem] shadow-xl flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
                       <span className="text-5xl font-black text-[#005a8d] mb-3 italic">3k+</span>
-                      <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">Tests Available</span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">{t("page.diag.trust.stat.available")}</span>
                    </div>
                    <div className="bg-white p-8 rounded-[2rem] shadow-xl flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
                       <span className="text-5xl font-black text-[#005a8d] mb-3 italic">24/7</span>
-                      <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">Lab Availability</span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">{t("page.diag.trust.stat.lab")}</span>
                    </div>
                    <div className="bg-white p-8 rounded-[2rem] shadow-xl flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
                       <Heart className="text-rose-500 mb-3" size={48} strokeWidth={1.5} />
-                      <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">Patient First</span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">{t("page.diag.trust.stat.patient")}</span>
                    </div>
                 </div>
              </div>
@@ -223,15 +222,16 @@ export default function DiagnosticServicesHub() {
       {/* ── Search/Help CTA ── */}
       <section className="py-20 lg:py-24 bg-neutral-50 text-center px-4">
         <div className="max-w-3xl mx-auto">
-           <h2 className="text-3xl font-extrabold text-neutral-900 mb-6">Need Assistance?</h2>
+           <h2 className="text-3xl font-extrabold text-neutral-900 mb-6">{t("page.diag.help.title")}</h2>
            <p className="text-xl text-gray-500 mb-10 leading-relaxed font-medium">
-             Need help choosing the right test? Our expert clinical team is available for guidance.
+             {t("page.diag.help.subtitle")}
            </p>
            <Link href="/contact" className="px-10 py-5 bg-[#005a8d] hover:bg-[#00395c] text-white rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center gap-3 hover:-translate-y-1">
-             Speak with a Specialist <ArrowRight size={20} />
+             {t("page.diag.help.cta")} <ArrowRight size={20} />
            </Link>
         </div>
       </section>
     </main>
+
   );
 }

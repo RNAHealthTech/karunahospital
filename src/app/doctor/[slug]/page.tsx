@@ -66,7 +66,7 @@ export default function DoctorProfilePage() {
               </div>
               <div className="dp-portrait__badge">
                 <CheckCircle2 size={15} />
-                Verified Expert
+                {t("page.doctor.verified")}
               </div>
             </div>
 
@@ -80,9 +80,7 @@ export default function DoctorProfilePage() {
               <h1 className="dp-info__name">{doctor.name}</h1>
 
               <p className="dp-info__tagline">
-                Senior {doctor.department} specialist at Karuna Hospital,
-                Dilshad Garden, Delhi — dedicated to providing compassionate,
-                evidence-based medical care.
+                {t("page.doctor.tagline")}
               </p>
 
               {/* Stats */}
@@ -105,7 +103,7 @@ export default function DoctorProfilePage() {
                   </div>
                   <div>
                     <span className="dp-stat__val">5,000+</span>
-                    <span className="dp-stat__lbl">Patients</span>
+                    <span className="dp-stat__lbl">{t("page.doctor.patients")}</span>
                   </div>
                 </div>
 
@@ -115,7 +113,7 @@ export default function DoctorProfilePage() {
                   </div>
                   <div>
                     <span className="dp-stat__val">4.9</span>
-                    <span className="dp-stat__lbl">Rating</span>
+                    <span className="dp-stat__lbl">{t("page.doctor.rating")}</span>
                   </div>
                 </div>
               </div>
@@ -149,7 +147,7 @@ export default function DoctorProfilePage() {
                 <div className="dp-card__icon dp-card__icon--blue">
                   <Heart size={24} />
                 </div>
-                <h2 className="dp-card__title">About {doctor.name}</h2>
+                <h2 className="dp-card__title">{t("page.doctor.about")} {doctor.name}</h2>
               </div>
               <p className="dp-card__text">
                 {doctor.name} is a highly experienced {doctor.department}{" "}
@@ -232,7 +230,7 @@ export default function DoctorProfilePage() {
           <aside className="dp-sidebar">
             {/* Contact card */}
             <div className="dp-sidebar-card">
-              <h3 className="dp-sidebar-card__title">Book a Consultation</h3>
+              <h3 className="dp-sidebar-card__title">{t("page.doctor.book")}</h3>
               <p className="dp-sidebar-card__sub">
                 Get expert medical advice from {doctor.name}.
               </p>
@@ -273,9 +271,9 @@ export default function DoctorProfilePage() {
                     <Clock size={18} />
                   </div>
                   <div>
-                    <span className="dp-sidebar-card__lbl">Availability</span>
+                    <span className="dp-sidebar-card__lbl">{t("page.doctor.availability")}</span>
                     <span className="dp-sidebar-card__val">
-                      Mon – Sat, 9 AM – 6 PM
+                      {t("page.doctor.mon_sat")}
                     </span>
                   </div>
                 </div>
@@ -303,7 +301,7 @@ export default function DoctorProfilePage() {
             <div className="dp-sidebar-card dp-sidebar-card--dark">
               <div className="dp-dark-badge">
                 <Award size={15} />
-                Why Karuna Hospital?
+                {t("page.doctor.why")}
               </div>
               <ul className="dp-dark-list">
                 <li>
@@ -339,10 +337,9 @@ export default function DoctorProfilePage() {
         <div className="dp-cta-banner__inner">
           <div className="dp-cta-banner__box">
             <div className="dp-cta-banner__copy">
-              <h3>Need Expert Medical Advice?</h3>
+              <h3>{t("page.doctor.needexpert")}</h3>
               <p>
-                Schedule your appointment with {doctor.name} today for
-                personalised, world-class care.
+                {t("page.doctor.schedule")}
               </p>
             </div>
             <div className="dp-cta-banner__actions">

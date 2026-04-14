@@ -231,15 +231,13 @@ export default function NewsPage() {
         <div className="hero__inner">
           <div className="hero__badge">
             <Newspaper size={13} />
-            <span>Latest Updates</span>
+            <span>{t("page.news.badge")}</span>
           </div>
           <h1 className="hero__title">
             {t("page.news.title") || "News & Announcements"}
           </h1>
           <p className="hero__subtitle">
-            Stay up to date with the latest clinical breakthroughs, community
-            service initiatives, and hospital announcements from Karuna
-            Hospital.
+            {t("page.news.hero.subtitle")}
           </p>
         </div>
       </section>
@@ -261,7 +259,7 @@ export default function NewsPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent lg:bg-gradient-to-r" />
               <span className="absolute top-4 left-4 rounded-full bg-[var(--brand-primary)] px-3 py-1 text-[10px] font-bold tracking-widest text-white uppercase">
-                Featured
+                {t("page.news.featured")}
               </span>
             </div>
             <div className="flex flex-1 flex-col justify-center p-8">
@@ -273,7 +271,7 @@ export default function NewsPage() {
                       "bg-neutral-100 text-neutral-600")
                   }
                 >
-                  {newsData[0].category}
+                  {t(`page.news.${newsData[0].category.toLowerCase()}`) || newsData[0].category}
                 </span>
               </div>
               <h2 className="mb-4 text-2xl leading-snug font-bold text-neutral-900 transition-colors group-hover:text-[var(--brand-primary)] lg:text-3xl">
@@ -297,7 +295,7 @@ export default function NewsPage() {
                   </span>
                 </div>
                 <button className="flex items-center gap-1.5 text-sm font-semibold text-[var(--brand-primary)] transition-all hover:gap-2.5">
-                  {t("page.news.readfull") || "Read More"}
+                  {t("page.news.readfull")}
                   <ArrowRight size={15} />
                 </button>
               </div>
@@ -330,7 +328,7 @@ export default function NewsPage() {
                           "bg-white text-neutral-700")
                       }
                     >
-                      {news.category}
+                      {t(`page.news.${news.category.toLowerCase()}`) || news.category}
                     </span>
                   </div>
 
@@ -363,7 +361,7 @@ export default function NewsPage() {
 
                     <div className="mt-auto flex items-center justify-end border-t border-neutral-100 pt-4">
                       <button className="flex items-center gap-1.5 text-sm font-semibold text-[var(--brand-primary)] transition-all hover:gap-2.5">
-                        {t("page.news.readfull") || "Read More"}
+                        {t("page.news.readfull")}
                         <ArrowRight size={14} />
                       </button>
                     </div>
@@ -372,6 +370,7 @@ export default function NewsPage() {
               );
             })}
           </div>
+
 
           {/* Pagination */}
           <div className="mt-14 flex items-center justify-center gap-2">

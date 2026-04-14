@@ -313,7 +313,7 @@ export function Header() {
               <KarunaLogo />
             </Link>
             <div className="h-10 w-px bg-neutral-200 hidden md:block" aria-hidden="true" />
-            <div className="relative w-16 h-16 hidden md:block">
+            <div className="relative w-12 h-12 hidden md:block">
               <Image
                 src="/nabh-logo.png"
                 alt="NABH Accredited"
