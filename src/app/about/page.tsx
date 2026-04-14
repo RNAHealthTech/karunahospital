@@ -35,10 +35,6 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="hero__content"
           >
-            <div className="hero__badge">
-              <Shield size={14} className="mr-2" />
-              {t("page.about.badge")}
-            </div>
             <h1 className="hero__title">{t("nav.about")}</h1>
             <p className="hero__subtitle">{t("page.about.heroSubtitle")}</p>
           </motion.div>

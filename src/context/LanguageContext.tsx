@@ -269,6 +269,7 @@ const translations = {
     // About
     "page.about.title": "Who We Are",
     "page.about.subtitle": "Excellence and empathy in healthcare for the local community.",
+    "page.about.heroSubtitle": "A premier multi-speciality hospital in East Delhi dedicated to clinical excellence and compassionate care since 2011.",
     "page.about.overview": "About Karuna Hospital",
     "page.about.p1": "Established in 2011, Karuna Hospital was founded with a singular purpose: to bridge the gap in healthcare needs for those who truly need it. Over the years, we have grown into a trusted multi-speciality healthcare facility in East Delhi, known for combining clinical excellence with a deeply empathetic approach.",
     "page.about.p2": "Our dedicated team of experienced doctors and medical professionals leverage advanced technology to provide high-quality, affordable healthcare.",
@@ -703,6 +704,7 @@ const translations = {
     // About
     "page.about.title": "हम कौन हैं",
     "page.about.subtitle": "स्थानीय समुदाय के लिए स्वास्थ्य सेवा में उत्कृष्टता और सहानुभूति।",
+    "page.about.heroSubtitle": "क्लिनिकल उत्कृष्टता और दयालु देखभाल के लिए समर्पित पूर्वी दिल्ली का एक प्रमुख मल्टी-स्पेशियलिटी अस्पताल।",
     "page.about.overview": "करुणा अस्पताल के बारे में",
     "page.about.p1": "2011 में स्थापित, करुणा अस्पताल की स्थापना एक विलक्षण उद्देश्य के साथ की गई थी: उन लोगों की स्वास्थ्य देखभाल आवश्यकताओं में अंतर को दूर करना जिन्हें वास्तव में इसकी आवश्यकता है। इन वर्षों में, हम पूर्वी दिल्ली में एक विश्वसनीय मल्टी-स्पेशियलिटी हेल्थकेयर सुविधा के रूप में विकसित हुए हैं, जो अत्यधिक सहानुभूतिपूर्ण दृष्टिकोण के साथ नैदानिक ​​उत्कृष्टता के संयोजन के लिए जाना जाता है।",
     "page.about.p2": "अनुभवी डॉक्टरों और चिकित्सा पेशेवरों की हमारी समर्पित टीम उच्च गुणवत्ता वाली, किफायती स्वास्थ्य सेवा प्रदान करने के लिए उन्नत तकनीक का लाभ उठाती है।",
