@@ -1,7 +1,7 @@
 "use client";
 
-import { FormEvent, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { FormEvent, useState } from "react";
 
 export default function ContactForm() {
   const { t } = useLanguage();
@@ -10,7 +10,7 @@ export default function ContactForm() {
     "idle" | "success" | "error"
   >("idle");
 
-  const whatsappNumber = "919557863199";
+  const whatsappNumber = "9195578631**";
   const prefillMessage = encodeURIComponent(
     "Hello, I would like to inquire about..."
   );
@@ -85,7 +85,7 @@ export default function ContactForm() {
             <div className="spec-card" style={{ padding: "1.2rem" }}>
               <h4 style={{ fontWeight: 600 }}>📞 {t("page.contact.card.call")}</h4>
               <p style={{ color: "var(--neutral-600)", fontSize: "0.9rem" }}>
-                +91 9557863199
+                +91 95578631**
               </p>
             </div>
 
@@ -655,14 +655,14 @@ export default function ContactForm() {
             >
               {t("page.contact.form.emergency.notice")}{" "}
               <a
-                href="tel:+919557863199"
+                href="tel:+9195578631**"
                 style={{
                   color: "var(--brand-accent)",
                   fontWeight: 600,
                   textDecoration: "none",
                 }}
               >
-                +91 9557863199
+                +91 95578631**
               </a>
             </p>
           </form>
