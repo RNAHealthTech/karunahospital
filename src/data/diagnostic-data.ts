@@ -33,32 +33,40 @@ export const diagnosticData: Record<string, DiagnosticCategory> = {
     key: "nav.diag.risk.acidity",
     en: {
       title: "Acidity (Acid Reflux)",
-      description: "Acidity or acid reflux occurs when the gastric glands in the stomach produce excess acid for food digestion. This is often triggered by modern lifestyle habits, such as overeating, consumption of junk food, smoking, alcohol, caffeine, or eating meals close to bedtime.",
+      description: "Acidity/acid reflux is a common problem with today's faulty lifestyle, affecting many worldwide. In the stomach, there are gastric glands that create acid, which is necessary to digest food properly and to kill germs. When, due to any reason, a large amount of acid is produced beyond what is actually required to digest the food, acidity or acid reflux occurs. Overeating, being overweight, having meals close to bedtime, excess junk food in diet, smoking, high consumption of alcohol or caffeine, pregnancy, or certain medications are common causes.",
       image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=1200",
       symptoms: [
-        "Heartburn and stomach discomfort",
-        "Nausea and vomiting",
-        "Bloating and frequent burping",
+        "Heartburn",
+        "Vomiting",
         "Headaches",
-        "Chronic sore throat or wheezing",
-        "Unexplained weight loss"
+        "Discomfort in stomach",
+        "Bloating",
+        "Burping",
+        "Nausea",
+        "Chronic sore throat",
+        "Unexplained weight loss",
+        "Wheezing"
       ],
-      importance: "While occasional acidity is common, experiencing symptoms more than twice a week may indicate a more severe underlying condition. Undetected chronic acidity can lead to other complications; testing helps identify root causes early.",
+      importance: "Although acidity is an easily curable problem with simple antacids and other over-the-counter medicines, its occurrence more than twice a week might indicate a more severe underlying condition. Undetected acidity can result in many other chronic diseases. In such cases, tests are conducted to figure out if there is any underlying cause — a blood sample is taken and sent to the lab to carry out the required analysis and determine the root cause early.",
       recommendedTests: ["Acidity Package", "PID Profile"]
     },
     hi: {
       title: "एसिडिटी (Acid Reflux)",
-      description: "एसिडिटी या एसिड रिफ्लक्स तब होता है जब पेट में गैस्ट्रिक ग्रंथियां भोजन पाचन के लिए अतिरिक्त एसिड का उत्पादन करती हैं। यह अक्सर आधुनिक जीवनशैली की आदतों, जैसे कि अधिक खाना, जंक फूड का सेवन, धूम्रपान, शराब, कैफीन, या सोने के करीब भोजन करने से शुरू होता है।",
+      description: "एसिडिटी/एसिड रिफ्लक्स आज की गलत जीवनशैली के कारण एक सामान्य समस्या बन गई है, जो दुनिया भर में बहुत से लोगों को प्रभावित करती है। पेट में गैस्ट्रिक ग्रंथियां एसिड बनाती हैं जो भोजन को पचाने और कीटाणुओं को मारने के लिए जरूरी है। जब किसी कारणवश जरूरत से ज्यादा एसिड बन जाता है, तो एसिडिटी या एसिड रिफ्लक्स होता है। अधिक खाना, मोटापा, सोने से पहले खाना, जंक फूड, धूम्रपान, शराब या कैफीन का अधिक सेवन, गर्भावस्था, या कुछ दवाइयां इसके सामान्य कारण हैं।",
       image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=1200",
       symptoms: [
-        "सीने में जलन और पेट में बेचैनी",
-        "जी मिचलाना और उल्टी",
-        "पेट फूलना और बार-बार डकार आना",
+        "सीने में जलन (Heartburn)",
+        "उल्टी",
         "सिरदर्द",
-        "पुरानी गले में खराश या घरघराहट",
-        "अस्पष्टीकृत वजन कम होना"
+        "पेट में बेचैनी",
+        "पेट फूलना",
+        "बार-बार डकार आना",
+        "जी मिचलाना",
+        "पुरानी गले में खराश",
+        "अस्पष्टीकृत वजन कम होना",
+        "घरघराहट (Wheezing)"
       ],
-      importance: "हालांकि कभी-कभार होने वाली एसिडिटी सामान्य है, लेकिन सप्ताह में दो बार से अधिक लक्षणों का अनुभव करना अधिक गंभीर अंतर्निहित स्थिति का संकेत दे सकता है। अनपेक्षित पुरानी एसिडिटी अन्य जटिलताओं का कारण बन सकती है; परीक्षण शुरुआती कारणों की पहचान करने में मदद करता है।",
+      importance: "हालांकि एसिडिटी साधारण एंटासिड से ठीक हो जाती है, लेकिन अगर यह हफ्ते में दो बार से ज्यादा हो तो यह किसी गंभीर अंतर्निहित बीमारी का संकेत हो सकता है। अनपहचानी एसिडिटी कई पुरानी बीमारियों का कारण बन सकती है। ऐसे मामलों में कारण जानने के लिए टेस्ट किए जाते हैं — खून का नमूना लेकर लैब में भेजा जाता है ताकि मूल कारण की जल्द पहचान हो सके।",
       recommendedTests: ["एसिडिटी पैकेज", "पीआईडी प्रोफाइल"]
     },
     associatedPackages: [
@@ -85,30 +93,34 @@ export const diagnosticData: Record<string, DiagnosticCategory> = {
     key: "nav.diag.risk.anaemia",
     en: {
       title: "Anaemia",
-      description: "Anaemia is a disorder characterized by a deficiency in red blood cells. Since these cells are responsible for transporting oxygen to the body's organs and tissues, a low count prevents the body from functioning optimally, leading to generalized weakness.",
+      description: "Anaemia is a disorder in which the amount of red blood cells gets low. Because red blood cells transport oxygen to all of the body's organs and tissues, when they are low, your body does not get enough oxygen to function properly. It can result from iron deficiency, vitamin deficiency, chronic disease, or inherited conditions.",
       image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2ad46?auto=format&fit=crop&q=80&w=1200",
       symptoms: [
-        "Persistent fatigue and weakness",
+        "Fatigue",
+        "Weakness",
         "Pale or yellowish skin",
         "Irregular heartbeats",
-        "Dizziness or lightheadedness",
-        "Chest pain and headaches"
+        "Dizziness",
+        "Chest pain",
+        "Headaches"
       ],
-      importance: "A diagnostic test is the only accurate way to confirm Anaemia. Early detection through blood analysis (like a CBC) ensures you can take the necessary steps to manage the condition and maintain long-term health.",
+      importance: "An Anaemia test is the most accurate approach to establish whether you have Anaemia. A complete blood count (CBC) test can assist you in determining all of the relevant criteria so that you can take the appropriate actions to guarantee that you are not hampered by the disorder and can live a long and healthy life. The blood sample is taken, which is later shipped off to the lab to carry out the Anaemia test.",
       recommendedTests: ["Anemia Profile Advance", "Complete Blood Count (CBC)"]
     },
     hi: {
-      title: "एनीमिया",
-      description: "एनीमिया एक विकार है जो लाल रक्त कोशिकाओं की कमी की विशेषता है। चूंकि ये कोशिकाएं शरीर के अंगों और ऊतकों तक ऑक्सीजन पहुंचाने के लिए जिम्मेदार होती हैं, कम संख्या शरीर को बेहतर ढंग से काम करने से रोकती है, जिससे सामान्य कमजोरी होती है।",
+      title: "एनीमिया (Anaemia)",
+      description: "एनीमिया एक ऐसा विकार है जिसमें लाल रक्त कोशिकाओं की मात्रा कम हो जाती है। चूंकि लाल रक्त कोशिकाएं शरीर के सभी अंगों और ऊतकों तक ऑक्सीजन पहुंचाती हैं, जब ये कम हो जाती हैं तो शरीर को ठीक से काम करने के लिए पर्याप्त ऑक्सीजन नहीं मिल पाती। यह आयरन की कमी, विटामिन की कमी, पुरानी बीमारी, या वंशानुगत स्थितियों से हो सकता है।",
       image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2ad46?auto=format&fit=crop&q=80&w=1200",
       symptoms: [
-        "लगातार थकान और कमजोरी",
+        "थकान",
+        "कमजोरी",
         "पीली या पीली त्वचा",
         "अनियमित दिल की धड़कन",
-        "चक्कर आना या हल्का महसूस होना",
-        "सीने में दर्द और सिरदर्द"
+        "चक्कर आना",
+        "सीने में दर्द",
+        "सिरदर्द"
       ],
-      importance: "एनीमिया की पुष्टि करने का एकमात्र सटीक तरीका डायग्नोस्टिक टेस्ट है। रक्त विश्लेषण (जैसे सीबीसी) के माध्यम से शुरुआती पहचान यह सुनिश्चित करती है कि आप स्थिति को प्रबंधित करने और दीर्घकालिक स्वास्थ्य बनाए रखने के लिए आवश्यक कदम उठा सकते हैं।",
+      importance: "एनीमिया की पुष्टि के लिए CBC टेस्ट सबसे सटीक तरीका है। यह टेस्ट सभी जरूरी मापदंडों को जानने में मदद करता है ताकि आप सही कदम उठाकर इस विकार से बाधित हुए बिना लंबा और स्वस्थ जीवन जी सकें। इसके लिए खून का नमूना लिया जाता है जिसे बाद में लैब में एनीमिया टेस्ट के लिए भेजा जाता है।",
       recommendedTests: ["एनीमिया प्रोफाइल एडवांस", "सीबीसी (CBC)"]
     },
     associatedPackages: [
@@ -118,7 +130,7 @@ export const diagnosticData: Record<string, DiagnosticCategory> = {
         price: 3300,
         oldPrice: 5640,
         discount: "42%",
-        description: "Comprehensive advanced profile for deep-root diagnosis of various types of anemia."
+        description: "Iron is essential for the integrity of our red blood cells, and a shortage of it can have serious consequences for our health. Comprehensive advanced profile for deep-root diagnosis of various types of anemia."
       }
     ]
   },
@@ -127,30 +139,36 @@ export const diagnosticData: Record<string, DiagnosticCategory> = {
     key: "nav.diag.risk.allergy",
     en: {
       title: "Allergy",
-      description: "At times our immune system reacts intensely to unfamiliar materials which are usually not considered risky in our routine life. Allergens are substances that trigger allergic reactions; common allergens include dust, explicit food varieties, and so forth.",
+      description: "At times our immune system reacts intensely to unfamiliar materials which are usually not considered risky in our routine life. Allergens are substances that trigger allergic reactions; common allergens include dust, explicit food varieties, pet dander, pollen, and certain medications. When the immune system detects these allergens, it releases chemicals like histamine that cause allergic symptoms.",
       image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=1200",
       symptoms: [
+        "Itchy skin",
         "Skin rashes",
         "Swelling of the lips, tongue, or face",
         "Weak pulse",
-        "Nausea and Vomiting",
-        "Sneezing and Runny nose"
+        "Nausea",
+        "Vomiting",
+        "Sneezing",
+        "Runny nose"
       ],
-      importance: "An Allergy Test is a decent method to figure out if you have any types of allergies and if yes, how severe your response is. An allergy profile test can assist you in narrowing down your triggers, helping you take the required steps to guarantee that your life is not disrupted by such allergic reactions.",
+      importance: "An Allergy Test is a decent method to figure out if you have any types of allergies and if yes, how severe your response is. You can easily schedule an Allergy Test and get yourself tested without any problems. An allergy profile test can assist you in narrowing down your triggers, helping you take the required steps to guarantee that your life is not disrupted by such allergic reactions. The blood sample is taken, which is later shipped off to the lab to carry out the allergy test.",
       recommendedTests: ["Allergy Test", "Allergy Profile Test"]
     },
     hi: {
       title: "एलर्जी",
-      description: "कभी-कभी हमारा इम्यून सिस्टम अपरिचित सामग्रियों के प्रति तीव्रता से प्रतिक्रिया करता है जिन्हें आमतौर पर हमारे नियमित जीवन में जोखिम भरा नहीं माना जाता है। एलर्जेन वे पदार्थ हैं जो एलर्जी प्रतिक्रियाओं को ट्रिगर करते हैं; सामान्य एलर्जी कारकों में धूल, विशिष्ट खाद्य किस्में आदि शामिल हैं।",
+      description: "कभी-कभी हमारा इम्यून सिस्टम उन अपरिचित चीज़ों के प्रति तीव्र प्रतिक्रिया करता है जिन्हें आमतौर पर हमारे सामान्य जीवन में हानिकारक नहीं माना जाता। एलर्जेन वे पदार्थ होते हैं जो एलर्जी प्रतिक्रिया को ट्रिगर करते हैं; जैसे धूल, विशेष खाद्य पदार्थ, पोलेन, पालतू जानवरों की रूसी और कुछ दवाइयां। जब इम्यून सिस्टम इन एलर्जेन्स को पहचानता है, तो वह हिस्टामाइन जैसे रसायन छोड़ता है जिससे एलर्जी के लक्षण उत्पन्न होते हैं।",
       image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=1200",
       symptoms: [
+        "त्वचा में खुजली",
         "त्वचा पर लाल चकत्ते",
         "होंठ, जीभ या चेहरे की सूजन",
         "कमजोर नब्ज",
-        "जी मिचलाना और उल्टी",
-        "छींक आना और बहती नाक"
+        "जी मिचलाना",
+        "उल्टी",
+        "छींक आना",
+        "बहती नाक"
       ],
-      importance: "एलर्जी टेस्ट यह पता लगाने का एक अच्छा तरीका है कि क्या आपको किसी भी प्रकार की एलर्जी है और यदि हाँ, तो आपकी प्रतिक्रिया कितनी गंभीर है। एक एलर्जी प्रोफाइल टेस्ट आपको अपने ट्रिगर्स को कम करने में सहायता कर सकता है, जिससे आपको यह सुनिश्चित करने के लिए आवश्यक कदम उठाने में मदद मिलती है कि आपका जीवन ऐसी एलर्जी प्रतिक्रियाओं से बाधित न हो।",
+      importance: "एलर्जी टेस्ट यह पता लगाने का सबसे अच्छा तरीका है कि क्या आपको किसी प्रकार की एलर्जी है और यदि हाँ, तो आपकी प्रतिक्रिया कितनी गंभीर है। एलर्जी प्रोफाइल टेस्ट आपको अपने ट्रिगर्स की पहचान करने में मदद करता है, जिससे आप ज़रूरी कदम उठाकर अपने जीवन को इन एलर्जी प्रतिक्रियाओं से बाधित होने से बचा सकते हैं। इसके लिए खून का नमूना लिया जाता है जिसे लैब में भेजकर एलर्जी टेस्ट किया जाता है।",
       recommendedTests: ["एलर्जी टेस्ट", "एलर्जी प्रोफाइल टेस्ट"]
     },
     associatedPackages: [
@@ -337,18 +355,34 @@ export const diagnosticData: Record<string, DiagnosticCategory> = {
     key: "nav.diag.habit.alcoholism",
     en: {
       title: "Alcoholism",
-      description: "Chronic alcohol consumption affects the liver, heart, and brain functions over time.",
+      description: "Human beings are creatures of habits, and in most cases, habits help us shape our lives in a certain way. But we often let our habits start controlling our lives, which turns into addictions. Alcoholism refers to addiction to alcohol in such a manner that an individual fails to function in their day-to-day lives without it. It leads to serious losses in an individual's life such as family, work, and social life.",
       image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=1200",
-      symptoms: ["Liver discomfort", "Fatigue", "Memory issues", "Digestive problems"],
-      importance: "Liver function tests and general health screening are vital for those with high alcohol consumption.",
+      symptoms: [
+        "Inability to control or stop drinking",
+        "Liver discomfort and abdominal pain",
+        "Persistent fatigue and weakness",
+        "Memory loss and cognitive issues",
+        "Digestive problems and nausea",
+        "Jaundice (yellowing of skin/eyes)",
+        "Mood swings and depression"
+      ],
+      importance: "An alcohol test is usually advisable to check the damage caused to vital organs such as the liver, kidneys, etc. due to alcohol abuse. This test can help you become aware of the extent of addiction and thereafter overcome it either through self-determination or by taking outside help. Early testing allows timely intervention before irreversible organ damage occurs.",
       recommendedTests: ["Liver Function Test (LFT)", "GGT Test"]
     },
     hi: {
-      title: "शराब की लत",
-      description: "लंबे समय तक शराब का सेवन समय के साथ लिवर, हृदय और मस्तिष्क के कार्यों को प्रभावित करता है।",
+      title: "शराब की लत (Alcoholism)",
+      description: "इंसान आदतों का प्राणी है, और अक्सर ये आदतें लत में बदल जाती हैं। शराब की लत (Alcoholism) एक ऐसी स्थिति है जिसमें व्यक्ति बिना शराब के अपना दैनिक जीवन नहीं जी पाता। इससे परिवार, काम और सामाजिक जीवन में गंभीर नुकसान होता है।",
       image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=1200",
-      symptoms: ["लिवर में बेचैनी", "थकान", "याददाश्त की समस्या", "पाचन संबंधी समस्याएं"],
-      importance: "शराब के उच्च सेवन वाले लोगों के लिए लिवर फंक्शन टेस्ट और सामान्य स्वास्थ्य जांच महत्वपूर्ण है।",
+      symptoms: [
+        "शराब पर नियंत्रण न कर पाना",
+        "लिवर में तकलीफ और पेट दर्द",
+        "लगातार थकान और कमजोरी",
+        "याददाश्त कमज़ोर होना",
+        "पाचन संबंधी समस्याएं और जी मिचलाना",
+        "पीलिया (त्वचा/आंखों का पीला पड़ना)",
+        "मूड में बदलाव और अवसाद"
+      ],
+      importance: "शराब का टेस्ट आमतौर पर लिवर, किडनी जैसे महत्वपूर्ण अंगों को शराब के दुरुपयोग से हुए नुकसान की जांच के लिए किया जाता है। यह टेस्ट लत की सीमा समझने और फिर खुद की इच्छाशक्ति या बाहरी मदद से इसे दूर करने में सहायता करता है। जल्द टेस्ट कराने से अंग क्षति होने से पहले समय पर हस्तक्षेप संभव हो जाता है।",
       recommendedTests: ["लिवर फंक्शन टेस्ट (LFT)", "GGT टेस्ट"]
     },
     associatedPackages: [
@@ -358,7 +392,7 @@ export const diagnosticData: Record<string, DiagnosticCategory> = {
         price: 1750,
         oldPrice: 3520,
         discount: "51%",
-        description: "Specifically designed to check for damage to vital organs like liver and kidneys."
+        description: "Specifically designed to check for damage to vital organs like liver and kidneys caused by alcohol abuse."
       }
     ]
   },
@@ -397,18 +431,34 @@ export const diagnosticData: Record<string, DiagnosticCategory> = {
     key: "nav.diag.habit.anger",
     en: {
       title: "Anger & Stress Level",
-      description: "Frequent anger and emotional stress can lead to physiological changes, including high blood pressure and increased cortisol levels.",
+      description: "Anger might put your heart's health in jeopardy. The persistent rush of stress hormones and related metabolic changes that come with unchecked anger can eventually impair a variety of physiological systems. Manage your anger and live a longer, healthier life with frequent testing.",
       image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1200",
-      symptoms: ["Elevated heart rate", "High blood pressure", "Muscle tension", "Headaches"],
-      importance: "Managing anger-related stress is crucial for preventing cardiovascular issues and maintaining psychological well-being.",
+      symptoms: [
+        "Headaches",
+        "Digestive issues and stomach discomfort",
+        "Sleeplessness",
+        "Anxiety and depression",
+        "High blood pressure",
+        "Skin conditions like eczema",
+        "Increased risk of heart attack and stroke"
+      ],
+      importance: "Unmanaged anger has been linked to a variety of immediate and long-term health issues. Schedule a test today to take precautionary measures and avoid the risk of such ailments. Regular screening of stress hormones and cardiovascular markers helps quantify the physical impact of chronic anger on your body.",
       recommendedTests: ["Stress Assessment Profile", "Cortisol Test"]
     },
     hi: {
       title: "क्रोध और तनाव स्तर",
-      description: "बार-बार क्रोध और भावनात्मक तनाव से शारीरिक परिवर्तन हो सकते हैं, जिसमें उच्च रक्तचाप और कोर्टिसोल का स्तर बढ़ना शामिल है।",
+      description: "क्रोध आपके दिल की सेहत को खतरे में डाल सकता है। अनियंत्रित क्रोध से लगातार स्ट्रेस हार्मोन का स्राव होता है जो कई शारीरिक प्रणालियों को नुकसान पहुंचा सकता है। नियमित टेस्ट से क्रोध को नियंत्रित करके लंबा और स्वस्थ जीवन जिएं।",
       image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1200",
-      symptoms: ["हृदय गति बढ़ना", "उच्च रक्तचाप", "मांसपेशियों में तनाव", "सिरदर्द"],
-      importance: "क्रोध से संबंधित तनाव का प्रबंधन हृदय संबंधी समस्याओं को रोकने और मनोवैज्ञानिक कल्याण बनाए रखने के लिए महत्वपूर्ण है।",
+      symptoms: [
+        "सिरदर्द",
+        "पाचन संबंधी समस्याएं और पेट में बेचैनी",
+        "अनिद्रा",
+        "चिंता और अवसाद",
+        "उच्च रक्तचाप",
+        "एक्जिमा जैसी त्वचा की समस्याएं",
+        "दिल का दौरा और स्ट्रोक का खतरा"
+      ],
+      importance: "अनियंत्रित क्रोध कई तत्काल और दीर्घकालिक स्वास्थ्य समस्याओं से जुड़ा है। आज ही टेस्ट करवाएं और ऐसी बीमारियों के खतरे से बचने के लिए एहतियाती कदम उठाएं। स्ट्रेस हार्मोन और हृदय संबंधी मार्करों की नियमित जांच से शरीर पर क्रोध के असर को मापा जा सकता है।",
       recommendedTests: ["तनाव मूल्यांकन प्रोफाइल", "कोर्टिसोल टेस्ट"]
     }
   },
@@ -417,18 +467,34 @@ export const diagnosticData: Record<string, DiagnosticCategory> = {
     key: "nav.diag.habit.heartburn",
     en: {
       title: "Heartburn / GERD",
-      description: "A burning sensation in the chest caused by stomach acid backup into the esophagus.",
+      description: "Heartburn is a burning sensation in the chest that occurs directly beneath the breastbone. After dining, in the night, or when falling asleep or leaning over, the discomfort is usually greater. Heartburn is a regular occurrence and might not be the reason for concern — most people can manage it with lifestyle adjustments. However, when it becomes more frequent or disrupts your daily routine, it may be a sign of a more serious condition.",
       image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=1200",
-      symptoms: ["Burning in chest", "Bitter taste in mouth", "Difficulty swallowing", "Chronic cough"],
-      importance: "Chronic heartburn can damage the esophagus; clinical evaluation helps rule out GERD or ulcers.",
+      symptoms: [
+        "Burning sensation in the chest beneath the breastbone",
+        "Bitter or acidic taste in the mouth",
+        "Difficulty swallowing",
+        "Chronic cough",
+        "Worsening pain when lying down or bending over",
+        "Regurgitation of food or sour liquid",
+        "Sensation of a lump in the throat"
+      ],
+      importance: "Heartburn that becomes more common or disrupts your everyday routine might be a sign of a more serious condition that necessitates medical attention. Indigestion can cause heartburn, which can lead to major health problems. Diagnose it early and live healthily with frequent health checks to rule out GERD or esophageal damage.",
       recommendedTests: ["Endoscopy", "Acidity Profile"]
     },
     hi: {
-      title: "सीने में जलन / जीईआरडी",
-      description: "पेट के एसिड के अन्नप्रणाली में वापस आने के कारण छाती में होने वाली जलन।",
+      title: "सीने में जलन / GERD",
+      description: "सीने में जलन एक जलती हुई अनुभूति है जो छाती में सीधे उरोस्थि के नीचे होती है। खाने के बाद, रात में, या सोते समय या झुकते समय यह तकलीफ आमतौर पर अधिक होती है। यह एक सामान्य समस्या है और जीवनशैली में बदलाव से ठीक हो सकती है, लेकिन जब यह बार-बार हो या दैनिक जीवन को प्रभावित करे, तो यह किसी गंभीर स्थिति का संकेत हो सकता है।",
       image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=1200",
-      symptoms: ["छाती में जलन", "मुंह में कड़वा स्वाद", "निगलने में कठिनाई", "पुरानी खांसी"],
-      importance: "पुरानी सीने में जलन अन्नप्रणाली को नुकसान पहुंचा सकती है; नैदानिक मूल्यांकन जीईआरडी या अल्सर को बाहर करने में मदद करता है।",
+      symptoms: [
+        "उरोस्थि के नीचे छाती में जलन",
+        "मुंह में कड़वा या खट्टा स्वाद",
+        "निगलने में कठिनाई",
+        "पुरानी खांसी",
+        "लेटने या झुकने पर दर्द बढ़ना",
+        "खाना या खट्टा तरल वापस आना",
+        "गले में गांठ जैसी अनुभूति"
+      ],
+      importance: "बार-बार होने वाली या रोज़मर्रा की जिंदगी को प्रभावित करने वाली सीने की जलन किसी गंभीर बीमारी का संकेत हो सकती है। अपच से शुरू हुई जलन बड़ी स्वास्थ्य समस्याओं का कारण बन सकती है। जल्द जांच करवाएं और GERD या अन्नप्रणाली की क्षति को समय रहते रोकें।",
       recommendedTests: ["एंडोस्कोपी", "एसिडिटी प्रोफाइल"]
     }
   },
