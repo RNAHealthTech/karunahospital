@@ -10,7 +10,7 @@ export default function ContactForm() {
     "idle" | "success" | "error"
   >("idle");
 
-  const whatsappNumber = "9195578631**";
+  const whatsappNumber = "919873754555";
   const prefillMessage = encodeURIComponent(
     "Hello, I would like to inquire about..."
   );
@@ -85,7 +85,8 @@ export default function ContactForm() {
             <div className="spec-card" style={{ padding: "1.2rem" }}>
               <h4 style={{ fontWeight: 600 }}>📞 {t("page.contact.card.call")}</h4>
               <p style={{ color: "var(--neutral-600)", fontSize: "0.9rem" }}>
-                +91 95578631**
+                {t("page.contact.card.phone")}<br />
+                {t("page.contact.card.phone.alt")}
               </p>
             </div>
 
@@ -93,7 +94,8 @@ export default function ContactForm() {
             <div className="spec-card" style={{ padding: "1.2rem" }}>
               <h4 style={{ fontWeight: 600 }}>✉️ {t("page.contact.card.email")}</h4>
               <p style={{ color: "var(--neutral-600)", fontSize: "0.9rem" }}>
-                karunahospital.dg@gmail.com
+                {t("page.contact.card.email.val")}<br />
+                {t("page.contact.card.email.alt")}
               </p>
             </div>
 
@@ -655,17 +657,69 @@ export default function ContactForm() {
             >
               {t("page.contact.form.emergency.notice")}{" "}
               <a
-                href="tel:+9195578631**"
+                href={`tel:${t("page.contact.card.phone")}`}
                 style={{
                   color: "var(--brand-accent)",
                   fontWeight: 600,
                   textDecoration: "none",
                 }}
               >
-                +91 95578631**
+                {t("page.contact.card.phone")}
               </a>
             </p>
           </form>
+        </div>
+      </div>
+
+      {/* ================= LOCATION & VISITING ================= */}
+      <div className="contact-grid" style={{ marginTop: "4rem", gridTemplateColumns: "1fr" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: "2rem" }}>
+
+          {/* Location & Directions */}
+          <div className="spec-card" style={{ padding: "0" }}>
+            <div style={{ padding: "2rem" }}>
+              <h3 className="section__title" style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
+                {t("page.contact.directions.title")}
+              </h3>
+              <p style={{ color: "var(--neutral-600)", lineHeight: "1.6", marginBottom: "1.5rem" }}>
+                {t("page.contact.directions.text")}
+              </p>
+            </div>
+            <div style={{ height: "400px", width: "100%", borderRadius: "0 0 16px 16px", overflow: "hidden" }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.5186419224423!2d77.3193233150835!3d28.6743139824005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfb6385555555%3A0x6334a17fd9e99a4!2sKaruna%20Hospital!5e0!3m2!1sen!2sin!4v1623832104561!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                title="Karuna Hospital Location"
+              ></iframe>
+            </div>
+          </div>
+
+          {/* Visiting Hours Card */}
+          <div className="spec-card" style={{ padding: "2.5rem", display: "flex", flexDirection: "column", justifyContent: "center", border: "2px solid var(--brand-primary-light)" }}>
+            <div className="feature-icon feature-icon--primary" style={{ marginBottom: "1.5rem" }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+            </div>
+            <h3 className="section__title" style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
+              {t("page.contact.visiting.title")}
+            </h3>
+            <p style={{ color: "var(--neutral-600)", lineHeight: "1.6", marginBottom: "2rem" }}>
+              {t("page.contact.visiting.text")}
+            </p>
+            <a href="/patient/visiting-hours" className="btn btn--primary" style={{ alignSelf: "flex-start" }}>
+              {t("page.contact.visiting.cta")}
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginLeft: "0.5rem" }}>
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
         </div>
       </div>
     </>

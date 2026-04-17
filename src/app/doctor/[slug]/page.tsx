@@ -17,8 +17,10 @@ import {
   Mail,
   MapPin,
   Phone,
+  Quote,
   Star,
   Stethoscope,
+  Trophy,
   Users,
 } from "lucide-react";
 
@@ -30,7 +32,9 @@ export default function DoctorProfilePage() {
   const { t } = useLanguage();
 
   const doctor = doctorsData.find((d) => d.slug === slug);
-  if (!doctor) notFound();
+  if (!doctor) {
+    return notFound();
+  }
 
   return (
     <main>
@@ -150,15 +154,36 @@ export default function DoctorProfilePage() {
                 <h2 className="dp-card__title">{t("page.doctor.about")} {doctor.name}</h2>
               </div>
               <p className="dp-card__text">
-                {doctor.name} is a highly experienced {doctor.department}{" "}
-                specialist practicing at Karuna Hospital, Dilshad Colony, New Delhi.
-                With over {doctor.experience} years of dedicated clinical
-                practice, the doctor has earned a reputation for providing
-                accurate diagnoses, evidence-based treatments, and compassionate
-                patient care. Patients trust their expertise for both routine
-                consultations and complex medical conditions.
+                {(doctor as any).about ? (doctor as any).about : (
+                  <>
+                    {doctor.name} is a highly experienced {doctor.department}{" "}
+                    specialist practicing at Karuna Hospital, Dilshad Colony, New Delhi.
+                    With over {doctor.experience} years of dedicated clinical
+                    practice, the doctor has earned a reputation for providing
+                    accurate diagnoses, evidence-based treatments, and compassionate
+                    patient care. Patients trust their expertise for both routine
+                    consultations and complex medical conditions.
+                  </>
+                )}
               </p>
             </div>
+
+            {/* Philosophy of Care */}
+            {(doctor as any).philosophy && (
+              <div className="dp-card">
+                <div className="dp-card__head">
+                  <div className="dp-card__icon dp-card__icon--indigo">
+                    <CheckCircle2 size={24} />
+                  </div>
+                  <h2 className="dp-card__title">
+                    Philosophy of Care
+                  </h2>
+                </div>
+                <p className="dp-card__text">
+                  {(doctor as any).philosophy}
+                </p>
+              </div>
+            )}
 
             {/* Education */}
             {doctor.education && doctor.education.length > 0 && (
@@ -203,6 +228,74 @@ export default function DoctorProfilePage() {
               </div>
             )}
 
+
+            {/* Awards & Recognition */}
+            {(doctor as any).awards && (doctor as any).awards.length > 0 && (
+              <div className="dp-card">
+                <div className="dp-card__head">
+                  <div className="dp-card__icon dp-card__icon--blue">
+                    <Trophy size={24} />
+                  </div>
+                  <h2 className="dp-card__title">
+                    Awards & Recognition
+                  </h2>
+                </div>
+                <div className="dp-list">
+                  {(doctor as any).awards.map((award: string, i: number) => (
+                    <div key={i} className="dp-list-item">
+                      <div className="dp-list-item__dot" style={{ background: 'var(--brand-accent)' }} />
+                      <span>{award}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Testimonials */}
+            {(doctor as any).testimonials && (doctor as any).testimonials.length > 0 && (
+              <div className="dp-card" style={{ background: 'var(--neutral-50)', border: 'none' }}>
+                <div className="dp-card__head">
+                  <div className="dp-card__icon dp-card__icon--indigo">
+                    <Quote size={24} />
+                  </div>
+                  <h2 className="dp-card__title">
+                    What Patients Say
+                  </h2>
+                </div>
+                <div 
+                  style={{ 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    gap: '1.5rem',
+                    marginTop: '1rem' 
+                  }}
+                >
+                  {(doctor as any).testimonials.map((test: any, i: number) => (
+                    <div 
+                      key={i} 
+                      style={{ 
+                        background: 'white', 
+                        padding: '1.5rem', 
+                        borderRadius: 'var(--radius)',
+                        boxShadow: 'var(--shadow-sm)',
+                        position: 'relative'
+                      }}
+                    >
+                      <Quote 
+                        size={32} 
+                        style={{ position: 'absolute', top: '1rem', right: '1.5rem', opacity: 0.1, color: 'var(--brand-primary)' }} 
+                      />
+                      <p style={{ fontStyle: 'italic', marginBottom: '1rem', color: 'var(--neutral-700)', lineHeight: '1.6' }}>
+                        "{test.quote}"
+                      </p>
+                      <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--brand-primary)' }}>
+                        — {test.author}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             {/* Hospital Associations */}
             {doctor.hospitals && doctor.hospitals.length > 0 && (
               <div className="dp-card">

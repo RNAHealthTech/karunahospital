@@ -1,11 +1,10 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
-import { KarunaLogo } from "./logo";
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Youtube, Heart } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
+import { Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react";
+import Link from "next/link";
+import { KarunaLogo } from "./logo";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -15,6 +14,7 @@ export function Footer() {
     { key: "nav.about", href: "/about" },
     { key: "nav.specialities", href: "/specialities" },
     { key: "nav.findDoctor", href: "/find-a-doctor" },
+    { key: "nav.patient", href: "/patient" },
     { key: "nav.news", href: "/news" },
     { key: "nav.career", href: "/career" },
     { key: "nav.contact", href: "/contact" },
@@ -23,7 +23,7 @@ export function Footer() {
   return (
     <footer className="site-footer" role="contentinfo">
       <div className="footer__top">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -90,16 +90,21 @@ export function Footer() {
               <div className="footer__contact-item">
                 <Phone size={15} className="footer__contact-icon" aria-hidden="true" />
                 <div>
-                  <a href="tel:+918588831732" className="footer__contact-link">8588831732</a>
-                  <a href="tel:+919873754555" className="footer__contact-link">9873754555</a>
-                  <a href="tel:01140793535" className="footer__contact-link">011-40793535</a>
+                  <a href={`tel:${t("footer.phone.1")}`} className="footer__contact-link">{t("footer.phone.1")}</a>
+                  <a href={`tel:${t("footer.phone.2")}`} className="footer__contact-link">{t("footer.phone.2")}</a>
+                  <a href={`tel:${t("footer.phone.3")}`} className="footer__contact-link">{t("footer.phone.3")}</a>
                 </div>
               </div>
               <div className="footer__contact-item">
                 <Mail size={15} className="footer__contact-icon" aria-hidden="true" />
-                <a href="mailto:admin.karunahospital@gmail.com" className="footer__contact-link">
-                  admin.karunahospital@gmail.com
-                </a>
+                <div>
+                  <a href={`mailto:${t("footer.email.1")}`} className="footer__contact-link">
+                    {t("footer.email.1")}
+                  </a>
+                  <a href={`mailto:${t("footer.email.2")}`} className="footer__contact-link">
+                    {t("footer.email.2")}
+                  </a>
+                </div>
               </div>
             </div>
             <Link href="/contact" className="footer__cta-btn" id="footer-book-btn">

@@ -12,9 +12,11 @@ import {
   Bone,
   Clock,
   Heart,
+  MessageSquare,
   Microscope,
   PhoneCall,
   Pill,
+  Quote,
   Shield,
   Star,
   Stethoscope,
@@ -26,39 +28,51 @@ import Image from "next/image";
 
 const specialities = [
   {
+    icon: Heart,
+    titleKey: "nav.spec.cardiology",
+    descKey: "spec.cardiology.desc",
+    color: "spec-blue",
+  },
+  {
+    icon: Bone,
+    titleKey: "nav.spec.ortho",
+    descKey: "spec.ortho.desc",
+    color: "spec-teal",
+  },
+  {
+    icon: Activity,
+    titleKey: "nav.spec.neuro",
+    descKey: "spec.neuro.desc",
+    color: "spec-purple",
+  },
+  {
+    icon: Microscope,
+    titleKey: "nav.spec.gastro",
+    descKey: "spec.gastro.desc",
+    color: "spec-green",
+  },
+  {
+    icon: Baby,
+    titleKey: "nav.spec.paediatrics",
+    descKey: "spec.paediatrics.desc",
+    color: "spec-rose",
+  },
+  {
+    icon: Pill,
+    titleKey: "nav.spec.surgery",
+    descKey: "spec.surgery.desc",
+    color: "spec-orange",
+  },
+  {
     icon: Stethoscope,
     titleKey: "nav.spec.medicine",
     descKey: "spec.medicine.desc",
     color: "spec-blue",
   },
   {
-    icon: Baby,
-    titleKey: "nav.spec.obst",
-    descKey: "spec.obst.desc",
-    color: "spec-rose",
-  },
-  {
     icon: Activity,
-    titleKey: "nav.spec.endo",
-    descKey: "spec.endo.desc",
-    color: "spec-green",
-  },
-  {
-    icon: Shield,
-    titleKey: "nav.spec.infectious",
-    descKey: "spec.infectious.desc",
-    color: "spec-orange",
-  },
-  {
-    icon: Pill,
-    titleKey: "nav.spec.surgery",
-    descKey: "spec.surgery.desc",
-    color: "spec-purple",
-  },
-  {
-    icon: Bone,
-    titleKey: "nav.spec.ortho",
-    descKey: "spec.ortho.desc",
+    titleKey: "nav.spec.urology",
+    descKey: "spec.urology.desc",
     color: "spec-teal",
   },
 ];
@@ -77,19 +91,19 @@ const whyUs = [
     descKey: "why.clinical.desc",
   },
   {
+    icon: Heart,
+    titleKey: "why.compassionate.title",
+    descKey: "why.compassionate.desc",
+  },
+  {
+    icon: Shield,
+    titleKey: "why.affordable.title",
+    descKey: "why.affordable.desc",
+  },
+  {
     icon: Microscope,
-    titleKey: "why.lab.title",
-    descKey: "why.lab.desc",
-  },
-  {
-    icon: Clock,
-    titleKey: "why.emergency.title",
-    descKey: "why.emergency.desc",
-  },
-  {
-    icon: Pill,
-    titleKey: "why.pharmacy.title",
-    descKey: "why.pharmacy.desc",
+    titleKey: "why.tech.title",
+    descKey: "why.tech.desc",
   },
 ];
 
@@ -121,8 +135,10 @@ export default function Home() {
               {t("hero.tagline")}
             </h1>
             <p className="hero__subtitle">{t("hero.subtitle")}</p>
+            <p className="hero__description" style={{ marginBottom: '2rem', fontSize: '1.125rem', color: 'rgba(255,255,255,0.9)', lineHeight: '1.6' }}>
+              {t("hero.main_message")}
+            </p>
 
-            {/* ✅ REMOVED: Specialities button. Only Book Appointment remains */}
             <div className="hero__actions">
               <Link
                 href="/contact"
@@ -131,6 +147,15 @@ export default function Home() {
               >
                 <PhoneCall size={16} aria-hidden="true" />
                 {t("hero.cta.book")}
+              </Link>
+              <Link
+                href="/find-a-doctor"
+                className="btn btn--secondary"
+                id="hero-doctor-btn"
+                style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'white' }}
+              >
+                <Users size={16} aria-hidden="true" />
+                {t("hero.cta.find_doctor")}
               </Link>
             </div>
 
@@ -221,17 +246,17 @@ export default function Home() {
                   {t("home.about.p2.desc")}
                 </p>
               </div>
-              
+
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-3 rounded-2xl bg-neutral-50 px-5 py-3 border border-neutral-100 shadow-sm transition-transform hover:-translate-y-1">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-[var(--brand-primary)]">
-                     <Shield size={20} />
+                    <Shield size={20} />
                   </div>
                   <span className="font-bold text-neutral-900 text-sm">NABH Accredited</span>
                 </div>
                 <div className="flex items-center gap-3 rounded-2xl bg-neutral-50 px-5 py-3 border border-neutral-100 shadow-sm transition-transform hover:-translate-y-1">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-[var(--brand-primary)]">
-                     <Clock size={20} />
+                    <Clock size={20} />
                   </div>
                   <span className="font-bold text-neutral-900 text-sm">24/7 Emergency</span>
                 </div>
@@ -423,68 +448,148 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Testimonials ────────────────────────────────── */}
+      <section className="section bg-neutral-50" aria-labelledby="testimonials-heading">
+        <div className="section__inner">
+          <div className="section__header">
+            <h2 id="testimonials-heading" className="section__title">
+              Patient Testimonials
+            </h2>
+            <p className="section__subtitle">
+              Hear from our patients who have experienced compassionate care and successful outcomes.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative bg-white p-10 rounded-[2rem] shadow-xl shadow-blue-900/5 border border-blue-50 flex flex-col justify-between transition-all hover:shadow-2xl hover:-translate-y-1"
+            >
+              <div className="absolute top-8 right-10 text-blue-100">
+                <Quote size={48} fill="currentColor" />
+              </div>
+
+              <div className="relative z-10 flex flex-col gap-6">
+                <div className="flex gap-1 text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} fill="currentColor" />
+                  ))}
+                </div>
+                <p className="text-neutral-700 text-lg font-medium leading-relaxed italic">
+                  "Karuna Hospital saved my life. The doctors were incredibly skilled, and the nursing staff provided such warm, attentive care. I felt truly cared for."
+                </p>
+              </div>
+
+              <div className="mt-8 flex items-center gap-4 border-t border-neutral-100 pt-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg">
+                  R
+                </div>
+                <div>
+                  <p className="font-extrabold text-neutral-900 text-lg uppercase tracking-tight">Dr. Rajesh Kumar</p>
+                  <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest">{t("nav.spec.cardiology")}</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="relative bg-white p-10 rounded-[2rem] shadow-xl shadow-blue-900/5 border border-blue-50 flex flex-col justify-between transition-all hover:shadow-2xl hover:-translate-y-1"
+            >
+              <div className="absolute top-8 right-10 text-blue-100">
+                <Quote size={48} fill="currentColor" />
+              </div>
+
+              <div className="relative z-10 flex flex-col gap-6 ">
+                <div className="flex gap-1 text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} fill="currentColor" />
+                  ))}
+                </div>
+                <p className="text-neutral-700 text-lg font-medium leading-relaxed italic">
+                  "The facilities are top-notch, and the entire process, from booking to recovery, was seamless. Highly recommend Karuna Hospital for their professionalism and empathy."
+                </p>
+              </div>
+
+              <div className="mt-8 flex items-center gap-4 border-t border-neutral-100 pt-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-rose-500 text-white font-bold text-lg">
+                  A
+                </div>
+                <div>
+                  <p className="font-extrabold text-neutral-900 text-lg uppercase tracking-tight">Anita Singh</p>
+                  <p className="text-sm font-semibold text-rose-500 uppercase tracking-widest">{t("nav.coe.maternity")}</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Director's Message ───────────────────────────── */}
-    <section className="director-section" aria-labelledby="director-heading">
-  <div className="section__inner director-section__inner flex items-center gap-12">
-    
-    {/* LEFT SIDE IMAGE */}
-    <motion.div
-      initial={{ opacity: 0, x: -30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="director-image relative w-[260px] h-[260px] shrink-0"
-    >
-      <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl">
-        <Image
-          src="/images/director.jpeg"
-          alt="Director"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+      <section className="director-section" aria-labelledby="director-heading">
+        <div className="section__inner director-section__inner flex items-center gap-12">
 
-      {/* Optional Ring Effect */}
-      <div className="absolute inset-0 rounded-2xl border-2 border-primary/30 scale-110" />
-    </motion.div>
+          {/* LEFT SIDE IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="director-image relative w-[260px] h-[260px] shrink-0"
+          >
+            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/director.jpeg"
+                alt="Director"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
 
-    {/* RIGHT SIDE CONTENT */}
-    <motion.div
-      initial={{ opacity: 0, x: 30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="director-content max-w-2xl"
-    >
-      <h2 id="director-heading" className="section__title">
-        {t("director.title")}
-      </h2>
+            {/* Optional Ring Effect */}
+            <div className="absolute inset-0 rounded-2xl border-2 border-primary/30 scale-110" />
+          </motion.div>
 
-      <blockquote className="director-quote space-y-4">
-        <p>
-          {t("home.director.p1")}
-        </p>
+          {/* RIGHT SIDE CONTENT */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="director-content max-w-2xl"
+          >
+            <h2 id="director-heading" className="section__title">
+              {t("director.title")}
+            </h2>
 
-        <p>&ldquo;{t("director.quote")}&rdquo;</p>
+            <blockquote className="director-quote space-y-4">
+              <p>
+                {t("home.director.p1")}
+              </p>
 
-        <footer className="director-quote__footer">
-          <cite>— {t("home.director.cite")}</cite>
-        </footer>
-      </blockquote>
+              <p>&ldquo;{t("director.quote")}&rdquo;</p>
 
-      <Link
-        href="/about#director"
-        className="btn btn--primary inline-flex items-center gap-2 mt-6"
-        id="director-readmore-btn"
-      >
-        {t("director.readmore")}
-        <ArrowRight size={16} />
-      </Link>
-    </motion.div>
+              <footer className="director-quote__footer">
+                <cite>— {t("home.director.cite")}</cite>
+              </footer>
+            </blockquote>
 
-  </div>
-</section>
+            <Link
+              href="/about#director"
+              className="btn btn--primary inline-flex items-center gap-2 mt-6"
+              id="director-readmore-btn"
+            >
+              {t("director.readmore")}
+              <ArrowRight size={16} />
+            </Link>
+          </motion.div>
+
+        </div>
+      </section>
 
       {/* ── CTA Banner ───────────────────────────────────── */}
       <section className="cta-section" aria-labelledby="cta-heading">

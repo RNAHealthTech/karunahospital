@@ -19,9 +19,14 @@ import {
 
 export interface SpecialityContent {
   title: string;
+  subHeadline?: string;
+  introduction?: string;
   description: string;
   treatments: string[];
   expertise: string[];
+  techIntroduction?: string;
+  expertTeamMessage?: string;
+  testimonial?: { quote: string; author: string; age?: string };
 }
 
 export interface Speciality {
@@ -40,32 +45,64 @@ export const specialitiesData: Record<string, Speciality> = {
     color: "blue",
     image: "/images/cardiology_main.png",
     en: {
-      title: "Cardiology",
-      description: "Department Of Cardiology\nThe Karuna Hospital's Department of Cardiology has the services of one of the most qualified cardiologists. The cardiology department is well-stocked, and there are seven beds for people with heart problems in the ICU. Patients in the Cardiac Intensive Care Unit are helped by ventilators, a blood gas analyzer, ECHO, X-Rays, Ultrasound, and a defibrillator. A state-of-the-art cardiac catheterization lab is being built at our hospital.\n\n/images/cardiology_lab.png\n\nWell-stocked Medicine High-tech Instruments 24 Hours Emergency Service Cutting-edge Technology\n\nBest Heart Doctor\nCardiologist-Recommended Laboratory Test\nCardiac Catheterization: This test is used to get a clear picture of the heart. The doctor can better help you if they know how your heart is doing and how it is doing right now.\n\nEchocardiogram: The heart's structure and function might be revealed to the doctor via this ultrasonic examination.\n\nAmbulatory ECG: This test is done to see if the heart is beating unusually.\n\nInfrastructure and Facilities\nKaruna Hospital is a state-of-the-art super speciality hospital. They offer emergency, in-patient, and outpatient care that is among the best in the world.\n\nKaruna Hospital is known for using new medical technology and more personal care for its patients. It holds many health-related events regularly, such as health camps, free health check-ups, blood donation drives, and so on, to educate the public and reach out to the community.\n\nAdvanced Technology at the Hospital: Karuna Hospital gives patients the best possible health care by combining cutting-edge medical technology and research with a commitment to patient welfare and healing. Here are a few of the hospital's high-tech services:\n• High-end Cath Lab\n• Modular CTVS OT\n• Echo Doppler\n• TMT\n• Holter",
+      title: "Department of Cardiology: Advanced Heart Care at Karuna Hospital",
+      subHeadline: "Leading-edge diagnostics, personalized treatment, and compassionate care for a healthy heart.",
+      introduction: "The Department of Cardiology at Karuna Hospital is dedicated to providing comprehensive and advanced cardiac care. Our team of highly skilled cardiologists, cardiac surgeons, and support staff utilizes state-of-the-art technology to diagnose, treat, and prevent a wide range of heart conditions. We are committed to delivering personalized, evidence-based care that prioritizes your heart health and well-being.",
+      description: "Leading-edge diagnostics, personalized treatment, and compassionate care for a healthy heart.\n\nThe Department of Cardiology at Karuna Hospital is dedicated to providing comprehensive and advanced cardiac care. Our team of highly skilled cardiologists, cardiac surgeons, and support staff utilizes state-of-the-art technology to diagnose, treat, and prevent a wide range of heart conditions. We are committed to delivering personalized, evidence-based care that prioritizes your heart health and well-being.\n\nOur cardiology department is equipped with advanced cardiac catheterization labs, non-invasive diagnostic tools, and a dedicated cardiac intensive care unit (CICU) to ensure the highest level of patient safety and care. We utilize cutting-edge imaging technologies for accurate diagnosis and precise interventions.",
       treatments: [
-        "Angina", "Arrhythmia", "Atrial Septal Defect", "Cerebrovascular Disease", "Coronary Artery Disease",
-        "Heart Attack", "Heart Block", "Heart Failure", "Heart Valve Leakage", "Inflammatory Heart Disease",
-        "Ischemic Heart Disease", "Rheumatic Heart Disease"
+        "Coronary Artery Disease (CAD)",
+        "Heart Failure",
+        "Arrhythmias (Irregular Heartbeats)",
+        "Valvular Heart Disease",
+        "Hypertension (High Blood Pressure)",
+        "Congenital Heart Defects",
+        "Peripheral Artery Disease (PAD)"
       ],
       expertise: [
-        "Non-Invasive Cardiology (ECG, TMT, TEE, NIEPT etc)",
-        "Invasive Cardiology (PAMI, PCTA, BMV, BAV etc)",
-        "Electrophysiology Procedures (EPS, RFA, PPI, CRT etc)"
-      ]
+        "Diagnostic: ECG, Echo, TMT, Holter, Cardiac CT & MRI",
+        "Interventional: Angiography, Angioplasty, Stenting, Pacemaker",
+        "Cardiac Surgery: CABG, Valve Repair & Replacement",
+        "Preventive Cardiology & Rehabilitation Programs",
+        "Advanced Cath Lab & Dedicated CICU Monitoring",
+        "Meet our expert team of cardiologists and specialists"
+      ],
+      techIntroduction: "Our cardiology department is equipped with advanced cardiac catheterization labs, non-invasive diagnostic tools, and a dedicated cardiac intensive care unit (CICU) to ensure the highest level of patient safety and care. We utilize cutting-edge imaging technologies for accurate diagnosis and precise interventions.",
+      expertTeamMessage: "Meet our team of experienced cardiologists and cardiac specialists who bring years of expertise and a compassionate approach to every patient.",
+      testimonial: {
+        quote: "After my angioplasty at Karuna Hospital, I feel like I have a new lease on life. The cardiology team was exceptional, explaining every step and providing incredible support.",
+        author: "Ramesh Sharma",
+        age: "58"
+      }
     },
     hi: {
-      title: "हृदय रोग विज्ञान (Cardiology)",
-      description: "करुणा अस्पताल के कार्डियोलॉजी विभाग में सबसे योग्य कार्डियोलॉजिस्ट सेवाएं प्रदान करते हैं। कार्डियोलॉजी विभाग अच्छी तरह से सुसज्जित है, और आईसीयू में हृदय की समस्याओं वाले लोगों के लिए सात बिस्तर हैं। कार्डियक इंटेंसिव केयर यूनिट में मरीजों की मदद वेंटिलेटर, ब्लड गैस एनालाइजर, ईको, एक्स-रे, अल्ट्रासाउंड और डिाइब्रिलेटर द्वारा की जाती है। हमारे अस्पताल में एक अत्याधुनिक कार्डियक कैथीटेराइजेशन लैब का निर्माण किया जा रहा है।\n\n/images/cardiology_lab.png\n\nसर्वश्रेष्ठ हृदय चिकित्सक\nह्रदय रोग विशेषज्ञ-अनुशंसित प्रयोगशाला परीक्षण\nकार्डियक कैथीटेराइजेशन: इस परीक्षण का उपयोग हृदय की स्पष्ट तस्वीर प्राप्त करने के लिए किया जाता है। यदि डॉक्टर जानते हैं कि आपका हृदय कैसा कार्य कर रहा है, तो वे बेहतर सहायता कर सकते हैं।\n\nइकोकार्डियोग्राम: इस अल्ट्रासोनिक परीक्षण के माध्यम से हृदय की संरचना और कार्यप्रणाली का पता लगाया जा सकता है।\n\nएंबुलेटरी ईसीजी(Ambulatory ECG): यह परीक्षण यह देखने के लिए किया जाता है कि क्या हृदय असामान्य रूप से धड़क रहा है।\n\nबुनियादी ढांचा और सुविधाएं\nकरुणा अस्पताल एक अत्याधुनिक सुपर स्पेशियलिटी अस्पताल है। वे आपातकालीन, इन-पेशेंट और आउटपेशेंट देखभाल प्रदान करते हैं जो दुनिया में सर्वश्रेष्ठ में से एक है।\n\nकरुणा अस्पताल अपने रोगियों के लिए नई चिकित्सा तकनीक और अधिक व्यक्तिगत देखभाल का उपयोग करने के लिए जाना जाता है। इट जनता को शिक्षित करने और समुदाय तक पहुंचने के लिए नियमित रूप से कई स्वास्थ्य संबंधी कार्यक्रम आयोजित करता है, जैसे स्वास्थ्य शिविर, मुफ्त स्वास्थ्य जांच, रक्तदान अभियान आदि।\n\nअस्पताल में उन्नत प्रौद्योगिकी: करुणा अस्पताल रोगी कल्याण और उपचार के साथ अत्याधुनिक चिकित्सा प्रौद्योगिकी और अनुसंधान के संयोजन से रोगियों को सर्वोत्तम संभव स्वास्थ्य सेवा प्रदान करता है। यहां अस्पताल की कुछ उच्च तकनीक वाली सेवाएं दी गई हैं:\n• हाई-एंड कैथ लैब\n• मॉड्यूलर सीटीवीएस ओटी (CTVS OT)\n• इको डॉपलर\n• टीएमटी (TMT)\n• होल्टर (Holter)",
+      title: "कार्डियोलॉजी विभाग: करुणा अस्पताल में उन्नत हृदय देखभाल",
+      subHeadline: "स्वस्थ हृदय के लिए अग्रणी निदान, व्यक्तिगत उपचार और दयालु देखभाल।",
+      introduction: "करुणा अस्पताल में कार्डियोलॉजी विभाग व्यापक और उन्नत हृदय देखभाल प्रदान करने के लिए समर्पित है। हमारे अत्यधिक कुशल कार्डियोलॉजिस्ट, कार्डियक सर्जन और सहायक कर्मचारियों की टीम हृदय की स्थितियों के निदान, उपचार और रोकथाम के लिए अत्याधुनिक तकनीक का उपयोग करती है।",
+      description: "स्वस्थ हृदय के लिए अग्रणी निदान, व्यक्तिगत उपचार और दयालु देखभाल।\n\nकरुणा अस्पताल का कार्डियोलॉजी विभाग विश्व स्तरीय हृदय देखभाल प्रदान करने वाला एक उत्कृष्टता केंद्र है। हमारी समर्पित विशेषज्ञों की टीम और अत्याधुनिक सुविधाएं हर मरीज की सुरक्षा और नैदानिक उत्कृष्टता सुनिश्चित करती हैं।\n\nहमारी अत्याधुनिक बुनियादी सुविधाओं में एक हाई-एंड कैथ लैब, विशेष कार्डियक आईसीयू (CICU) और मॉड्यूलर ऑपरेशन थिएटर शामिल हैं।",
       treatments: [
-        "एंजाइना", "अतालता (Arrhythmia)", "एट्रियल सेप्टल डिफेक्ट", "सेरेब्रोवास्कुलर रोग",
-        "कोरोनरी धमनी रोग", "दिल का दौरा", "हार्ट ब्लॉक", "हार्ट फेल्योर", "हार्ट वाल्व लीकेज",
-        "सूजन संबंधी हृदय रोग", "इस्केमिक हृदय रोग", "रुमेटिक हृदय रोग"
+        "कोरोनरी आर्टरी डिजीज (CAD)",
+        "हार्ट फेल्योर",
+        "अतालता (Arrhythmias)",
+        "वाल्वुलर हार्ट डिजीज",
+        "उच्च रक्तचाप (Hypertension)",
+        "जन्मजात हृदय दोष",
+        "पेरिफेरल आर्टरी डिजीज (PAD)"
       ],
       expertise: [
-        "नॉन-इनवेसिव कार्डियोलॉजी",
-        "इनवेसिव कार्डियोलॉजी",
-        "इलेक्ट्रोफिजियोलॉजी प्रक्रियाएं"
-      ]
+        "नैदानिक: ईसीजी, ईको, टीएमटी, होल्टर, कार्डियक सीटी और एमआरआई",
+        "इंटरवेंशनल: एंजियोग्राफी, एंजियोप्लास्टी, स्टेंटिंग, पेसमेकर",
+        "कार्डियक सर्जरी: बाईपास सर्जरी (CABG), वाल्व मरम्मत और प्रतिस्थापन",
+        "निवारक कार्डियोलॉजी और पुनर्वास कार्यक्रम",
+        "उन्नत कैथ लैब और समर्पित सीआईसीयू निगरानी",
+        "हमारे विशेषज्ञ कार्डियोलॉजिस्ट और विशेषज्ञों की टीम से मिलें"
+      ],
+      techIntroduction: "हमारा कार्डियोलॉजी विभाग उन्नत कार्डियक कैथीटेराइजेशन लैब, गैर-इनवेसिव नैदानिक उपकरण और एक समर्पित कार्डियक इंटेंसिव केयर यूनिट (CICU) से लैस है ताकि उच्चतम स्तर की रोगी सुरक्षा और देखभाल सुनिश्चित की जा सके।",
+      expertTeamMessage: "हमारे अनुभवी हृदय रोग विशेषज्ञों और कार्डियक विशेषज्ञों की टीम से मिलें जो हर मरीज के लिए वर्षों की विशेषज्ञता और दयालु दृष्टिकोण लाते हैं।",
+      testimonial: {
+        quote: "करुणा अस्पताल में अपनी एंजियोप्लास्टी के बाद, मुझे ऐसा लगता है कि मुझे जीवन का एक नया पट्टा मिल गया है। कार्डियोलॉजी टीम असाधारण थी।",
+        author: "रमेश शर्मा",
+        age: "58"
+      }
     }
   },
   "orthopaedics": {

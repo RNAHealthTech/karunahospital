@@ -13,6 +13,7 @@ import {
   CheckCircle,
   Clock,
   Phone,
+  Quote,
   Shield,
 } from "lucide-react";
 
@@ -82,7 +83,7 @@ export default function SpecialityPage() {
             transition={{ delay: 0.2 }}
             className="hero__subtitle"
           >
-            {content.description.substring(0, 160)}...
+            {content.subHeadline || content.description.substring(0, 160) + "..."}
           </motion.p>
         </div>
       </section>
@@ -162,15 +163,21 @@ export default function SpecialityPage() {
           <div
             className="spec-page-desc"
             style={{
-              fontSize: "1.05rem",
-              color: "var(--neutral-600)",
+              fontSize: "1.1rem",
+              color: "var(--neutral-700)",
               lineHeight: "1.8",
               textAlign: "left",
-              marginBottom: "4rem",
-              maxWidth: "850px",
+              marginBottom: "3rem",
+              maxWidth: "900px",
               margin: '0 auto',
             }}
           >
+            {content.introduction ? (
+              <p style={{ marginBottom: "2rem", fontSize: "1.2rem", color: "var(--neutral-900)", fontWeight: 500 }}>
+                {content.introduction}
+              </p>
+            ) : null}
+
             {content.description.split('\n').map((line, i) => {
               if (line.trim().startsWith('/images/')) {
                 return (
@@ -180,12 +187,33 @@ export default function SpecialityPage() {
                 );
               }
               return (
-                <p key={i} style={{ marginBottom: line.trim() === '' ? '0' : '1rem' }}>
+                <p key={i} style={{ marginBottom: line.trim() === '' ? '0' : '1.5rem' }}>
                   {line}
                 </p>
               );
             })}
           </div>
+
+          {content.techIntroduction && (
+            <div
+              style={{
+                background: "var(--neutral-50)",
+                borderRadius: "var(--radius)",
+                padding: "2.5rem",
+                marginBottom: "4rem",
+                border: "1px solid var(--border)",
+                maxWidth: "900px",
+                margin: "0 auto 4rem",
+              }}
+            >
+              <h3 style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1rem", color: "var(--brand-primary)" }}>
+                Technology & Infrastructure
+              </h3>
+              <p style={{ color: "var(--neutral-600)", lineHeight: "1.7", fontSize: "1.05rem" }}>
+                {content.techIntroduction}
+              </p>
+            </div>
+          )}
 
           {/* ========== CARDS (using your EXACT .spec-card classes) ========== */}
           <div
@@ -201,7 +229,7 @@ export default function SpecialityPage() {
               <div className="spec-card__icon-wrap">
                 <Shield size={24} />
               </div>
-              <h3 className="spec-card__title">{t("page.spec.treatments")}</h3>
+              <h3 className="spec-card__title">Conditions We Treat</h3>
               <ul
                 style={{
                   display: "flex",
@@ -220,7 +248,7 @@ export default function SpecialityPage() {
                       display: "flex",
                       alignItems: "flex-start",
                       gap: "0.5rem",
-                      fontSize: "0.9rem",
+                      fontSize: "0.95rem",
                       color: "var(--neutral-600)",
                     }}
                   >
@@ -236,9 +264,6 @@ export default function SpecialityPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/contact" className="spec-card__link">
-                {t("Contact Us")} <ArrowRight size={14} />
-              </Link>
             </div>
 
             {/* Expertise Card */}
@@ -246,7 +271,7 @@ export default function SpecialityPage() {
               <div className="spec-card__icon-wrap">
                 <CheckCircle size={24} />
               </div>
-              <h3 className="spec-card__title">{t("page.spec.expert")}</h3>
+              <h3 className="spec-card__title">Our Services & Expertise</h3>
               <ul
                 style={{
                   display: "flex",
@@ -265,7 +290,7 @@ export default function SpecialityPage() {
                       display: "flex",
                       alignItems: "flex-start",
                       gap: "0.5rem",
-                      fontSize: "0.9rem",
+                      fontSize: "0.95rem",
                       color: "var(--neutral-600)",
                     }}
                   >
@@ -281,11 +306,60 @@ export default function SpecialityPage() {
                   </li>
                 ))}
               </ul>
-              {/* <Link href="/doctors" className="spec-card__link">
-                {t("Doctors")} <ArrowRight size={14} />
-              </Link> */}
             </div>
           </div>
+
+          {content.expertTeamMessage && (
+             <div
+             style={{
+               background: "linear-gradient(to right, var(--brand-primary), var(--brand-primary-dark))",
+               borderRadius: "var(--radius)",
+               padding: "3.5rem 2rem",
+               marginBottom: "4rem",
+               color: "white",
+               textAlign: "center",
+             }}
+           >
+             <h3 style={{ fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
+               Our Expert Team
+             </h3>
+             <p style={{ fontSize: "1.15rem", opacity: 0.9, marginBottom: "2rem", maxWidth: "750px", margin: "0 auto 2.5rem", lineHeight: "1.6" }}>
+               {content.expertTeamMessage}
+             </p>
+             <Link href="/find-a-doctor" className="btn btn--secondary" style={{ background: "white", color: "var(--brand-primary)", padding: "1rem 2.5rem" }}>
+                Meet Our Specialists <ArrowRight size={18} />
+             </Link>
+           </div>
+          )}
+
+          {content.testimonial && (
+            <div style={{ marginBottom: "5rem" }}>
+              <div className="section__header" style={{ textAlign: "center", marginBottom: "3rem" }}>
+                <h3 className="section__title" style={{ fontSize: "1.75rem" }}>Patient Success Story</h3>
+              </div>
+              <div
+                className="relative bg-white p-12 rounded-[2.5rem] shadow-2xl shadow-blue-900/10 border border-blue-50 flex flex-col justify-between max-w-4xl mx-auto transition-transform hover:-translate-y-1"
+              >
+                 <div className="absolute top-10 right-12 text-blue-50/50">
+                    <Quote size={80} fill="currentColor" />
+                  </div>
+                <p style={{ position: 'relative', zIndex: 1, fontSize: "1.25rem", fontStyle: "italic", color: "var(--neutral-700)", lineHeight: "1.8", marginBottom: "2rem" }}>
+                  "{content.testimonial.quote}"
+                </p>
+                <div style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', gap: '1.25rem', borderTop: '1px solid var(--neutral-100)', paddingTop: '2rem' }}>
+                  <div style={{ width: '3.5rem', height: '3.5rem', borderRadius: '50%', background: 'linear-gradient(135deg, var(--brand-primary), var(--brand-primary-dark))', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '900', fontSize: '1.5rem', flexShrink: 0 }}>
+                    <span style={{ margin: 'auto' }}>{content.testimonial.author[0]}</span>
+                  </div>
+                  <div>
+                    <h4 style={{ fontWeight: 800, margin: 0, fontSize: '1.2rem', color: 'var(--neutral-900)' }}>{content.testimonial.author}</h4>
+                    {content.testimonial.age && (
+                      <p style={{ color: 'var(--brand-primary)', fontWeight: 600, fontSize: '0.9rem', margin: 0 }}>Verified Patient • Age: {content.testimonial.age}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* ========== CTA (using your exact cta-section class) ========== */}
           <div className="cta-section">

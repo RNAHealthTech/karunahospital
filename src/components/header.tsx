@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { KarunaLogo } from "./logo";
-import { ChevronDown, Globe, Menu, X, Phone, Heart, Activity, Brain, Shield, User, Users, Clock, Target, Award, FlaskConical, Stethoscope, Droplet, Zap, ClipboardCheck, ArrowRight, Wind, Eye, Smile } from "lucide-react";
+import { ChevronDown, Globe, Menu, X, Phone, Heart, Activity, Brain, Shield, User, Users, Clock, Target, Award, FlaskConical, Stethoscope, Droplet, Zap, ClipboardCheck, ArrowRight, Wind, Eye, Smile, Calendar, FileText, HelpCircle, BookOpen, Info, MessageSquare } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -61,10 +61,15 @@ const navigation = [
     key: "nav.patient",
     href: "/patient",
     children: [
-      { key: "nav.patient.rights", href: "/patient/rights", icon: <Shield size={14} /> },
-      { key: "nav.patient.feedback", href: "/patient/feedback", icon: <ClipboardCheck size={14} /> },
+      { key: "nav.patient.appointment", href: "/patient/appointment", icon: <Calendar size={14} /> },
+      { key: "nav.patient.forms", href: "/patient/forms", icon: <FileText size={14} /> },
       { key: "nav.patient.insurance", href: "/patient/insurance", icon: <Shield size={14} /> },
-      { key: "nav.patient.visiting", href: "/patient/visiting-hours", icon: <Activity size={14} /> },
+      { key: "nav.patient.faq", href: "/patient/faq", icon: <HelpCircle size={14} /> },
+      { key: "nav.patient.stories", href: "/patient/stories", icon: <Users size={14} /> },
+      { key: "nav.patient.library", href: "/patient/library", icon: <BookOpen size={14} /> },
+      { key: "nav.patient.visiting", href: "/patient/visiting-hours", icon: <Clock size={14} /> },
+      { key: "nav.patient.feedback", href: "/patient/feedback", icon: <MessageSquare size={14} /> },
+      { key: "nav.patient.rights", href: "/patient/rights", icon: <Info size={14} /> },
     ],
   },
   { key: "nav.news", href: "/news" },

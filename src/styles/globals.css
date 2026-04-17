@@ -606,6 +606,14 @@ body {
   align-items: center;
   overflow: hidden;
   background: linear-gradient(135deg, #0b2a47 0%, #0b6fa4 50%, #1a9fd4 100%);
+  padding: 6rem 0;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+    padding: 4rem 0;
+  }
 }
 .hero--internal {
   min-height: 45vh;

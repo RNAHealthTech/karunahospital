@@ -5,10 +5,33 @@ export const doctorsData = [
     "profile": "/doctor/rajeev-gupta",
     "image": "https://karunahospital.in/wp-content/uploads/2024/03/dr-rajeev-gupta.jpg",
     "slug": "rajeev-gupta",
-    "experience": "10+",
-    "interests": [],
-    "education": [],
-    "hospitals": []
+    "experience": "35",
+    "education": ["MBBS", "MD (Internal Medicine)", "Fellowships in Advanced Internal Medicine"],
+    "interests": [
+      "Diagnosis and management of chronic diseases (Diabetes, Hypertension, Thyroid disorders)",
+      "Preventive health and wellness counseling",
+      "Infectious disease management",
+      "Geriatric care",
+      "Complex medical conditions"
+    ],
+    "hospitals": ["Karuna Hospital (Director)"],
+    "about": "Dr. Rajeev Gupta is a highly respected and experienced Internal Medicine specialist with over 35 years of dedicated service in healthcare. As the Director of Karuna Hospital, his vision and leadership have been instrumental in establishing the hospital as a beacon of compassionate and high-quality medical care in East Delhi. Dr. Gupta is renowned for his holistic approach to patient care, focusing on accurate diagnosis, effective treatment, and preventive health strategies. He is committed to fostering a patient-centric environment where clear communication and empathy are paramount.",
+    "philosophy": "Dr. Gupta believes in building strong, trusting relationships with his patients. He emphasizes clear communication, ensuring patients fully understand their health conditions and treatment options. His philosophy, deeply rooted in the hospital's name 'Karuna' (compassion), guides his practice, making patients feel comfortable, heard, and cared for throughout their healing journey.",
+    "awards": [
+      "Excellence in Healthcare Leadership Award",
+      "Distinguished Service Award for Medical Excellence in East Delhi",
+      "Member of Association of Physicians of India (API)"
+    ],
+    "testimonials": [
+      {
+        "quote": "Dr. Gupta is not just an excellent physician but also a very kind and understanding person. He took the time to explain my condition thoroughly, and I felt completely at ease under his care.",
+        "author": "Suresh Oberoi"
+      },
+      {
+        "quote": "I have been Dr. Gupta's patient for many years, and I trust him implicitly with my health. His expertise and compassionate approach are truly exceptional.",
+        "author": "Mrs. Anita Sharma"
+      }
+    ]
   },
   {
     "name": "Dr Archana Gupta",
