@@ -354,7 +354,7 @@ export default function DoctorProfilePage() {
                       href="mailto:admin.karunahospital@gmail.com"
                       className="dp-sidebar-card__val"
                     >
-                      admin@karunahospital.in
+                      admin.karunahospital@gmail.com
                     </a>
                   </div>
                 </div>

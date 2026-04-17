@@ -85,17 +85,17 @@ export default function ContactForm() {
             <div className="spec-card" style={{ padding: "1.2rem" }}>
               <h4 style={{ fontWeight: 600 }}>📞 {t("page.contact.card.call")}</h4>
               <p style={{ color: "var(--neutral-600)", fontSize: "0.9rem" }}>
-                {t("page.contact.card.phone")}<br />
-                {t("page.contact.card.phone.alt")}
+                {t("page.contact.card.phone")}
               </p>
             </div>
 
             {/* Email */}
             <div className="spec-card" style={{ padding: "1.2rem" }}>
               <h4 style={{ fontWeight: 600 }}>✉️ {t("page.contact.card.email")}</h4>
-              <p style={{ color: "var(--neutral-600)", fontSize: "0.9rem" }}>
-                {t("page.contact.card.email.val")}<br />
-                {t("page.contact.card.email.alt")}
+              <p style={{ color: "var(--neutral-600)", fontSize: "0.93rem" }}>
+                <a href={`mailto:${t("page.contact.card.email.val")}`} style={{ color: 'inherit', textDecoration: 'none' }} className="hover:text-[var(--brand-primary)]">
+                  {t("page.contact.card.email.val")}
+                </a>
               </p>
             </div>
 

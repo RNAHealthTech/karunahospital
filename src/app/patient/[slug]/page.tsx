@@ -121,7 +121,7 @@ export default function PatientInfoPage() {
 
                   {slug === "appointment" && (
                     <div className="mt-8">
-                      <Link href="/appointment" className="btn btn--primary">
+                      <Link href="/contact" className="btn btn--primary">
                         {t("page.patient.appointment.title")}
                       </Link>
                     </div>
@@ -175,8 +175,8 @@ export default function PatientInfoPage() {
                       <a href="tel:+919873754555" className="flex items-center gap-2 text-sm font-bold text-[var(--brand-primary)] hover:text-[var(--brand-primary-dark)]">
                         <Phone size={16} /> +91 9873754555
                       </a>
-                      <a href="mailto:info@karunahospital.in" className="flex items-center gap-2 text-sm font-bold text-[var(--brand-primary)] hover:text-[var(--brand-primary-dark)]">
-                        <Mail size={16} /> info@karunahospital.in
+                      <a href="mailto:admin.karunahospital@gmail.com" className="flex items-center gap-2 text-sm font-bold text-[var(--brand-primary)] hover:text-[var(--brand-primary-dark)]">
+                        <Mail size={16} /> admin.karunahospital@gmail.com
                       </a>
                     </div>
                   </div>

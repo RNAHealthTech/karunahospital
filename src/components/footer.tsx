@@ -91,8 +91,6 @@ export function Footer() {
                 <Phone size={15} className="footer__contact-icon" aria-hidden="true" />
                 <div>
                   <a href={`tel:${t("footer.phone.1")}`} className="footer__contact-link">{t("footer.phone.1")}</a>
-                  <a href={`tel:${t("footer.phone.2")}`} className="footer__contact-link">{t("footer.phone.2")}</a>
-                  <a href={`tel:${t("footer.phone.3")}`} className="footer__contact-link">{t("footer.phone.3")}</a>
                 </div>
               </div>
               <div className="footer__contact-item">
@@ -100,9 +98,6 @@ export function Footer() {
                 <div>
                   <a href={`mailto:${t("footer.email.1")}`} className="footer__contact-link">
                     {t("footer.email.1")}
-                  </a>
-                  <a href={`mailto:${t("footer.email.2")}`} className="footer__contact-link">
-                    {t("footer.email.2")}
                   </a>
                 </div>
               </div>

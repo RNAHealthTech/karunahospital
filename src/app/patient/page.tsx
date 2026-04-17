@@ -24,7 +24,7 @@ export default function PatientResourcesPage() {
       desc: t("page.patient.appointment.desc"),
       cta: t("page.patient.cta.book"),
       icon: <Calendar className="w-8 h-8" />,
-      link: "/find-a-doctor",
+      link: "/contact",
       color: "blue"
     },
     {
