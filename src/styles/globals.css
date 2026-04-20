@@ -3149,16 +3149,22 @@ body {
   }
   
   .topbar {
+    display: flex;
+  }
+  
+  .topbar__left {
     display: none;
   }
   
-  body {
-    padding-top: var(--header-height);
+  .topbar__inner {
+    justify-content: center;
   }
   
-  .site-header {
-    top: 0;
+  body {
+    padding-top: calc(var(--header-height) + 36px);
   }
+  
+
   
   .hero__title {
     font-size: 1.85rem;
