@@ -175,8 +175,8 @@ export default function PatientInfoPage() {
                       <a href="tel:+919873754555" className="flex items-center gap-2 text-sm font-bold text-[var(--brand-primary)] hover:text-[var(--brand-primary-dark)]">
                         <Phone size={16} /> +91 9873754555
                       </a>
-                      <a href="mailto:admin.karunahospital@gmail.com" className="flex items-center gap-2 text-sm font-bold text-[var(--brand-primary)] hover:text-[var(--brand-primary-dark)]">
-                        <Mail size={16} /> admin.karunahospital@gmail.com
+                      <a href="mailto:addmin.karunahospital@gmail.com" className="flex items-center gap-2 text-sm font-bold text-[var(--brand-primary)] hover:text-[var(--brand-primary-dark)]">
+                        <Mail size={16} /> addmin.karunahospital@gmail.com
                       </a>
                     </div>
                   </div>

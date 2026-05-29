@@ -124,7 +124,7 @@ const translations = {
     "nav.about.vision": "Vision & Mission",
     "nav.about.management": "Management Team",
     "nav.about.services247": "24x7 Services",
-    "nav.about.accreditation": "Accreditations",
+    "nav.about.accreditation": "Achievements",
     // Specialities
     "nav.spec.medicine": "Internal Medicine",
     "nav.spec.obst": "Obstetrics & Gynaecology",
@@ -379,7 +379,7 @@ const translations = {
     "page.about.choose.5.title": "Community Focus",
     "page.about.choose.5.desc": "Dedicated to serving the healthcare needs of East Delhi with affordable and accessible services.",
 
-    "page.about.awards.title": "Awards & Accreditations",
+    "page.about.awards.title": "Achievements",
     "page.about.awards.desc": "We are proud to be recognized by leading health and quality regulators in the country. This ensures that every test, procedure, and surgery meets global safety and quality standards.",
     // Career
     "page.career.title": "Join Our Team",
@@ -411,7 +411,7 @@ const translations = {
     "page.contact.card.call": "Call Us",
     "page.contact.card.phone": "+91 9873754555",
     "page.contact.card.email": "Email",
-    "page.contact.card.email.val": "admin.karunahospital@gmail.com",
+    "page.contact.card.email.val": "addmin.karunahospital@gmail.com",
     "page.contact.card.emergency": "24/7 Helpline",
     "page.contact.card.emergency.desc": "+91 9873754555",
     "page.contact.form.title": "Send Us a Message",
@@ -448,7 +448,7 @@ const translations = {
     "footer.nabh": "NABH Accredited",
     "footer.address": "Plot No. 1, 2, 3, 4, LSC Pocket A, Dilshad Colony, Delhi - 110095",
     "footer.phone.1": "011-40793535",
-    "footer.email.1": "admin.karunahospital@gmail.com",
+    "footer.email.1": "addmin.karunahospital@gmail.com",
     "footer.emergency.helpline": "Emergency: 011-40793535, 8588831732",
     "footer.tagline": "Delivering Compassionate, World-Class Healthcare Since 2011. NABH Accredited for Your Peace of Mind.",
     "home.about.badge": "About Us",
@@ -656,7 +656,7 @@ const translations = {
     "nav.about.vision": "दृष्टि और मिशन",
     "nav.about.management": "प्रबंधन टीम",
     "nav.about.services247": "24x7 सेवाएं",
-    "nav.about.accreditation": "मान्यताएं",
+    "nav.about.accreditation": "उपलब्धियां",
     // Specialities
     "nav.spec.medicine": "आंतरिक चिकित्सा",
     "nav.spec.obst": "प्रसूति एवं स्त्री रोग",
@@ -897,7 +897,7 @@ const translations = {
     "page.about.choose.5.title": "सामुदायिक फोकस",
     "page.about.choose.5.desc": "किफायती और सुलभ सेवाओं के साथ पूर्वी दिल्ली की स्वास्थ्य संबंधी जरूरतों को पूरा करने के लिए समर्पित।",
 
-    "page.about.awards.title": "पुरस्कार और मान्यताएं",
+    "page.about.awards.title": "उपलब्धियां",
     "page.about.awards.desc": "हमें देश में प्रमुख स्वास्थ्य और गुणवत्ता नियामकों द्वारा मान्यता प्राप्त होने पर गर्व है। यह सुनिश्चित करता है कि हर परीक्षण, प्रक्रिया और सर्जरी वैश्विक सुरक्षा और गुणवत्ता मानकों को पूरा करती है।",
     // Career
     "page.career.title": "हमारी टीम में शामिल हों",
@@ -964,7 +964,7 @@ const translations = {
     "footer.nabh": "NABH मान्यता प्राप्त",
     "footer.address": "प्लॉट नंबर 1, 2, 3, 4, एलएससी पॉकेट ए, दिलशाद कॉलोनी, दिल्ली - 110095",
     "footer.phone.1": "+91 9873754555",
-    "footer.email.1": "admin.karunahospital@gmail.com",
+    "footer.email.1": "addmin.karunahospital@gmail.com",
     "footer.emergency.helpline": "24/7 हेल्पलाइन: +91 9873754555",
     "footer.tagline": "2011 से दयालु और विश्व स्तरीय स्वास्थ्य देखभाल प्रदान करना। आपकी मानसिक शांति के लिए NABH मान्यता प्राप्त।",
     "home.about.badge": "हमारे बारे में",

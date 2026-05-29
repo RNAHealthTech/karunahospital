@@ -351,10 +351,10 @@ export default function DoctorProfilePage() {
                   <div>
                     <span className="dp-sidebar-card__lbl">Email</span>
                     <a
-                      href="mailto:admin.karunahospital@gmail.com"
+                      href="mailto:addmin.karunahospital@gmail.com"
                       className="dp-sidebar-card__val"
                     >
-                      admin.karunahospital@gmail.com
+                      addmin.karunahospital@gmail.com
                     </a>
                   </div>
                 </div>
