@@ -27,7 +27,7 @@ const navigation = [
     href: "/specialities",
     children: [
       { key: "nav.spec.ortho", href: "/specialities/orthopaedics", icon: <Activity size={14} /> },
-      { key: "nav.spec.neuro", href: "/specialities/neurosciences", icon: <Brain size={14} /> },
+      { key: "nav.spec.neuro", href: "/specialities/neurology", icon: <Brain size={14} /> },
       { key: "nav.spec.gastro", href: "/specialities/gastroenterology", icon: <Activity size={14} /> },
       { key: "nav.spec.obst", href: "/specialities/obstetrics-gynaecology", icon: <Heart size={14} /> },
       { key: "nav.spec.paediatrics", href: "/specialities/pediatrics", icon: <Activity size={14} /> },
