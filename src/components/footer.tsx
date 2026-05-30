@@ -71,7 +71,6 @@ export function Footer() {
                 ["nav.spec.obst", "/specialities/obstetrics-gynaecology"],
                 ["nav.spec.surgery", "/specialities/surgery"],
                 ["nav.spec.ortho", "/specialities/orthopaedics"],
-                ["nav.spec.cardiology", "/specialities/cardiology"],
                 ["nav.spec.neuro", "/specialities/neurology"],
               ].map(([key, href]) => (
                 <li key={key}>

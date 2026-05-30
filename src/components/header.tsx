@@ -26,7 +26,6 @@ const navigation = [
     key: "nav.specialities",
     href: "/specialities",
     children: [
-      { key: "nav.spec.cardiology", href: "/specialities/cardiology", icon: <Heart size={14} /> },
       { key: "nav.spec.ortho", href: "/specialities/orthopaedics", icon: <Activity size={14} /> },
       { key: "nav.spec.neuro", href: "/specialities/neurosciences", icon: <Brain size={14} /> },
       { key: "nav.spec.gastro", href: "/specialities/gastroenterology", icon: <Activity size={14} /> },
@@ -35,8 +34,6 @@ const navigation = [
       { key: "nav.spec.surgery", href: "/specialities/general-surgery", icon: <ClipboardCheck size={14} /> },
       { key: "nav.spec.urology", href: "/specialities/urology", icon: <Droplet size={14} /> },
       { key: "nav.spec.medicine", href: "/specialities/internal-medicine", icon: <Stethoscope size={14} /> },
-      { key: "nav.spec.dentistry", href: "/specialities/dentistry", icon: <Smile size={14} /> },
-      { key: "nav.spec.ophthalmology", href: "/specialities/ophthalmology", icon: <Eye size={14} /> },
       { key: "nav.spec.psychiatry", href: "/specialities/psychiatry", icon: <Activity size={14} /> },
       { key: "nav.spec.radiology", href: "/specialities/radiology", icon: <Activity size={14} /> },
       { key: "nav.spec.pathology", href: "/specialities/pathology", icon: <Activity size={14} /> },

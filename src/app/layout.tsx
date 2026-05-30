@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import { Providers } from "../components/providers";
+import { ScrollToTop } from "../components/scroll-to-top";
 import '../styles/globals.css';
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <ScrollToTop />
         </Providers>
       </body>
     </html>

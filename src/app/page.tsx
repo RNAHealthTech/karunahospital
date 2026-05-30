@@ -3,7 +3,8 @@
 
 import Link from "next/link";
 
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import {
   Activity,
   ArrowRight,
@@ -27,12 +28,6 @@ import { useLanguage } from "@/context/LanguageContext";
 import Image from "next/image";
 
 const specialities = [
-  {
-    icon: Heart,
-    titleKey: "nav.spec.cardiology",
-    descKey: "spec.cardiology.desc",
-    color: "spec-blue",
-  },
   {
     icon: Bone,
     titleKey: "nav.spec.ortho",
@@ -107,6 +102,50 @@ const whyUs = [
   },
 ];
 
+function Counter({ value }: { value: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [displayValue, setDisplayValue] = useState("0");
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const match = value.match(/^(\d+)(.*)$/);
+    if (!match) {
+      setDisplayValue(value);
+      return;
+    }
+
+    const targetNumber = parseInt(match[1], 10);
+    const suffix = match[2] || "";
+    
+    let startTimestamp: number | null = null;
+    const duration = 1500; // 1.5 seconds
+
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const elapsed = timestamp - startTimestamp;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing out quad
+      const easeProgress = progress * (2 - progress);
+      const current = Math.floor(easeProgress * targetNumber);
+      
+      setDisplayValue(`${current}${suffix}`);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        setDisplayValue(value);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  }, [value, isInView]);
+
+  return <span ref={ref}>{displayValue}</span>;
+}
+
 export default function Home() {
   const { t } = useLanguage();
 
@@ -168,14 +207,44 @@ export default function Home() {
             className="hero__visual"
             aria-hidden="true"
           >
-            <div className="hero__image-container">
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 6,
+                ease: "easeInOut",
+              }}
+              className="hero__image-container"
+            >
               <img
                 src="/images/hero-medical.png"
                 alt="Karuna Hospital Healthcare"
                 className="hero__main-image"
               />
               <div className="hero__image-glow" />
-            </div>
+              
+              {/* Floating Card Top */}
+              <div className="hero__card hero__card--floating hero__card--top flex items-center gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400">
+                  <Shield size={20} />
+                </div>
+                <div>
+                  <span className="block font-bold text-[10px] uppercase tracking-wider text-emerald-400">Accredited</span>
+                  <span className="block font-extrabold text-[11px] text-white leading-tight">{t("hero.badge")}</span>
+                </div>
+              </div>
+
+              {/* Floating Card Bottom */}
+              <div className="hero__card hero__card--floating hero__card--bottom flex items-center gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-500/20 text-blue-400">
+                  <Clock size={20} />
+                </div>
+                <div>
+                  <span className="block font-bold text-[10px] uppercase tracking-wider text-blue-400">Available 24/7</span>
+                  <span className="block font-extrabold text-[11px] text-white leading-tight">{t("why.emergency.title")}</span>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -193,7 +262,9 @@ export default function Home() {
                   aria-hidden="true"
                 />
                 <div>
-                  <div className="stat-item__value">{s.value}</div>
+                  <div className="stat-item__value">
+                    <Counter value={s.value} />
+                  </div>
                   <div className="stat-item__label">{t(s.key)}</div>
                 </div>
               </div>
@@ -290,10 +361,10 @@ export default function Home() {
               const Icon = s.icon;
               return (
                 <motion.article
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
+                  transition={{ delay: index * 0.05, duration: 0.5, ease: "easeOut" }}
                   key={s.titleKey}
                   className={`spec-card spec-card--${s.color}`}
                 >
@@ -335,14 +406,14 @@ export default function Home() {
               {t("home.infra.subtitle")}
             </p>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
-          >
-            <div className="group relative h-[450px] overflow-hidden rounded-2xl shadow-2xl lg:col-span-2">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0 }}
+              className="group relative h-[450px] overflow-hidden rounded-2xl shadow-2xl lg:col-span-2"
+            >
               <img
                 src="/images/building.jpg"
                 alt="Karuna Hospital Building"
@@ -356,8 +427,14 @@ export default function Home() {
                   {t("home.infra.facility.desc")}
                 </p>
               </div>
-            </div>
-            <div className="group relative h-[450px] overflow-hidden rounded-2xl shadow-xl">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="group relative h-[450px] overflow-hidden rounded-2xl shadow-xl"
+            >
               <img
                 src="/images/lobby.png"
                 alt="Hospital Lobby"
@@ -371,8 +448,14 @@ export default function Home() {
                   {t("home.infra.lobby.desc")}
                 </p>
               </div>
-            </div>
-            <div className="group relative h-[400px] overflow-hidden rounded-xl shadow-xl">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="group relative h-[400px] overflow-hidden rounded-xl shadow-xl"
+            >
               <img
                 src="/images/doctor.png"
                 alt="Patient Care"
@@ -386,8 +469,14 @@ export default function Home() {
                   {t("home.infra.care.desc")}
                 </p>
               </div>
-            </div>
-            <div className="group relative h-[400px] overflow-hidden rounded-xl shadow-xl md:col-span-2 lg:col-span-1">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="group relative h-[400px] overflow-hidden rounded-xl shadow-xl md:col-span-2 lg:col-span-1"
+            >
               <img
                 src="/images/ot.png"
                 alt="Operation Theater"
@@ -401,8 +490,8 @@ export default function Home() {
                   {t("home.infra.ot.desc")}
                 </p>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -418,21 +507,15 @@ export default function Home() {
               {t("why.title")}
             </h2>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="why-grid"
-          >
+          <div className="why-grid">
             {whyUs.map((item, index) => {
               const Icon = item.icon;
               return (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
+                  transition={{ delay: index * 0.05, duration: 0.5, ease: "easeOut" }}
                   key={item.titleKey}
                   className="why-card"
                 >
@@ -444,7 +527,7 @@ export default function Home() {
                 </motion.div>
               );
             })}
-          </motion.div>
+          </div>
         </div>
       </section>
 
