@@ -2051,6 +2051,197 @@ body {
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
 }
 
+/* ── Career Application Form Styles ── */
+.career-cta__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .career-cta__grid {
+    grid-template-columns: 1.12fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.career-cta__text-side {
+  color: white;
+}
+
+.career-cta__form-side {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .career-cta__form-side {
+    padding: 2.5rem;
+  }
+}
+
+.career-form__group {
+  margin-bottom: 1.25rem;
+}
+
+.career-form__label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.career-form__label span {
+  color: #f87171;
+}
+
+.career-form__input,
+.career-form__textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.75rem;
+  padding: 0.8rem 1rem;
+  color: white;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.career-form__input::placeholder,
+.career-form__textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.career-form__input:focus,
+.career-form__textarea:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.career-form__textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.career-form__file-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.career-form__file-upload:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.career-form__file-icon {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.career-form__file-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+.career-form__file-hint {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.career-form__submit-btn {
+  width: 100%;
+  padding: 0.875rem;
+  background: white;
+  color: var(--brand-primary);
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.career-form__submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.career-form__submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.career-form__submit-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.career-form__status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.career-form__status--success {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+.career-form__status--error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* ═══════════════════════════════════════════════
    RESPONSIVE UPDATES FOR CAREER PAGE
 ═══════════════════════════════════════════════ */
