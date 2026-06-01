@@ -328,11 +328,6 @@ export default function RiskDetailPage({
                   transition={{ delay: i * 0.1 }}
                   className="spec-card spec-card--spec-blue group relative"
                 >
-                  {/* Discount Badge */}
-                  <div className="bg-brand-accent absolute top-4 right-4 rounded-full px-3 py-1 text-xs font-bold text-white">
-                    {pkg.discount} {t("diag.detail.off")}
-                  </div>
-
                   <div className="spec-card__icon-wrap mb-4">
                     <Activity size={20} />
                   </div>
@@ -340,15 +335,6 @@ export default function RiskDetailPage({
                   <h3 className="spec-card__title group-hover:text-brand-primary pt-2 transition-colors">
                     {pkg.title}
                   </h3>
-
-                  <div className="my-3 flex items-baseline gap-2">
-                    <span className="text-brand-primary text-2xl font-extrabold">
-                      ₹{pkg.price}
-                    </span>
-                    <span className="text-sm text-neutral-400 line-through">
-                      ₹{pkg.oldPrice}
-                    </span>
-                  </div>
 
                   <p className="spec-card__desc">{pkg.description}</p>
 
