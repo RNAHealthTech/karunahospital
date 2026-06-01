@@ -321,12 +321,6 @@ export default function Home() {
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-3 rounded-2xl bg-neutral-50 px-5 py-3 border border-neutral-100 shadow-sm transition-transform hover:-translate-y-1">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-[var(--brand-primary)]">
-                    <Shield size={20} />
-                  </div>
-                  <span className="font-bold text-neutral-900 text-sm">NABH Accredited</span>
-                </div>
-                <div className="flex items-center gap-3 rounded-2xl bg-neutral-50 px-5 py-3 border border-neutral-100 shadow-sm transition-transform hover:-translate-y-1">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-[var(--brand-primary)]">
                     <Clock size={20} />
                   </div>
                   <span className="font-bold text-neutral-900 text-sm">24/7 Emergency</span>

@@ -1323,6 +1323,9 @@ body {
   background: var(--neutral-900);
   color: var(--neutral-300);
 }
+.site-footer .footer__brand img {
+  filter: brightness(0) invert(1);
+}
 .footer__top {
   padding: 4rem 0 3rem;
 }
