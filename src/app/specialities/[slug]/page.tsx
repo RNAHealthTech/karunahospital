@@ -34,6 +34,144 @@ export default function SpecialityPage() {
 
   const content = spec[language];
 
+  const renderDescription = (description: string) => {
+    const lines = description.split('\n');
+    const elements: React.ReactNode[] = [];
+    let currentListItems: string[] = [];
+
+    const flushList = (keyPrefix: string | number) => {
+      if (currentListItems.length > 0) {
+        elements.push(
+          <ul
+            key={`list-${keyPrefix}`}
+            style={{
+              listStyle: "none",
+              paddingLeft: "0.75rem",
+              marginTop: "0.25rem",
+              marginBottom: "1.25rem",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.4rem",
+            }}
+          >
+            {currentListItems.map((item, idx) => (
+              <li
+                key={idx}
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "0.6rem",
+                  fontSize: "1rem",
+                  color: "var(--neutral-700)",
+                  lineHeight: "1.5",
+                }}
+              >
+                <span
+                  style={{
+                    display: "inline-block",
+                    width: "5px",
+                    height: "5px",
+                    borderRadius: "50%",
+                    backgroundColor: "var(--brand-primary)",
+                    marginTop: "0.55rem",
+                    flexShrink: 0,
+                  }}
+                />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        );
+        currentListItems = [];
+      }
+    };
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+
+      if (line === '') {
+        flushList(i);
+        continue;
+      }
+
+      // Handle Image
+      if (line.startsWith('/images/')) {
+        flushList(i);
+        elements.push(
+          <div
+            key={`img-${i}`}
+            style={{
+              margin: '2rem 0',
+              borderRadius: 'var(--radius)',
+              overflow: 'hidden',
+              border: '1px solid var(--border)',
+            }}
+          >
+            <img
+              src={line}
+              alt="Speciality Detail"
+              style={{ width: '100%', display: 'block' }}
+            />
+          </div>
+        );
+        continue;
+      }
+
+      // Handle List Items
+      if (line.startsWith('- ') || line.startsWith('* ')) {
+        const itemText = line.substring(2).trim();
+        if (itemText) {
+          currentListItems.push(itemText);
+        }
+        continue;
+      }
+
+      // Since we encountered a non-list item, flush the accumulated list first
+      flushList(i);
+
+      // Check if it's a heading
+      // Standard headings end with ":" or "?" and are relatively short (e.g. < 80 chars)
+      const isHeading = (line.endsWith(':') || line.endsWith('?')) && line.length < 80;
+
+      if (isHeading) {
+        const isQuestion = line.endsWith('?');
+        elements.push(
+          <h4
+            key={`heading-${i}`}
+            style={{
+              fontSize: isQuestion ? "1.25rem" : "1.05rem",
+              fontWeight: 700,
+              color: isQuestion ? "var(--brand-primary)" : "var(--neutral-900)",
+              marginTop: "1.5rem",
+              marginBottom: "0.5rem",
+              fontFamily: "var(--font-display, inherit)",
+              lineHeight: 1.4,
+            }}
+          >
+            {line}
+          </h4>
+        );
+      } else {
+        // Standard Paragraph
+        elements.push(
+          <p
+            key={`p-${i}`}
+            style={{
+              marginBottom: "0.75rem",
+              color: "var(--neutral-700)",
+              lineHeight: "1.7",
+            }}
+          >
+            {line}
+          </p>
+        );
+      }
+    }
+
+    flushList('final');
+    return elements;
+  };
+
   return (
     <main
       className="spec-detail-page"
@@ -163,7 +301,7 @@ export default function SpecialityPage() {
           <div
             className="spec-page-desc"
             style={{
-              fontSize: "1.1rem",
+              fontSize: "1rem",
               color: "var(--neutral-700)",
               lineHeight: "1.8",
               textAlign: "left",
@@ -173,25 +311,12 @@ export default function SpecialityPage() {
             }}
           >
             {content.introduction ? (
-              <p style={{ marginBottom: "2rem", fontSize: "1.2rem", color: "var(--neutral-900)", fontWeight: 500 }}>
+              <p style={{ marginBottom: "2rem", fontSize: "1.125rem", color: "var(--neutral-900)", fontWeight: 500 }}>
                 {content.introduction}
               </p>
             ) : null}
 
-            {content.description.split('\n').map((line, i) => {
-              if (line.trim().startsWith('/images/')) {
-                return (
-                  <div key={i} style={{ margin: '2rem 0', borderRadius: 'var(--radius)', overflow: 'hidden', border: '1px solid var(--border)' }}>
-                    <img src={line.trim()} alt="Speciality Detail" style={{ width: '100%', display: 'block' }} />
-                  </div>
-                );
-              }
-              return (
-                <p key={i} style={{ marginBottom: line.trim() === '' ? '0' : '1.5rem' }}>
-                  {line}
-                </p>
-              );
-            })}
+            {renderDescription(content.description)}
           </div>
 
           {content.techIntroduction && (
@@ -209,7 +334,7 @@ export default function SpecialityPage() {
               <h3 style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1rem", color: "var(--brand-primary)" }}>
                 Technology & Infrastructure
               </h3>
-              <p style={{ color: "var(--neutral-600)", lineHeight: "1.7", fontSize: "1.05rem" }}>
+              <p style={{ color: "var(--neutral-600)", lineHeight: "1.7", fontSize: "1rem" }}>
                 {content.techIntroduction}
               </p>
             </div>
@@ -248,7 +373,7 @@ export default function SpecialityPage() {
                       display: "flex",
                       alignItems: "flex-start",
                       gap: "0.5rem",
-                      fontSize: "0.95rem",
+                      fontSize: "0.9rem",
                       color: "var(--neutral-600)",
                     }}
                   >
@@ -290,7 +415,7 @@ export default function SpecialityPage() {
                       display: "flex",
                       alignItems: "flex-start",
                       gap: "0.5rem",
-                      fontSize: "0.95rem",
+                      fontSize: "0.9rem",
                       color: "var(--neutral-600)",
                     }}
                   >
@@ -323,9 +448,9 @@ export default function SpecialityPage() {
              <h3 style={{ fontSize: "2rem", fontWeight: 800, marginBottom: "1rem" }}>
                Our Expert Team
              </h3>
-             <p style={{ fontSize: "1.15rem", opacity: 0.9, marginBottom: "2rem", maxWidth: "750px", margin: "0 auto 2.5rem", lineHeight: "1.6" }}>
-               {content.expertTeamMessage}
-             </p>
+              <p style={{ fontSize: "1rem", opacity: 0.9, marginBottom: "2rem", maxWidth: "750px", margin: "0 auto 2.5rem", lineHeight: "1.6" }}>
+                {content.expertTeamMessage}
+              </p>
              <Link href="/find-a-doctor" className="btn btn--secondary" style={{ background: "white", color: "var(--brand-primary)", padding: "1rem 2.5rem" }}>
                 Meet Our Specialists <ArrowRight size={18} />
              </Link>
@@ -343,7 +468,7 @@ export default function SpecialityPage() {
                  <div className="absolute top-10 right-12 text-blue-50/50">
                     <Quote size={80} fill="currentColor" />
                   </div>
-                <p style={{ position: 'relative', zIndex: 1, fontSize: "1.25rem", fontStyle: "italic", color: "var(--neutral-700)", lineHeight: "1.8", marginBottom: "2rem" }}>
+                <p style={{ position: 'relative', zIndex: 1, fontSize: "1.1rem", fontStyle: "italic", color: "var(--neutral-700)", lineHeight: "1.8", marginBottom: "2rem" }}>
                   "{content.testimonial.quote}"
                 </p>
                 <div style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', gap: '1.25rem', borderTop: '1px solid var(--neutral-100)', paddingTop: '2rem' }}>
@@ -404,7 +529,7 @@ export default function SpecialityPage() {
             >
               <h3
                 style={{
-                  fontSize: "1.1rem",
+                  fontSize: "1rem",
                   fontWeight: "700",
                   color: "var(--neutral-900)",
                   marginBottom: "1rem",
@@ -483,7 +608,7 @@ export default function SpecialityPage() {
               </div>
               <h4
                 style={{
-                  fontSize: "1.25rem",
+                  fontSize: "1.15rem",
                   fontWeight: "700",
                   marginBottom: "0.75rem",
                   lineHeight: 1.3,

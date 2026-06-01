@@ -2311,12 +2311,23 @@ body {
 ═══════════════════════════════════════════════ */
 /* ... [Your existing premium components CSS remains here] ... */
 
-/* ========== FIX: Text Alignment ========== */
+/* ========== FIX: Text Alignment & Typography ========== */
+.spec-detail-page {
+  font-family: "Inter", "Outfit", "Roboto", sans-serif !important;
+}
 .spec-detail-page h1,
 .spec-detail-page h2,
 .spec-detail-page h3,
+.spec-detail-page h4,
+.spec-detail-page h5,
+.spec-detail-page h6,
+.spec-detail-page .section__title,
+.spec-detail-page .spec-card__title {
+  font-family: "DM Sans", sans-serif !important;
+  text-align: left !important;
+}
 .spec-detail-page p,
-.spec-detail-page .section__title {
+.spec-detail-page li {
   text-align: left !important;
 }
 
