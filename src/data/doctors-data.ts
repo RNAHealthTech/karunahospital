@@ -31,7 +31,8 @@ export const doctorsData = [
         "quote": "I have been Dr. Gupta's patient for many years, and I trust him implicitly with my health. His expertise and compassionate approach are truly exceptional.",
         "author": "Mrs. Anita Sharma"
       }
-    ]
+    ],
+    "schedule": ["11:30 AM - 5:00 PM (Mon to Sat)"]
   },
   {
     "name": "Dr Archana Gupta",
@@ -42,7 +43,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["11:00 AM - 2:00 PM (Mon to Sat)", "7:00 PM - 9:00 PM (Mon to Sat)", "11:00 AM - 1:00 PM (Sun)"]
   },
   {
     "name": "Dr. Setu Gupta",
@@ -53,7 +55,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["5:00 PM - 7:00 PM (Mon, Tue, Wed, Fri, Sat)"]
   },
   {
     "name": "Dr Saloni Seth",
@@ -64,7 +67,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["5:00 PM - 6:30 PM (Tue & Thur)"]
   },
   {
     "name": "Dr Sachin Kumar",
@@ -75,7 +79,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["10:00 AM - 11:00 AM (Tue & Sat)"]
   },
   {
     "name": "Dr Anivita Aggarwal",
@@ -86,7 +91,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["On Call"]
   },
   {
     "name": "Dr LKC Sinha",
@@ -97,7 +103,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["11:00 AM - 2:00 PM (Daily)", "8:00 PM - 10:00 PM (Daily)"]
   },
   {
     "name": "Dr Rajnish Kashyap",
@@ -108,7 +115,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["7:30 PM - 8:30 PM (Mon to Sat)"]
   },
   {
     "name": "Dr Mamta Kumari",
@@ -119,7 +127,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["On Call / By Appointment"]
   },
   {
     "name": "Dr Rajan Sareen",
@@ -130,7 +139,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["10:00 AM - 11:00 AM (Mon to Sat)", "5:00 PM - 6:00 PM (Mon to Sat)"]
   },
   {
     "name": "Dr Praveen Garg",
@@ -141,7 +151,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["11:00 AM - 1:00 PM (Mon to Sat)"]
   },
   {
     "name": "Dr Dnyaneshwar Shankarlal",
@@ -152,7 +163,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["24/7 (Emergency / CMO)"]
   },
   {
     "name": "Dr SK Jain",
@@ -163,7 +175,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["6:30 PM - 8:00 PM (Mon to Sat)"]
   },
   {
     "name": "Dr Vyomesh Bansal",
@@ -174,7 +187,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["2:00 PM - 3:00 PM (Mon, Wed, Fri)"]
   },
   {
     "name": "Dr Vasudha Goel",
@@ -185,7 +199,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["8:00 PM - 9:00 PM (Wed)"]
   },
   {
     "name": "Dr Abhishek Aggarwal",
@@ -196,7 +211,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["5:30 PM - 6:30 PM (Thu)", "10:00 AM - 12:00 PM (Sun)"]
   },
   {
     "name": "Dr Amit Kansal",
@@ -207,7 +223,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["10:00 AM - 11:00 AM (Mon to Sat)"]
   },
   {
     "name": "Dr Pankaj Kumar Garg",
@@ -218,7 +235,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["On Call / By Appointment"]
   },
   {
     "name": "Dr Madhukar Prakash",
@@ -229,7 +247,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["On Call / By Appointment"]
   },
   {
     "name": "Dr Ashish Sachan",
@@ -240,7 +259,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["On Call"]
   },
   {
     "name": "Dr Kapil",
@@ -251,7 +271,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["On Call"]
   },
   {
     "name": "Dr Rahul Ramteke",
@@ -262,7 +283,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["11:00 AM - 12:00 PM (Fri)"]
   },
   {
     "name": "Dr Atul Kapila",
@@ -273,7 +295,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["On Call"]
   },
   {
     "name": "Dr Jahnavi Meena",
@@ -284,7 +307,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["On Call / By Appointment"]
   },
   {
     "name": "Dr Naveen Jain",
@@ -295,7 +319,8 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["On Call"]
   },
   {
     "name": "Dr Abhiman Chauhan",
@@ -306,6 +331,7 @@ export const doctorsData = [
     "experience": "10+",
     "interests": [],
     "education": [],
-    "hospitals": []
+    "hospitals": [],
+    "schedule": ["11:00 AM - 12:00 PM (Mon to Sat)"]
   }
 ];

@@ -365,9 +365,19 @@ export default function DoctorProfilePage() {
                   </div>
                   <div>
                     <span className="dp-sidebar-card__lbl">{t("page.doctor.availability")}</span>
-                    <span className="dp-sidebar-card__val">
-                      {t("page.doctor.mon_sat")}
-                    </span>
+                    {doctor.schedule && doctor.schedule.length > 0 ? (
+                      <div className="flex flex-col gap-1 mt-0.5">
+                        {doctor.schedule.map((slot, idx) => (
+                          <span key={idx} className="dp-sidebar-card__val block text-sm font-semibold text-neutral-800">
+                            {slot}
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <span className="dp-sidebar-card__val">
+                        {t("page.doctor.mon_sat")}
+                      </span>
+                    )}
                   </div>
                 </div>
 
